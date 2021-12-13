@@ -280,8 +280,8 @@ void send_digits_to_clock(float _f){
     delay(100);
     Serial.flush();
     delay(100);
-    Serial.println("_st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_");
-    last_error = "MQTT _st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_";
+    Serial.println("_st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_"+ String(sync_mode) + "_");
+    last_error = "MQTT _st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_"+ String(sync_mode) + "_";
     delay(100);
  
 }
@@ -301,8 +301,8 @@ if((tmph+timezone)>23){tmph =tmph+timezone-24;}
 else if((tmph+timezone)<0){tmph = tmph+timezone+24;}else{
   tmph = tmph+timezone;}
 
-            Serial.println("_st_" + String(tmph) + "_" + String(timeClient.getMinutes()) + "_");
-            last_error = "_st_" + String(tmph) + "_" + String(timeClient.getMinutes()) + "_";
+            Serial.println("_st_" + String(tmph) + "_" + String(timeClient.getMinutes()) + "_" + String(sync_mode) + "_");
+            last_error = "_st_" + String(tmph) + "_" + String(timeClient.getMinutes()) + "_"+ String(sync_mode) + "_";
             delay(100);
   }
 
