@@ -50,7 +50,7 @@ int timezone = 0;
 String ntp_server_url = "";
 String mqtt_broker_url = "";
 String mqtt_topic = "";
-String mqtt_broker_port = "";
+String mqtt_broker_port = "1883";
 long long last = 0;
 //NTPSyncEvent_t ntpEvent; // Last triggered event
 
@@ -187,7 +187,7 @@ void restore_eeprom_values()
     sync_mode = read_file(file_syncmode, "1").toInt();
     mqtt_broker_url = read_file(file_mqtt_server,DEFAULT_MQTT_BROKER);
     mqtt_topic = read_file(file_mqtt_topic,DEFAULT_MQTT_TOPIC);
-    mqtt_broker_port = read_file(file_mqtt_broker_port, String(DEFAULT_MQTT_BROKER_PORT)).toInt();
+    mqtt_broker_port = read_file(file_mqtt_broker_port, String(DEFAULT_MQTT_BROKER_PORT));
 }
 
 bool write_file(const char* _file, String _content)
@@ -207,7 +207,7 @@ void save_values_to_eeprom()
     write_file(file_ntp_server, ntp_server_url);
     write_file(file_syncmode, String(sync_mode));
     write_file(file_timezone, String(timezone));
-    write_file(file_timezone, mqtt_broker_url);
+    write_file(file_mqtt_server, mqtt_broker_url);
     write_file(file_mqtt_topic, mqtt_topic);
     write_file(file_mqtt_broker_port, mqtt_broker_port);
 }
@@ -220,6 +220,9 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
 
 
   String tmp = "";
+  if(length > 5){
+    length = 5;
+  }
   for (int i = 0; i < length; i++) {
     tmp += (char)payload[i];
   }
@@ -229,7 +232,7 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
   //IF MQTT DISPLAY IS ENABLES SEND IT TO CLOCK
   if(sync_mode == 2 && tmp != ""){
     float ff = tmp.toFloat();
-    if (isnan(ff)) {
+    if (!isnan(ff)) {
        send_digits_to_clock(ff);
     }
    
@@ -264,18 +267,33 @@ void send_digits_to_clock(float _f){
     int whole = (int)_f;
     int remainder = (_f - whole) * 1000;
 
+
+    if(whole < 0){whole = 0;}
+
+
+    const int ones = (whole%10);
+    const int tens = ((whole/10)%10);
+    const int hundreds = ((whole/100)%10);
+    const int thousands = (whole/1000);
+
+    Serial.println();
+    delay(100);
     Serial.flush();
     delay(100);
-    Serial.println("_st_" + String(whole) + "_" + String(remainder) + "_");
-    last_error = "_st_" + String(whole) + "_" + String(remainder) + "_";
+    Serial.println("_st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_");
+    last_error = "MQTT _st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_";
     delay(100);
  
 }
 
 
 void send_time_to_clock(){
-  Serial.flush();
-  delay(100);
+  
+    Serial.println();
+    delay(100);
+    Serial.flush();
+    delay(100);
+
 
 
 int tmph = timeClient.getHours();
@@ -324,8 +342,10 @@ void handleSave()
         if (server.argName(i) == "ntp_server_url") {
             ntp_server_url = server.arg(i);
             last_error = "set ntp_server_url to" + ntp_server_url;
-            timeClient.setPoolServerName(ntp_server_url.c_str());
-            timeClient.forceUpdate();
+            if(ntp_server_url != ""){
+              timeClient.setPoolServerName(ntp_server_url.c_str());
+              timeClient.forceUpdate();
+            }
             last = 0;
         }
 
@@ -410,12 +430,21 @@ void handleSave()
 
 void handleRoot()
 {
-  String timezonesign = "";
-  if(timezone > 0){
-    timezonesign = "+";
+
+
+
+    String control_forms = "<hr><h2>DEVICE ID</h2>";
+    control_forms+="<h1>" + String(MDNS_NAME) + String(ESP.getChipId()) + "</h1><br><br>";
+
+
+
+  
+    String timezonesign = "";
+    if(timezone > 0){
+      timezonesign = "+";
     }
-    String control_forms = "<hr><h2>CURRENT TIME</h2>";
-    control_forms+="<h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1>";
+
+    control_forms+="<hr><h2>CURRENT TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1>";
 
 
 
@@ -480,7 +509,7 @@ void handleRoot()
 
 
   control_forms += "<br><h3> MQTT SETTINGS </h3>";
-  control_forms += "<form name='btn_off' action='/save' method='GET'>"
+  control_forms += "<form name='btn_offmq' action='/save' method='GET'>"
                      "<input type='text' value='"+ String(mqtt_broker_url) + "' name='mqtt_broker_url' required placeholder='broker.hivemq.com'/>"
                      "<input type='submit' value='SAVE MQTT BROKER'/>"
                      "</form>";
@@ -543,7 +572,11 @@ void handleNotFound()
 
 
 void setup(void)
-{
+{ 
+
+   
+
+
     Serial.begin(SERIAL_BAUD_RATE);
     // START THE FILESYSTEM
     if (SPIFFS.begin()) {
@@ -565,7 +598,7 @@ void setup(void)
     wifiManager.setDebugOutput(false);
     wifiManager.autoConnect("LixieClockConfiguration");
 
-    if (MDNS.begin(MDNS_NAME)) {
+    if (MDNS.begin((MDNS_NAME + String(ESP.getChipId())).c_str())) {
     }
     //WEBSERVER ROUTES
     delay(1000);
@@ -576,7 +609,7 @@ void setup(void)
     server.begin();
     
     //START OTA LIB
-    ArduinoOTA.setHostname(MDNS_NAME);
+    ArduinoOTA.setHostname((MDNS_NAME + String(ESP.getChipId())).c_str());
     ArduinoOTA.onStart([]() {
         String type;
         if (ArduinoOTA.getCommand() == U_FLASH) {
