@@ -21,15 +21,14 @@
  #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
 #endif
 
-
-#define ENABLE_I2C_RTC
-
-#ifdef ENABLE_I2C_RTC
 #include <Wire.h>
 #include "RTClib.h"
-#endif
 
-String time_last = "not synced";
+
+
+
+
+
 // CONFIG -------------------------------------
 #define WEBSERVER_PORT 80 // set the port for the webserver eg 80 8080
 #define MDNS_NAME "lixieclock" // set hostname
@@ -43,15 +42,36 @@ String time_last = "not synced";
 #define DEFAULT_MQTT_TOPIC "/iot/9770941/humidity"
 #define DEFAULT_MQTT_BROKER_PORT "1883"
 
-#define NEOPIXEL_PIN 8
-#define NUMPIXELS 60
+// PIN CONFIG -----------------------------------
+#ifdef ESP8266
+#define NEOPIXEL_PIN D8
+#endif
+
+#ifdef ESP32
+#define NEOPIXEL_PIN D2
+#endif
+
+
+
 // END CONFIG ---------------------------------
+
+
+String time_last = "not synced";
+
+
+#if defined(ESP8266)
+const String BOARD_INFO= "LIXIE_FW_" + String(VERSION) + "_BOARD_" + "ESP8266";
+#elif defined(ESP32)
+const String BOARD_INFO= "LIXIE_FW_" + String(VERSION) + "_BOARD_" + "ESP32";
+#endif
 
 
 
 // NEOPIXEL CONF ------------------------------
 const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
-const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
+const int NUM_NEOPIXELS = COUNT_CLOCK_DIGITS*10; //10 leds per digit
+//const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8};
+const int led_index_digits[] = {0, 9, 8, 7, 6, 5, 4, 3, 2, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
 const int digit_offsets[6] = {0, 10 ,20 ,30, 40, 50}; //HOUR_TENS HOUR_ONES MINUTES_TENS MINUTES_ONES
 
 // END NEOPIXEL CONF ---------------------------
@@ -92,7 +112,7 @@ int abi_counter = 0;
 const int ABI_COUNTER_MAX = COUNT_CLOCK_DIGITS * 6;
 
 
-
+bool is_rtc_present = false;
 
 // INSTANCES --------------------------------------------
 ESP8266WebServer server(WEBSERVER_PORT);
@@ -100,11 +120,9 @@ WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP,DEFAULT_NTP_SERVER,0,60000);
 WiFiClient espClient;
 PubSubClient client(espClient);
-Adafruit_NeoPixel pixels(NUMPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
-
-#ifdef ENABLE_I2C_RTC
+Adafruit_NeoPixel pixels(NUM_NEOPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 RTC_DS1307 rtc;
-#endif
+
 
 
 
@@ -341,9 +359,9 @@ void parse_mqtt_float_to_digits(float _f){
 
 
 void update_rtc() {
-  #ifdef ENABLE_I2C_RTC
-  rtc.adjust(DateTime(2000, 1, 1, rtc_hours, rtc_mins, rtc_secs));
-  #endif
+  if(is_rtc_present){
+    rtc.adjust(DateTime(2000, 1, 1, rtc_hours, rtc_mins, rtc_secs));
+  }
 }
 
 void send_time_to_clock(){
@@ -393,7 +411,7 @@ void loop_abi(){
   }
   //UPDATE CLOCK DISPLAY
   abi_counter--;
-  const int c = abi_counter % 10;
+  const int c = (abi_counter % 10)*11;
   update_clock_display(c,c,c,0,128,false);
 }
 
@@ -436,17 +454,17 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     
     if(COUNT_CLOCK_DIGITS >= 2){
       pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens], digit_color(h_tens,0,_disable_leading_zero, col, _bright));
-      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], digit_color(h_ones,1,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], digit_color(h_ones,0,_disable_leading_zero, col, _bright));
     }
  
     if(COUNT_CLOCK_DIGITS >= 4){
-      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], digit_color(m_tens,2,_disable_leading_zero, col, _bright));
-      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones],digit_color(m_ones,3,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], digit_color(m_tens,1,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones],digit_color(m_ones,1,_disable_leading_zero, col, _bright));
     }
  
     if(COUNT_CLOCK_DIGITS >= 6){
-      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], digit_color(s_tens,4,_disable_leading_zero, col, _bright));
-      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], digit_color(s_ones,5,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], digit_color(s_tens,2,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], digit_color(s_ones,2,_disable_leading_zero, col, _bright));
     }
     
    
@@ -579,8 +597,8 @@ void handleRoot()
 
 
 
-    String control_forms = "<hr><h2>DEVICE ID</h2>";
-    control_forms+="<h1>" + String(MDNS_NAME) + String(ESP.getChipId()) + "</h1><br><br>";
+    String control_forms = "<hr><h2>DEVICE INFO</h2>";
+    control_forms+="<h3>" + String(MDNS_NAME) + String(ESP.getChipId()) + "<br><br>"+BOARD_INFO+"</h3><br>";
 
 
 
@@ -790,25 +808,35 @@ void setup(void)
   
   
   //RTC INIT
-  #ifdef ENABLE_I2C_RTC
   Wire.begin();
+  is_rtc_present = true;
   if (!rtc.begin()) {
     last_error = "_rct_begin_error_";
+    Serial.println(last_error);
+    is_rtc_present = false;
   }
 
-  if (!rtc.isrunning()) {
+  if (is_rtc_present && !rtc.isrunning()) {
     last_error = "RTC is NOT running!";
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    Serial.println(last_error);
   }
 
 
   delay(100);
-  DateTime now = rtc.now();
-  rtc_hours = now.hour();
-  rtc_mins = now.minute();
-  rtc_secs = now.second();
-  #endif
+  if(is_rtc_present){
+    DateTime now = rtc.now();
+    rtc_hours = now.hour();
+    rtc_mins = now.minute();
+    rtc_secs = now.second();
+  }
+ 
+
+  Serial.println("_setup_complete_");
 }
+
+unsigned long timeNow = 0;
+unsigned long timeLast = 0;
 
 
 
@@ -840,22 +868,35 @@ void loop(void)
       client.loop();
     }
     
-     //UPDATE RTC
-    #ifdef ENABLE_I2C_RTC
-    if (sync_mode == 1) {
+     //UPDATE RTC IF THE CLOCK IS PRESENT
+     //ELSE SIMPLY USE MILLIS TO KEEP TRACK OF TIME
+    if (is_rtc_present && sync_mode == 1) {
       DateTime now = rtc.now();
       rtc_hours = now.hour();
       rtc_mins = now.minute();
       rtc_secs = now.second();
+    }else{
+    
+      timeNow = millis()/1000;
+      rtc_secs = timeNow - timeLast;
+      
+      if (rtc_secs == 60) {
+        timeLast = timeNow;
+        rtc_mins++;
+      }
+      
+      if (rtc_mins == 60){
+        rtc_mins = 0;
+        rtc_hours = rtc_hours + 1;
+      }
     }
-    #endif
      
       
     //UPDATE CLOCK DISPLAY
     if (sync_mode == 1 && !abi_started) {
       update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), 255, false);
     }else if (sync_mode == 2 && !abi_started) {
-      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255, false);
+      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255, true);
     }else if(sync_mode == 0){
       update_clock_display(0, 0, 0, 0, 10, true);
     }else{
