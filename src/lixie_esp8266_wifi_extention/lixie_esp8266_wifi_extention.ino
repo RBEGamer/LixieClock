@@ -257,11 +257,12 @@ uint32_t Wheel(int WheelPos, int _bright) {
    if(_bright > 255){
       _bright = 255;
     }
+ 
     if(_bright < 0){
     _bright = 0;
     }
     
- float brgth_scale = _bright / 255.0;
+ const float brgth_scale = _bright / 255.0;
     
   WheelPos = 255 - WheelPos;
   if(WheelPos < 85) {
@@ -300,15 +301,9 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
 void mqtt_reconnect() {
   // Loop until we're reconnected
  if(client.connected() || sync_mode != 2) {return;}
-   
-    // Create a random client ID
-    String clientId = "lixieclock-";
-    clientId += String(random(0xffff), HEX);
     // Attempt to connect
-    if (client.connect(clientId.c_str())) {
+    if (client.connect((MDNS_NAME + String(ESP.getChipId())).c_str())) {
       last_error = "MQTT CLICNET CONNCTED";
-
-      
       client.subscribe(mqtt_topic.c_str());
     } else {
       last_error = "MQTT CLCIENT CONECT FAILED WITH" + String(client.state());
@@ -331,7 +326,7 @@ void parse_mqtt_float_to_digits(float _f){
     const int thousands = (whole/1000);
     
     //SAVE AS SPLITTED REFORMATTED HOUR MINS VARIABLES
-    mqtt_hours = thousands*1000 + hundreds*100;
+    mqtt_hours = thousands*10 + hundreds;
     mqtt_mins = tens*10 + ones;
 }
 
@@ -372,12 +367,10 @@ void send_time_to_clock(){
 
 
 uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright){
-  
- //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
+  //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
     const int MAX_COLOR = 255;
     const int color_offset_per_digit = max_color / COUNT_CLOCK_DIGITS*2;
-    uint32_t tmp_col = 0;
- 
+   
    if(_banked && _val <= 0){
       return pixels.Color(0, 0, 0);
    }else{
@@ -398,14 +391,14 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
   
     //UPDATE NEOPIXEL
     //SPLIT HOURS MINS,.. INTO SEPERATE DIGITS
-    int m_tens = m / 10;      // tens now = 2
-    int m_ones = m % 10;      // ones now = 6 
+    const int m_tens = m / 10;      // tens now = 2
+    const int m_ones = m % 10;      // ones now = 6 
 
-    int h_tens = h / 10;      // tens now = 2
-    int h_ones = h % 10;      // ones now = 6 
+    const int h_tens = h / 10;      // tens now = 2
+    const int h_ones = h % 10;      // ones now = 6 
     
-    int s_tens / 10;
-    int s_ones % 10;
+    const int s_tens / 10;
+    const int s_ones % 10;
   
     pixels.clear();
     
@@ -569,8 +562,10 @@ void handleRoot()
     if(timezone > 0){
       timezonesign = "+";
     }
-
-    control_forms+="<hr><h2>CURRENT TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1>";
+   
+ 
+     control_forms+="<hr><h2>CURRENT TIME</h2><h1>" + String(rtc_hours) + ":"+ String(rtc_mins) + ":" + String(rtc_secs) +"</h1>";
+    control_forms+="<hr><h2>LAST NTP TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1>";
 
 
 
