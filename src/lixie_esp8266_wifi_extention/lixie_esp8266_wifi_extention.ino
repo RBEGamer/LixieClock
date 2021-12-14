@@ -74,8 +74,10 @@ String ntp_server_url = "";
 String mqtt_broker_url = "";
 String mqtt_topic = "";
 String mqtt_broker_port = "1883";
-long long last = 0;
 
+
+long long last = 0;
+long long last_abi = 0;
 
 int rtc_hours = 0;
 int rtc_mins = 0;
@@ -85,21 +87,27 @@ int mqtt_hours = 0;
 int mqtt_mins = 0;
 int mqtt_secs = 0;
 
-//NTPSyncEvent_t ntpEvent; // Last triggered event
+bool abi_started = false;
+int abi_counter = 0;
+const int ABI_COUNTER_MAX = COUNT_CLOCK_DIGITS * 6;
 
+
+
+
+// INSTANCES --------------------------------------------
 ESP8266WebServer server(WEBSERVER_PORT);
-
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP,DEFAULT_NTP_SERVER,0,60000);
-
 WiFiClient espClient;
 PubSubClient client(espClient);
+Adafruit_NeoPixel pixels(NUMPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
 #ifdef ENABLE_I2C_RTC
 RTC_DS1307 rtc;
 #endif
 
-Adafruit_NeoPixel pixels(NUMPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
+
+
 
 
 
@@ -366,6 +374,30 @@ void send_time_to_clock(){
 
 
 
+//ANTI BURN IN CYLCE ANIMATION
+//LIKE REAL NIXIES
+void start_abi(){
+//LEGACY SUPPORT
+              
+   Serial.println("_abi_");
+   delay(10);
+   abi_counter = ABI_COUNTER_MAX;
+   abi_started = true;
+}
+
+
+void loop_abi(){
+  if(abi_started && abi_counter <= 0){
+   abi_started = false;
+   abi_counter = 0;
+  }
+  //UPDATE CLOCK DISPLAY
+  abi_counter--;
+  const int c = abi_counter % 10;
+  update_clock_display(c,c,c,0,128,false);
+}
+
+
 uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright){
   //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
     const int MAX_COLOR = 255;
@@ -521,25 +553,20 @@ void handleSave()
 
          //ANTI BURNOUT CYCLE
         if (server.argName(i) == "abi") {
-            Serial.println("_abi_");
-            delay(10);
+            start_abi();
         }
 
       if (server.argName(i) == "sendtime") {
             send_time_to_clock();
             delay(100);
-        }
-
-
-        
-        
+        }  
     }
     //SAVE THESE DATA
     save_values_to_eeprom();
     //SAVE MQTT STUFF 
     setup_mqtt_client();
     
-    server.send(404, "text/html","<html><head><meta http-equiv='refresh' content='1; url=/' /></head><body>SAVE SETTINGS PLEASE WAIT</body></html>");
+    server.send(300, "text/html","<html><head><meta http-equiv='refresh' content='1; url=/' /></head><body>SAVE SETTINGS PLEASE WAIT</body></html>");
 }
 
 
@@ -673,9 +700,6 @@ void handleRoot()
 
     control_forms += "<br><hr><h3>LAST SYSTEM MESSAGE</h3><br>" + last_error;
 
-
-    
-
     server.send(200, "text/html", phead_1 + WEBSITE_TITLE + phead_2 + pstart + control_forms + pend);
 }
 
@@ -740,32 +764,14 @@ void setup(void)
         }
         SPIFFS.end();
     });
-    ArduinoOTA.onEnd([]() { /*Serial.println("\nEnd");*/ });
-    ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {/*Serial.printf("Progress: %u%%\r", (progress / (total / 100)));*/});
-    ArduinoOTA.onError([](ota_error_t error) {
-        // Serial.printf("Error[%u]: ", error);
-        if (error == OTA_AUTH_ERROR) {
-            // Serial.println("Auth Failed");
-        }
-        else if (error == OTA_BEGIN_ERROR) {
-            // Serial.println("Begin Failed");
-        }
-        else if (error == OTA_CONNECT_ERROR) {
-            // Serial.println("Connect Failed");
-        }
-        else if (error == OTA_RECEIVE_ERROR) {
-            // Serial.println("Receive Failed");
-        }
-        else if (error == OTA_END_ERROR) {
-            // Serial.println("End Failed");
-        }
-    });
+    ArduinoOTA.onEnd([]() {});
+    ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {});
+    ArduinoOTA.onError([](ota_error_t error) {});
     ArduinoOTA.onEnd([]() {
         if (SPIFFS.begin()) {
             restore_eeprom_values(); // RESTORE FILE SETTINGS
         }
     });
-
     ArduinoOTA.begin();
 
 
@@ -846,15 +852,34 @@ void loop(void)
      
       
     //UPDATE CLOCK DISPLAY
-    if (sync_mode == 1) {
+    if (sync_mode == 1 && !abi_started) {
       update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(secs,0,60,0,255), 255);
-    }else if (sync_mode == 2) {
+    }else if (sync_mode == 2 && !abi_started) {
       update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255);
-    }else{
+    }else if(sync_mode == 0){
       update_clock_display(-1, -1, -1, 0, 10);
+    }else{
+     
+      //HANDLE ABI CYLCE
+      if ((millis() - last_abi) > 1000) {
+        last_abi = millis();   
+        loop_abi();
+      }
+        
     }
+ 
+   
+ 
     //HANDLE OTA
     ArduinoOTA.handle();
+   
+  
+ 
+ 
     
+   
+ 
+ 
+ 
     delay(70);
 }
