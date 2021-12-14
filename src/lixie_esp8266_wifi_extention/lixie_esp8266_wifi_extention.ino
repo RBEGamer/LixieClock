@@ -84,6 +84,7 @@ int rtc_secs = 0;
 int mqtt_hours = 0;
 int mqtt_mins = 0;
 int mqtt_secs = 0;
+
 //NTPSyncEvent_t ntpEvent; // Last triggered event
 
 ESP8266WebServer server(WEBSERVER_PORT);
@@ -251,18 +252,27 @@ void save_values_to_eeprom()
 }
 
 
-uint32_t Wheel(int WheelPos) {
+uint32_t Wheel(int WheelPos, int _bright) {
+  
+   if(_bright > 255){
+      _bright = 255;
+    }
+    if(_bright < 0){
+    _bright = 0;
+    }
+    
+ float brgth_scale = _bright / 255.0;
     
   WheelPos = 255 - WheelPos;
   if(WheelPos < 85) {
-    return pixels.Color(255 - WheelPos * 3, 0, WheelPos * 3);
+    return pixels.Color((255 - WheelPos * 3) * brgth_scale, 0, (WheelPos * 3) * brgth_scale);
   }
   if(WheelPos < 170) {
     WheelPos -= 85;
-    return pixels.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+    return pixels.Color(0, (WheelPos * 3) * brgth_scale, (255 - WheelPos * 3) * brgth_scale);
   }
   WheelPos -= 170;
-  return pixels.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
+  return pixels.Color((WheelPos * 3) * brgth_scale, (255 - WheelPos * 3) * brgth_scale, 0);
 }
 
 
@@ -362,13 +372,13 @@ void send_time_to_clock(){
 
 
 
-
-void update_clock_display(int h, int m, int s, int col){
-  
+//h: 0-99, m:0-99, s:0-99 col: 0-255, _bright: 0-255
+void update_clock_display(int h, int m, int s, int col, int _bright){
+    
     //LEGACY SEND TO ARDUINO BASED CLOCK
     Serial.flush();
     Serial.println();
-    last_error = "_st_" + String(h) + "_" + String(m) + "_"+ String(s) + "_" + String(col) +"_";
+    last_error = "_st_" + String(h) + "_" + String(m) + "_"+ String(s) + "_" + String(col) +"_" + String(_bright) +"_";
     Serial.println(last_error);          
     delay(100);
   
@@ -389,16 +399,16 @@ void update_clock_display(int h, int m, int s, int col){
     const int color_offset_per_digit = max_color / COUNT_CLOCK_DIGITS*2;
   
     if(COUNT_CLOCK_DIGITS >= 2){
-      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens], Wheel((col + color_offset_per_digit) % max_color));
-      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], Wheel((col + color_offset_per_digit) % max_color));
+      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens], Wheel((col + color_offset_per_digit) % max_color, _bright));
+      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], Wheel((col + color_offset_per_digit) % max_color, _bright));
     }
     if(COUNT_CLOCK_DIGITS >= 4){
-      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], Wheel((col + 2*color_offset_per_digit) % max_color));
-      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones], Wheel((col + 2*color_offset_per_digit) % max_color));
+      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], Wheel((col + 2*color_offset_per_digit) % max_color, _bright));
+      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones], Wheel((col + 2*color_offset_per_digit) % max_color, _bright));
     }
     if(COUNT_CLOCK_DIGITS >= 6){
-      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], Wheel((col + 3*color_offset_per_digit) % max_color));
-      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], Wheel((col + 3*color_offset_per_digit) % max_color));
+      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], Wheel((col + 3*color_offset_per_digit) % max_color, _bright));
+      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], Wheel((col + 3*color_offset_per_digit) % max_color, _bright));
     }
     
     
@@ -832,11 +842,11 @@ void loop(void)
       
     //UPDATE CLOCK DISPLAY
     if (sync_mode == 1) {
-      update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(secs,0,60,0,255))
+      update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(secs,0,60,0,255), 255);
     }else if (sync_mode == 2) {
-      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255))
+      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255);
     }else{
-      update_clock_display(-1, -1, -1, 0)
+      update_clock_display(-1, -1, -1, 0, 10);
     }
     //HANDLE OTA
     ArduinoOTA.handle();
