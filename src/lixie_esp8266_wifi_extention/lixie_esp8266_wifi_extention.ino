@@ -1,5 +1,5 @@
 
-#define VERSION "0.9"
+#define VERSION "1.0"
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
