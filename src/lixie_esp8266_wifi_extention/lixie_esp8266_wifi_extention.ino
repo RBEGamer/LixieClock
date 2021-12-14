@@ -371,9 +371,23 @@ void send_time_to_clock(){
 
 
 
+uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright){
+  
+ //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
+    const int MAX_COLOR = 255;
+    const int color_offset_per_digit = max_color / COUNT_CLOCK_DIGITS*2;
+    uint32_t tmp_col = 0;
+ 
+   if(_banked && _val <= 0){
+      return pixels.Color(0, 0, 0);
+   }else{
+      return Wheel((_base_color + color_offset_per_digit*_index) % MAX_COLOR, _bright)
+   }
+}
 
-//h: 0-99, m:0-99, s:0-99 col: 0-255, _bright: 0-255
-void update_clock_display(int h, int m, int s, int col, int _bright){
+//h: 0-99, m:0-99, s:0-99 col: 0-255, _bright: 0-255, _disable_leading_zero:0-1
+//_disable_leading_zero =>
+void update_clock_display(int h, int m, int s, int col, int _bright, bool _disable_leading_zero){
     
     //LEGACY SEND TO ARDUINO BASED CLOCK
     Serial.flush();
@@ -393,28 +407,24 @@ void update_clock_display(int h, int m, int s, int col, int _bright){
     int s_tens / 10;
     int s_ones % 10;
   
-    pixels.clear(); // Set all pixel colors to 'off'
-    //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
-    const int max_color = 255;
-    const int color_offset_per_digit = max_color / COUNT_CLOCK_DIGITS*2;
-  
+    pixels.clear();
+    
     if(COUNT_CLOCK_DIGITS >= 2){
-      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens], Wheel((col + color_offset_per_digit) % max_color, _bright));
-      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], Wheel((col + color_offset_per_digit) % max_color, _bright));
+      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens], digit_color(h_tens,0,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], digit_color(h_ones,1,_disable_leading_zero, col, _bright));
     }
+ 
     if(COUNT_CLOCK_DIGITS >= 4){
-      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], Wheel((col + 2*color_offset_per_digit) % max_color, _bright));
-      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones], Wheel((col + 2*color_offset_per_digit) % max_color, _bright));
+      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], digit_color(m_tens,2,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones],digit_color(m_ones,3,_disable_leading_zero, col, _bright));
     }
+ 
     if(COUNT_CLOCK_DIGITS >= 6){
-      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], Wheel((col + 3*color_offset_per_digit) % max_color, _bright));
-      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], Wheel((col + 3*color_offset_per_digit) % max_color, _bright));
+      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], digit_color(s_tens,4,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], digit_color(s_ones,5,_disable_leading_zero, col, _bright));
     }
     
-    
-
-
-
+   
     pixels.show();   // Send the updated pixel colors to the hardware.
  
 }
