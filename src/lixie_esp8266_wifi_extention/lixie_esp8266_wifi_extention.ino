@@ -24,8 +24,8 @@
 #include <Wire.h>
 #include "RTClib.h"
 
-
-
+#include <TZ.h>
+#define MYTZ TZ_Europe_London
 
 
 
@@ -71,7 +71,7 @@ const String BOARD_INFO= "LIXIE_FW_" + String(VERSION) + "_BOARD_" + "ESP32";
 const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
 const int NUM_NEOPIXELS = COUNT_CLOCK_DIGITS*10; //10 leds per digit
 //const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8};
-const int led_index_digits[] = {0, 9, 8, 7, 6, 5, 4, 3, 2, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
+const int led_index_digits[] = {0, 9, 8, 6, 7, 5, 4, 2, 3, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
 const int digit_offsets[6] = {0, 10 ,20 ,30, 40, 50}; //HOUR_TENS HOUR_ONES MINUTES_TENS MINUTES_ONES
 
 // END NEOPIXEL CONF ---------------------------
@@ -364,26 +364,11 @@ void update_rtc() {
   }
 }
 
-void send_time_to_clock(){
+void update_rtc_via_ntp(){
   
-    Serial.println();
-    delay(100);
-    Serial.flush();
-    delay(100);
-
-
-  //ADD CRUDE TIMEZONE
-  int tmph = timeClient.getHours();
-  if((tmph+timezone)>23){
-    tmph =tmph+timezone-24;
-  }else if((tmph+timezone)<0){
-    tmph = tmph+timezone+24;
-  }else{
-    tmph = tmph+timezone;
-  }
   
   //UPDATE RTC IF USED
-  rtc_hours = tmph;
+  rtc_hours = timeClient.getHours();;
   rtc_mins = timeClient.getMinutes();
   rtc_secs = 0;
   update_rtc();
@@ -505,9 +490,9 @@ void handleSave()
                 timezone = 0;
             }
             last_error = "set timezone to" + String(timezone);
-            //timeClient.setTimeOffset(timezone);
+            timeClient.setTimeOffset(timezone*3600);
             timeClient.forceUpdate();
-            send_time_to_clock();
+            update_rtc_via_ntp();
         }
         // ntp_server_url
         if (server.argName(i) == "ntp_server_url") {
@@ -575,7 +560,7 @@ void handleSave()
         }
 
       if (server.argName(i) == "sendtime") {
-            send_time_to_clock();
+            update_rtc_via_ntp();
             delay(100);
         }  
     }
@@ -854,7 +839,7 @@ void loop(void)
     if ((millis() - last) > 1000 * 60 * NTP_SEND_TIME_INTERVAL) {
         last = millis();   
         if (sync_mode == 1) {
-            send_time_to_clock();
+            update_rtc_via_ntp();
         }
     }
 
@@ -880,23 +865,34 @@ void loop(void)
       timeNow = millis()/1000;
       rtc_secs = timeNow - timeLast;
       
-      if (rtc_secs == 60) {
+      if (rtc_secs >= 60) {
+        rtc_secs = 0;
         timeLast = timeNow;
         rtc_mins++;
       }
       
-      if (rtc_mins == 60){
+      if (rtc_mins >= 60){
         rtc_mins = 0;
-        rtc_hours = rtc_hours + 1;
+        rtc_hours++;
+      }
+      if (rtc_hours >= 24){
+        rtc_mins = 0;
+        rtc_hours = 0;
       }
     }
      
       
     //UPDATE CLOCK DISPLAY
+
+    // SET DISPLAY CLOCK
     if (sync_mode == 1 && !abi_started) {
-      update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), 255, false);
+     update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), 255, false);
+
+      //MQTT
     }else if (sync_mode == 2 && !abi_started) {
       update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255, true);
+
+      //OFF
     }else if(sync_mode == 0){
       update_clock_display(0, 0, 0, 0, 10, true);
     }else{
