@@ -401,12 +401,12 @@ void loop_abi(){
 uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright){
   //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
     const int MAX_COLOR = 255;
-    const int color_offset_per_digit = max_color / COUNT_CLOCK_DIGITS*2;
+    const int color_offset_per_digit = MAX_COLOR / COUNT_CLOCK_DIGITS*2;
    
    if(_banked && _val <= 0){
       return pixels.Color(0, 0, 0);
    }else{
-      return Wheel((_base_color + color_offset_per_digit*_index) % MAX_COLOR, _bright)
+      return Wheel((_base_color + color_offset_per_digit*_index) % MAX_COLOR, _bright);
    }
 }
 
@@ -429,8 +429,8 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     const int h_tens = h / 10;      // tens now = 2
     const int h_ones = h % 10;      // ones now = 6 
     
-    const int s_tens / 10;
-    const int s_ones % 10;
+    const int s_tens = s / 10;
+    const int s_ones = s % 10;
   
     pixels.clear();
     
@@ -853,11 +853,11 @@ void loop(void)
       
     //UPDATE CLOCK DISPLAY
     if (sync_mode == 1 && !abi_started) {
-      update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(secs,0,60,0,255), 255);
+      update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), 255, false);
     }else if (sync_mode == 2 && !abi_started) {
-      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255);
+      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255, false);
     }else if(sync_mode == 0){
-      update_clock_display(-1, -1, -1, 0, 10);
+      update_clock_display(0, 0, 0, 0, 10, true);
     }else{
      
       //HANDLE ABI CYLCE
