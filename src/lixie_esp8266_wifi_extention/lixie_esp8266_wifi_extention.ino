@@ -16,12 +16,24 @@
 #include <ArduinoOTA.h>
 #include <PubSubClient.h>
 
+#include <Adafruit_NeoPixel.h>
+#ifdef __AVR__
+ #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
+#endif
+
+
+#define ENABLE_I2C_RTC
+
+#ifdef ENABLE_I2C_RTC
+#include <Wire.h>
+#include "RTClib.h"
+#endif
 
 String time_last = "not synced";
 // CONFIG -------------------------------------
 #define WEBSERVER_PORT 80 // set the port for the webserver eg 80 8080
 #define MDNS_NAME "lixieclock" // set hostname
-#define WEBSITE_TITLE "Lixie Clck Confuguration" // name your device
+#define WEBSITE_TITLE "Lixie Clock Configuration" // name your device
 #define SERIAL_BAUD_RATE 9600
 #define NTP_SEND_TIME_INTERVAL 5 //sende zeit an uhr all x minuten
 
@@ -30,8 +42,19 @@ String time_last = "not synced";
 #define DEFAULT_MQTT_BROKER "192.168.178.89"
 #define DEFAULT_MQTT_TOPIC "/iot/9770941/humidity"
 #define DEFAULT_MQTT_BROKER_PORT "1883"
+
+#define NEOPIXEL_PIN 8
+#define NUMPIXELS 60
 // END CONFIG ---------------------------------
 
+
+
+// NEOPIXEL CONF ------------------------------
+const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
+const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
+const int digit_offsets[6] = {0, 10 ,20 ,30, 40, 50}; //HOUR_TENS HOUR_ONES MINUTES_TENS MINUTES_ONES
+
+// END NEOPIXEL CONF ---------------------------
 //FILES FOR STORiNG CONFIGURATION DATA
 const char* file_ntp_server = "/file.txt";
 const char* file_timezone = "/timezone.txt";
@@ -52,6 +75,15 @@ String mqtt_broker_url = "";
 String mqtt_topic = "";
 String mqtt_broker_port = "1883";
 long long last = 0;
+
+
+int rtc_hours = 0;
+int rtc_mins = 0;
+int rtc_secs = 0;
+
+int mqtt_hours = 0;
+int mqtt_mins = 0;
+int mqtt_secs = 0;
 //NTPSyncEvent_t ntpEvent; // Last triggered event
 
 ESP8266WebServer server(WEBSERVER_PORT);
@@ -61,6 +93,12 @@ NTPClient timeClient(ntpUDP,DEFAULT_NTP_SERVER,0,60000);
 
 WiFiClient espClient;
 PubSubClient client(espClient);
+
+#ifdef ENABLE_I2C_RTC
+RTC_DS1307 rtc;
+#endif
+
+Adafruit_NeoPixel pixels(NUMPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 
 
 
@@ -213,11 +251,22 @@ void save_values_to_eeprom()
 }
 
 
+uint32_t Wheel(int WheelPos) {
+    
+  WheelPos = 255 - WheelPos;
+  if(WheelPos < 85) {
+    return pixels.Color(255 - WheelPos * 3, 0, WheelPos * 3);
+  }
+  if(WheelPos < 170) {
+    WheelPos -= 85;
+    return pixels.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+  }
+  WheelPos -= 170;
+  return pixels.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
+}
 
 
 void mqtt_callback(char* topic, byte* payload, unsigned int length) {
-
-
 
   String tmp = "";
   if(length > 5){
@@ -228,18 +277,13 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
   }
   last_error = "GOT MQTT MSG: " + tmp;
 
-
   //IF MQTT DISPLAY IS ENABLES SEND IT TO CLOCK
   if(sync_mode == 2 && tmp != ""){
     float ff = tmp.toFloat();
     if (!isnan(ff)) {
-       send_digits_to_clock(ff);
+       parse_mqtt_float_to_digits(ff);
     }
-   
-
   }
-  
-
 }
 
 
@@ -263,29 +307,31 @@ void mqtt_reconnect() {
 
 
 
-void send_digits_to_clock(float _f){
+void parse_mqtt_float_to_digits(float _f){
     int whole = (int)_f;
     int remainder = (_f - whole) * 1000;
 
-
-    if(whole < 0){whole = 0;}
-
+    if(whole < 0){
+      whole = 0;
+    }
 
     const int ones = (whole%10);
     const int tens = ((whole/10)%10);
     const int hundreds = ((whole/100)%10);
     const int thousands = (whole/1000);
-
-    Serial.println();
-    delay(100);
-    Serial.flush();
-    delay(100);
-    Serial.println("_st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_"+ String(sync_mode) + "_");
-    last_error = "MQTT _st_" + String(thousands)+String(hundreds) + "_" + String(tens) + String(ones) + "_"+ String(sync_mode) + "_";
-    delay(100);
- 
+    
+    //SAVE AS SPLITTED REFORMATTED HOUR MINS VARIABLES
+    mqtt_hours = thousands*1000 + hundreds*100;
+    mqtt_mins = tens*10 + ones;
 }
 
+
+
+void update_rtc() {
+  #ifdef ENABLE_I2C_RTC
+  rtc.adjust(DateTime(2000, 1, 1, rtc_hours, rtc_mins, rtc_secs));
+  #endif
+}
 
 void send_time_to_clock(){
   
@@ -295,16 +341,78 @@ void send_time_to_clock(){
     delay(100);
 
 
-
-int tmph = timeClient.getHours();
-if((tmph+timezone)>23){tmph =tmph+timezone-24;}
-else if((tmph+timezone)<0){tmph = tmph+timezone+24;}else{
-  tmph = tmph+timezone;}
-
-            Serial.println("_st_" + String(tmph) + "_" + String(timeClient.getMinutes()) + "_" + String(sync_mode) + "_");
-            last_error = "_st_" + String(tmph) + "_" + String(timeClient.getMinutes()) + "_"+ String(sync_mode) + "_";
-            delay(100);
+  //ADD CRUDE TIMEZONE
+  int tmph = timeClient.getHours();
+  if((tmph+timezone)>23){
+    tmph =tmph+timezone-24;
+  }else if((tmph+timezone)<0){
+    tmph = tmph+timezone+24;
+  }else{
+    tmph = tmph+timezone;
   }
+  
+  //UPDATE RTC IF USED
+  rtc_hours = tmph;
+  rtc_mins = timeClient.getMinutes();
+  rtc_secs = 0;
+  update_rtc();
+
+  }
+
+
+
+
+
+void update_clock_display(int h, int m, int s, int col){
+  
+    //LEGACY SEND TO ARDUINO BASED CLOCK
+    Serial.flush();
+    Serial.println();
+    last_error = "_st_" + String(h) + "_" + String(m) + "_"+ String(s) + "_" + String(col) +"_";
+    Serial.println(last_error);          
+    delay(100);
+  
+    //UPDATE NEOPIXEL
+    //SPLIT HOURS MINS,.. INTO SEPERATE DIGITS
+    int m_tens = m / 10;      // tens now = 2
+    int m_ones = m % 10;      // ones now = 6 
+
+    int h_tens = h / 10;      // tens now = 2
+    int h_ones = h % 10;      // ones now = 6 
+    
+    int s_tens / 10;
+    int s_ones % 10;
+  
+    pixels.clear(); // Set all pixel colors to 'off'
+    //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
+    const int max_color = 255;
+    const int color_offset_per_digit = max_color / COUNT_CLOCK_DIGITS*2;
+  
+    if(COUNT_CLOCK_DIGITS >= 2){
+      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens], Wheel((col + color_offset_per_digit) % max_color));
+      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], Wheel((col + color_offset_per_digit) % max_color));
+    }
+    if(COUNT_CLOCK_DIGITS >= 4){
+      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], Wheel((col + 2*color_offset_per_digit) % max_color));
+      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones], Wheel((col + 2*color_offset_per_digit) % max_color));
+    }
+    if(COUNT_CLOCK_DIGITS >= 6){
+      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], Wheel((col + 3*color_offset_per_digit) % max_color));
+      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], Wheel((col + 3*color_offset_per_digit) % max_color));
+    }
+    
+    
+
+
+
+    pixels.show();   // Send the updated pixel colors to the hardware.
+ 
+}
+
+
+
+
+
 
 
 void setup_mqtt_client(){
@@ -398,7 +506,7 @@ void handleSave()
            timeClient.forceUpdate();
         }
 
- //LOAD CURRENT SAVED DATA
+         //ANTI BURNOUT CYCLE
         if (server.argName(i) == "abi") {
             Serial.println("_abi_");
             delay(10);
@@ -418,9 +526,7 @@ void handleSave()
     //SAVE MQTT STUFF 
     setup_mqtt_client();
     
-    server.send(404, "text/html",
-        "<html><head><meta http-equiv='refresh' content='1; url=/' "
-        "/></head><body>SAVE SETTINGS PLEASE WAIT</body></html>");
+    server.send(404, "text/html","<html><head><meta http-equiv='refresh' content='1; url=/' /></head><body>SAVE SETTINGS PLEASE WAIT</body></html>");
 }
 
 
@@ -452,7 +558,6 @@ void handleRoot()
     control_forms += "<br><h3> MODE CONTROL </h3><br>";
 
 
-    //if (sync_mode == 0) {
         control_forms += "<form name='btn_on' action='/save' method='GET' required >"
                          "<select name='sync_mode' id='sync_mode'>";
 
@@ -656,8 +761,32 @@ void setup(void)
 
     //SETUP MQTT
     setup_mqtt_client();
+    
+  
+  //SETUP NEOPIXELS
+  pixels.begin();
+  pixels.clear();
+  
+  
+  //RTC INIT
+  #ifdef ENABLE_I2C_RTC
+  Wire.begin();
+  if (!rtc.begin()) {
+    last_error = "_rct_begin_error_";
+  }
+
+  if (!rtc.isrunning()) {
+    last_error = "RTC is NOT running!";
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
 
 
+  delay(100);
+  DateTime now = rtc.now();
+  rtc_hours = now.hour();
+  rtc_mins = now.minute();
+  rtc_secs = now.second();
+  #endif
 }
 
 
@@ -672,7 +801,7 @@ void loop(void)
 
 
     
-    //SEND NTP TIME TO CLOCK
+    //UPDATE NTP NTP
     if ((millis() - last) > 1000 * 60 * NTP_SEND_TIME_INTERVAL) {
         last = millis();   
         if (sync_mode == 1) {
@@ -689,12 +818,28 @@ void loop(void)
     if(sync_mode == 2){
       client.loop();
     }
-
     
+     //UPDATE RTC
+    #ifdef ENABLE_I2C_RTC
+    if (sync_mode == 1) {
+      DateTime now = rtc.now();
+      rtc_hours = now.hour();
+      rtc_mins = now.minute();
+      rtc_secs = now.second();
+    }
+    #endif
+     
+      
+    //UPDATE CLOCK DISPLAY
+    if (sync_mode == 1) {
+      update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(secs,0,60,0,255))
+    }else if (sync_mode == 2) {
+      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255))
+    }else{
+      update_clock_display(-1, -1, -1, 0)
+    }
     //HANDLE OTA
     ArduinoOTA.handle();
     
-     
-
     delay(70);
 }
