@@ -68,8 +68,10 @@ const String BOARD_INFO= "LIXIE_FW_" + String(VERSION) + "_BOARD_" + "ESP32";
 
 
 // NEOPIXEL CONF ------------------------------
+
 const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
-const int NUM_NEOPIXELS = COUNT_CLOCK_DIGITS*10; //10 leds per digit
+const int NEOPIXEL_DIGIT_OFFSET = 1;
+const int NUM_NEOPIXELS = (COUNT_CLOCK_DIGITS*10) + NEOPIXEL_DIGIT_OFFSET; //10 leds per digit
 //const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8};
 const int led_index_digits[] = {0, 9, 8, 6, 7, 5, 4, 2, 3, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
 const int digit_offsets[6] = {0, 10 ,20 ,30, 40, 50}; //HOUR_TENS HOUR_ONES MINUTES_TENS MINUTES_ONES
@@ -93,7 +95,7 @@ int timezone = 0;
 String ntp_server_url = "";
 String mqtt_broker_url = "";
 String mqtt_topic = "";
-String mqtt_broker_port = "1883";
+String mqtt_broker_port = "";
 
 
 long long last = 0;
@@ -338,6 +340,7 @@ void mqtt_reconnect() {
 
 
 
+
 void parse_mqtt_float_to_digits(float _f){
     int whole = (int)_f;
     int remainder = (_f - whole) * 1000;
@@ -346,6 +349,7 @@ void parse_mqtt_float_to_digits(float _f){
       whole = 0;
     }
 
+    
     const int ones = (whole%10);
     const int tens = ((whole/10)%10);
     const int hundreds = ((whole/100)%10);
@@ -438,18 +442,18 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     pixels.clear();
     
     if(COUNT_CLOCK_DIGITS >= 2){
-      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens], digit_color(h_tens,0,_disable_leading_zero, col, _bright));
-      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones], digit_color(h_ones,0,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens] + NEOPIXEL_DIGIT_OFFSET, digit_color(h_tens,0,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones] + NEOPIXEL_DIGIT_OFFSET, digit_color(h_ones,0,_disable_leading_zero, col, _bright));
     }
  
     if(COUNT_CLOCK_DIGITS >= 4){
-      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens], digit_color(m_tens,1,_disable_leading_zero, col, _bright));
-      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones],digit_color(m_ones,1,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens] + NEOPIXEL_DIGIT_OFFSET, digit_color(m_tens,1,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones] + NEOPIXEL_DIGIT_OFFSET,digit_color(m_ones,1,_disable_leading_zero, col, _bright));
     }
  
     if(COUNT_CLOCK_DIGITS >= 6){
-      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens], digit_color(s_tens,2,_disable_leading_zero, col, _bright));
-      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones], digit_color(s_ones,2,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens] + NEOPIXEL_DIGIT_OFFSET, digit_color(s_tens,2,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones] + NEOPIXEL_DIGIT_OFFSET, digit_color(s_ones,2,_disable_leading_zero, col, _bright));
     }
     
    
@@ -464,13 +468,24 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
 
 
 void setup_mqtt_client(){
-   if(sync_mode == 2 && mqtt_broker_url != "" && mqtt_broker_port != ""){
+   if(mqtt_broker_url != "" && mqtt_broker_port != ""){
     client.setServer(mqtt_broker_url.c_str(), mqtt_broker_port.toInt());
     client.setCallback(mqtt_callback);
+    
+    if(client.connected() && mqtt_topic != ""){
+      //client.unsubscribe();
+      client.subscribe(mqtt_topic.c_str());
+    }
    }    
 }
 
-  
+void unsub_mqtt_client(){
+    if(client.connected() && mqtt_topic != ""){
+      client.unsubscribe(mqtt_topic.c_str());
+    }   
+}
+
+ 
 void handleSave()
 {
     // PARSE ALL GET ARGUMENTS
@@ -522,6 +537,7 @@ void handleSave()
 
         // mqtt_broker_port
         if (server.argName(i) == "mqtt_topic") {
+            unsub_mqtt_client();
             mqtt_topic = server.arg(i);
             last_error = "set mqtt_topic to" + mqtt_topic;
             last = 0;
@@ -783,6 +799,9 @@ void setup(void)
     timeClient.setPoolServerName(ntp_server_url.c_str());
     timeClient.begin();
 
+    timeClient.setTimeOffset(timezone*3600);
+    timeClient.forceUpdate();
+
     //SETUP MQTT
     setup_mqtt_client();
     
@@ -817,6 +836,13 @@ void setup(void)
   }
  
 
+
+
+  if (sync_mode == 1) {
+            update_rtc_via_ntp();
+  }
+
+        
   Serial.println("_setup_complete_");
 }
 
