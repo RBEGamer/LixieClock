@@ -751,7 +751,13 @@ void handleNotFound()
 
 
 
-
+String IpAddress2String(const IPAddress& ipAddress)
+{
+  return String(ipAddress[0]) + String(".") +\
+  String(ipAddress[1]) + String(".") +\
+  String(ipAddress[2]) + String(".") +\
+  String(ipAddress[3])  ; 
+}
 
 
 void setup(void)
@@ -784,18 +790,18 @@ void setup(void)
     wifiManager.setTimeout(120);
     //TRY TO CONNECT
     if(wifiManager.autoConnect("LixieClockConfiguration")){
-      String ip = String(WiFi.localIP();
-      for(int i =0; i < strlen(string); i++ ) {
-        if(string[i] == "."){
-          update_clock_display(0,0,0,64,false); //DISPLAY WIFI ERROR
+      String ip = IpAddress2String(WiFi.localIP());
+      for(int i =0; i < strlen(ip.c_str()); i++ ) {
+        if(ip[i] == '.'){
+          update_clock_display(0,0,0,128,64,false); //DISPLAY WIFI ERROR
         }else{
-          update_clock_display(string[i].toInt(),0,0,255,false); //DISPLAY WIFI ERROR
+          update_clock_display(ip[i]-'0',0,0,0,255,false); //DISPLAY WIFI ERROR
         }
         delay(2000);
       }
       
     }else{
-      update_clock_display(42,42,42,255,false); //DISPLAY WIFI ERROR
+      update_clock_display(42, 42, 42, 192, 255,false); //DISPLAY WIFI ERROR
     }
 
     if (MDNS.begin((MDNS_NAME + String(ESP.getChipId())).c_str())) {
