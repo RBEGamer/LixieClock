@@ -784,6 +784,15 @@ void setup(void)
     wifiManager.setTimeout(120);
     //TRY TO CONNECT
     if(wifiManager.autoConnect("LixieClockConfiguration")){
+      String ip = String(WiFi.localIP();
+      for(int i =0; i < strlen(string); i++ ) {
+        if(string[i] == "."){
+          update_clock_display(0,0,0,64,false); //DISPLAY WIFI ERROR
+        }else{
+          update_clock_display(string[i].toInt(),0,0,255,false); //DISPLAY WIFI ERROR
+        }
+        delay(2000);
+      }
       
     }else{
       update_clock_display(42,42,42,255,false); //DISPLAY WIFI ERROR
