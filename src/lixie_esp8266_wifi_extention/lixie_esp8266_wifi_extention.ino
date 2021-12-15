@@ -41,7 +41,7 @@
 #define DEFAULT_MQTT_BROKER "192.168.178.89"
 #define DEFAULT_MQTT_TOPIC "/iot/9770941/humidity"
 #define DEFAULT_MQTT_BROKER_PORT "1883"
-
+#define DEFAULT_MQTT_DISPLAY_MODE 0
 // PIN CONFIG -----------------------------------
 #ifdef ESP8266
 #define NEOPIXEL_PIN D8
@@ -84,7 +84,7 @@ const char* file_syncmode = "/syncmode.txt";
 const char* file_mqtt_server = "/mqttbroker.txt";
 const char* file_mqtt_topic = "/mqtttopic.txt";
 const char* file_mqtt_broker_port = "/mqttbrokerport.txt";
-
+const char* file_mqtt_display_mode = "/mqttdispmode.txt";
 
 
 
@@ -97,7 +97,6 @@ String mqtt_broker_url = "";
 String mqtt_topic = "";
 String mqtt_broker_port = "";
 
-
 long long last = 0;
 long long last_abi = 0;
 
@@ -108,13 +107,19 @@ int rtc_secs = 0;
 int mqtt_hours = 0;
 int mqtt_mins = 0;
 int mqtt_secs = 0;
+//0 FOR 4 DIGIT MODE 1 FOR TWO DIGIT MODE
+int mqtt_display_mode = 0;
 
 bool abi_started = false;
 int abi_counter = 0;
-const int ABI_COUNTER_MAX = COUNT_CLOCK_DIGITS * 6;
+const int ABI_COUNTER_MAX = COUNT_CLOCK_DIGITS * 6; //HOW MANY ABI ITERATIONS
 
-
+//IS SET TO TRUE IN SETUP IF A RTC CLOCK IS DETECTED
 bool is_rtc_present = false;
+//USEDE FOR SOFTWARE CLOCK
+unsigned long timeNow = 0;
+unsigned long timeLast = 0;
+
 
 // INSTANCES --------------------------------------------
 ESP8266WebServer server(WEBSERVER_PORT);
@@ -255,6 +260,7 @@ void restore_eeprom_values()
     mqtt_broker_url = read_file(file_mqtt_server,DEFAULT_MQTT_BROKER);
     mqtt_topic = read_file(file_mqtt_topic,DEFAULT_MQTT_TOPIC);
     mqtt_broker_port = read_file(file_mqtt_broker_port, String(DEFAULT_MQTT_BROKER_PORT));
+    mqtt_display_mode = read_file(file_mqtt_display_mode, String(DEFAULT_MQTT_DISPLAY_MODE)).toInt();
 }
 
 bool write_file(const char* _file, String _content)
@@ -277,6 +283,7 @@ void save_values_to_eeprom()
     write_file(file_mqtt_server, mqtt_broker_url);
     write_file(file_mqtt_topic, mqtt_topic);
     write_file(file_mqtt_broker_port, mqtt_broker_port);
+    write_file(file_mqtt_display_mode, String(mqtt_display_mode));
 }
 
 
@@ -356,8 +363,17 @@ void parse_mqtt_float_to_digits(float _f){
     const int thousands = (whole/1000);
     
     //SAVE AS SPLITTED REFORMATTED HOUR MINS VARIABLES
-    mqtt_hours = thousands*10 + hundreds;
-    mqtt_mins = tens*10 + ones;
+
+    if(mqtt_display_mode == 0){
+      mqtt_hours = thousands*10 + hundreds;
+      mqtt_mins = tens*10 + ones;
+      mqtt_secs = 0;
+    }else if(mqtt_display_mode == 1){
+      mqtt_hours = tens*10 + ones;
+      mqtt_mins = 0;
+      mqtt_secs = 0;
+    }
+    
 }
 
 
@@ -416,6 +432,8 @@ uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _br
       return Wheel((_base_color + color_offset_per_digit*_index) % MAX_COLOR, _bright);
    }
 }
+
+
 
 //h: 0-99, m:0-99, s:0-99 col: 0-255, _bright: 0-255, _disable_leading_zero:0-1
 //_disable_leading_zero =>
@@ -535,6 +553,13 @@ void handleSave()
             last = 0;
         }
 
+        // mqtt_display_mode
+        if (server.argName(i) == "mqtt_display_mode") {
+            mqtt_display_mode = server.arg(i).toInt();
+            last_error = "set mqtt_display_mode to" + String(mqtt_display_mode);
+            last = 0;
+        }
+        
         // mqtt_broker_port
         if (server.argName(i) == "mqtt_topic") {
             unsub_mqtt_client();
@@ -566,6 +591,7 @@ void handleSave()
            mqtt_broker_url = DEFAULT_MQTT_BROKER;
            mqtt_broker_port = DEFAULT_MQTT_BROKER_PORT;
            mqtt_topic = DEFAULT_MQTT_TOPIC;
+           mqtt_display_mode = DEFAULT_MQTT_DISPLAY_MODE;
            
            timeClient.forceUpdate();
         }
@@ -599,7 +625,7 @@ void handleRoot()
 
 
     String control_forms = "<hr><h2>DEVICE INFO</h2>";
-    control_forms+="<h3>" + String(MDNS_NAME) + String(ESP.getChipId()) + "<br><br>"+BOARD_INFO+"</h3><br>";
+    control_forms+="<h3>" + String(MDNS_NAME) + String(ESP.getChipId()) + "<br><br>"+BOARD_INFO+"<br>RTC:"+ String(is_rtc_present)+"</h3><br>";
 
 
 
@@ -610,8 +636,8 @@ void handleRoot()
     }
    
  
-     control_forms+="<hr><h2>CURRENT TIME</h2><h1>" + String(rtc_hours) + ":"+ String(rtc_mins) + ":" + String(rtc_secs) +"</h1>";
-    control_forms+="<hr><h2>LAST NTP TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1>";
+     control_forms+="<hr><h2>CURRENT TIME</h2><h1>" + String(rtc_hours) + ":"+ String(rtc_mins) + ":" + String(rtc_secs) +"</h1>"
+                    "<hr><h2>LAST NTP TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1>";
 
 
 
@@ -619,8 +645,7 @@ void handleRoot()
     control_forms += "<br><h3> MODE CONTROL </h3><br>";
 
 
-        control_forms += "<form name='btn_on' action='/save' method='GET' required >"
-                         "<select name='sync_mode' id='sync_mode'>";
+        control_forms += "<form name='btn_on' action='/save' method='GET' required ><select name='sync_mode' id='sync_mode'>";
 
                          if(sync_mode == 0){
                             control_forms += "<option value='0' selected>DISABLED</option>";
@@ -641,76 +666,71 @@ void handleRoot()
                          }
                          
                      
-        control_forms += "</select>"
-                         "<input type='submit' value='SAVE'/>"
-                         "</form>";
+        control_forms += "</select><input type='submit' value='SAVE'/></form>";
     
     
 
 
-     control_forms += "<br><h3> CLOCK CONTROLS </h3>";
-    
-      control_forms += "<form name='btn_off' action='/save' method='GET'>"
+     control_forms += "<br><h3> CLOCK CONTROLS </h3>"
+                      "<form name='btn_off' action='/save' method='GET'>"
                      "<input type='number' value='"+ String(timezone) + "' name='timezone' min='-12' max='12' required placeholder='1'/>"
                      "<input type='submit' value='SET TIMEZONE'/>"
-                     "</form>";
-
-    control_forms += "<br>";
-    control_forms += "<br>";
-    control_forms += "<br>";
-    control_forms += "<form name='btn_off' action='/save' method='GET'>"
+                     "</form><br>"
+                     "<form name='btn_off' action='/save' method='GET'>"
                      "<input type='text' value='"+ ntp_server_url + "' name='ntp_server_url' required placeholder='pool.ntp.org'/>"
                      "<input type='submit' value='SET NTP SERVER URL'/>"
-                     "</form>";
-                     
-    control_forms += "<br>";
-    
-
-   control_forms += "<form name='btn_on' action='/save' method='GET' required >"
+                     "</form><br>";
+                     "<form name='btn_on' action='/save' method='GET' required >"
                      "<input type='hidden' value='sendtime' name='sendtime' />"
                      "<input type='submit' value='SEND NTP TIME TO CLOCK'/>"
-                     "</form>";
-                     
-
-
-
-  control_forms += "<br><h3> MQTT SETTINGS </h3>";
-  control_forms += "<form name='btn_offmq' action='/save' method='GET'>"
+                     "</form><br>"
+                     "<br><h3> MQTT SETTINGS </h3>"
+                     "<form name='btn_offmq' action='/save' method='GET'>"
                      "<input type='text' value='"+ String(mqtt_broker_url) + "' name='mqtt_broker_url' required placeholder='broker.hivemq.com'/>"
                      "<input type='submit' value='SAVE MQTT BROKER'/>"
-                     "</form>";
-
-  control_forms += "<form name='btn_off' action='/save' method='GET'>"
+                     "</form>"
+                     "<form name='btn_off' action='/save' method='GET'>"
                      "<input type='number' value='"+ String(mqtt_broker_port) + "' name='mqtt_broker_port' min='1' max='65536' required placeholder='1883'/>"
                      "<input type='submit' value='SET MQTT BROKER PORT'/>"
-                     "</form>";
-  control_forms += "<form name='btn_off' action='/save' method='GET'>"
+                     "</form>"
+                     "<form name='btn_off' action='/save' method='GET'>"
                      "<input type='text' value='"+ String(mqtt_topic) + "' name='mqtt_topic' required placeholder='/iot/sensor/temp'/>"
                      "<input type='submit' value='SET MQTT TOPIC'/>"
                      "</form>";
-   
 
 
-     control_forms += "<br><h3> OTHER SETTINGS </h3>";
+   control_forms += "<form name='btn_on' action='/save' method='GET' required ><select name='mqtt_display_mode' id='mqtt_display_mode'>";
 
-    control_forms += "<form name='btn_on' action='/save' method='GET' required >"
+                         if(mqtt_display_mode == 0){
+                            control_forms += "<option value='0' selected>4 DIGIT MODE</option>";
+                         }else{
+                            control_forms += "<option value='0'>4 DIGIT MODE</option>";
+                         }
+
+                         if(mqtt_display_mode == 1){
+                            control_forms += "<option value='1' selected>2 DIGIT MODE</option>";
+                         }else{
+                            control_forms += "<option value='1'>2 DIGIT MODE</option>";
+                         }
+                                      
+        control_forms += "</select><input type='submit' value='SAVE'/></form>";
+                         
+
+
+     control_forms += "<br><h3>OTHER SETTINGS </h3>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
                      "<input type='hidden' value='eepromread' name='eepromread' />"
                      "<input type='submit' value='READ STORED CONFIG'/>"
-                     "</form><br>";
-
-    control_forms += "<form name='btn_on' action='/save' method='GET' required >"
+                     "</form><br>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
                      "<input type='hidden' value='fsformat' name='fsformat' />"
                      "<input type='submit' value='DELETE CONFIGURATION'/>"
-                     "</form><br>";
-                     
-    control_forms += "<form name='btn_on' action='/save' method='GET' required >"
+                     "</form><br>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
                      "<input type='hidden' value='abi' name='abi' />"
                      "<input type='submit' value='START ANTI BURN IN CYCLE'/>"
-                     "</form><br>";
-
-
-                     
-     control_forms += "<form name='btn_on' action='/save' method='GET' required >"
+                     "</form><br>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
                      "<input type='hidden' value='factreset' name='factreset' />"
                      "<input type='submit' value='FACTORY RESET'/>"
                      "</form><br>";
@@ -749,17 +769,25 @@ void setup(void)
         last_error = "SPIFFS Initialisierung...Fehler!";
     }
 
-
-
-   
-
     
     // LOAD SETTINGS
     restore_eeprom_values();
+
+    //SETUP NEOPIXELS
+    pixels.begin();
+    pixels.clear();
+
+    
     // START WFIFIMANAGER FOR CAPTIVE PORTAL
     WiFiManager wifiManager;
     wifiManager.setDebugOutput(false);
-    wifiManager.autoConnect("LixieClockConfiguration");
+    wifiManager.setTimeout(120);
+    //TRY TO CONNECT
+    if(wifiManager.autoConnect("LixieClockConfiguration")){
+      
+    }else{
+      update_clock_display(42,42,42,255,false); //DISPLAY WIFI ERROR
+    }
 
     if (MDNS.begin((MDNS_NAME + String(ESP.getChipId())).c_str())) {
     }
@@ -806,25 +834,23 @@ void setup(void)
     setup_mqtt_client();
     
   
-  //SETUP NEOPIXELS
-  pixels.begin();
-  pixels.clear();
+    
   
   
-  //RTC INIT
-  Wire.begin();
-  is_rtc_present = true;
-  if (!rtc.begin()) {
-    last_error = "_rct_begin_error_";
-    Serial.println(last_error);
-    is_rtc_present = false;
-  }
+    //RTC INIT
+    Wire.begin();
+    is_rtc_present = true;
+    if (!rtc.begin()) {
+      last_error = "_rct_begin_error_";
+      Serial.println(last_error);
+      is_rtc_present = false;
+    }
 
-  if (is_rtc_present && !rtc.isrunning()) {
-    last_error = "RTC is NOT running!";
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-    Serial.println(last_error);
-  }
+    if (is_rtc_present && !rtc.isrunning()) {
+      last_error = "RTC is NOT running!";
+      rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+      Serial.println(last_error);
+    }
 
 
   delay(100);
@@ -846,8 +872,7 @@ void setup(void)
   Serial.println("_setup_complete_");
 }
 
-unsigned long timeNow = 0;
-unsigned long timeLast = 0;
+
 
 
 
