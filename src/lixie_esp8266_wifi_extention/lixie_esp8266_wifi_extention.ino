@@ -42,6 +42,7 @@
 #define DEFAULT_MQTT_TOPIC "/iot/9770941/humidity"
 #define DEFAULT_MQTT_BROKER_PORT "1883"
 #define DEFAULT_MQTT_DISPLAY_MODE 0
+#define DEFAULT_BEIGHTNESS 255
 // PIN CONFIG -----------------------------------
 #ifdef ESP8266
 #define NEOPIXEL_PIN D8
@@ -85,13 +86,14 @@ const char* file_mqtt_server = "/mqttbroker.txt";
 const char* file_mqtt_topic = "/mqtttopic.txt";
 const char* file_mqtt_broker_port = "/mqttbrokerport.txt";
 const char* file_mqtt_display_mode = "/mqttdispmode.txt";
-
+const char* file_brightness = "/brightness.txt";
 
 
 
 //VARS
 int sync_mode = 0;
 int timezone = 0;
+int brightness = 255;
 String ntp_server_url = "";
 String mqtt_broker_url = "";
 String mqtt_topic = "";
@@ -261,6 +263,8 @@ void restore_eeprom_values()
     mqtt_topic = read_file(file_mqtt_topic,DEFAULT_MQTT_TOPIC);
     mqtt_broker_port = read_file(file_mqtt_broker_port, String(DEFAULT_MQTT_BROKER_PORT));
     mqtt_display_mode = read_file(file_mqtt_display_mode, String(DEFAULT_MQTT_DISPLAY_MODE)).toInt();
+    brightness = read_file(file_brightness, String(DEFAULT_BEIGHTNESS)).toInt();
+
 }
 
 bool write_file(const char* _file, String _content)
@@ -284,6 +288,9 @@ void save_values_to_eeprom()
     write_file(file_mqtt_topic, mqtt_topic);
     write_file(file_mqtt_broker_port, mqtt_broker_port);
     write_file(file_mqtt_display_mode, String(mqtt_display_mode));
+    write_file(file_brightness, String(brightness));
+ 
+ 
 }
 
 
@@ -545,6 +552,7 @@ void handleSave()
             last = 0;
         }
        
+     
 
         // mqtt_broker_port
         if (server.argName(i) == "mqtt_broker_port") {
@@ -560,6 +568,14 @@ void handleSave()
             last = 0;
         }
         
+      // mqtt_display_mode
+        if (server.argName(i) == "brightness") {
+            brightness = server.arg(i).toInt();
+            last_error = "set brightness to" + String(brightness);
+            last = 0;
+        }
+     
+     
         // mqtt_broker_port
         if (server.argName(i) == "mqtt_topic") {
             unsub_mqtt_client();
@@ -592,7 +608,7 @@ void handleSave()
            mqtt_broker_port = DEFAULT_MQTT_BROKER_PORT;
            mqtt_topic = DEFAULT_MQTT_TOPIC;
            mqtt_display_mode = DEFAULT_MQTT_DISPLAY_MODE;
-           
+           brightness = DEFAULT_BEIGHTNESS;
            timeClient.forceUpdate();
         }
 
@@ -669,6 +685,7 @@ void handleRoot()
         control_forms += "</select><input type='submit' value='SAVE'/></form>";
     
     
+                     
 
 
      control_forms += "<br><h3> CLOCK CONTROLS </h3>"
@@ -718,6 +735,10 @@ void handleRoot()
 
 
      control_forms += "<br><h3>OTHER SETTINGS </h3>"
+                    "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='number' value='"+ String(brightness) + "' name='brightness' min='0' max='255' required placeholder='255'/>"
+                     "<input type='submit' value='SET BRIGHTNESS'/>"
+                     "</form><br><br><br>"
                      "<form name='btn_on' action='/save' method='GET' required >"
                      "<input type='hidden' value='eepromread' name='eepromread' />"
                      "<input type='submit' value='READ STORED CONFIG'/>"
@@ -952,11 +973,11 @@ void loop(void)
 
     // SET DISPLAY CLOCK
     if (sync_mode == 1 && !abi_started) {
-     update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), 255, false);
+     update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), brightness, false);
 
       //MQTT
     }else if (sync_mode == 2 && !abi_started) {
-      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), 255, true);
+      update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), brightness, true);
 
       //OFF
     }else if(sync_mode == 0){
