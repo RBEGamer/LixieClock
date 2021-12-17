@@ -4,8 +4,8 @@ This folder contains all svg files for lasercutting all needed peaces for a sing
 
 ## LASERCUTTING PASSES
 
-* CUTTING `C` RED LINE IN SVG
-* ENGRAVING `E` BLUE LINE IN SVG
+* CUTTING `C` RED LINE IN SVG - (K40 SETTINGS 16%, 10mm/s)
+* ENGRAVING `E` BLUE LINE IN SVG - (K40 SETTINGS 16%, 40mm/s)
 
 
 ## MATERIAL
