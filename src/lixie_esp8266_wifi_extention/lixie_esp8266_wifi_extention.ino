@@ -294,6 +294,21 @@ void save_values_to_eeprom()
 }
 
 
+void write_deffault_to_eeprom(){
+
+            sync_mode = 1;
+           timezone = DEFAULT_TIMEZONE;
+           ntp_server_url = DEFAULT_NTP_SERVER;
+           mqtt_broker_url = DEFAULT_MQTT_BROKER;
+           mqtt_broker_port = DEFAULT_MQTT_BROKER_PORT;
+           mqtt_topic = DEFAULT_MQTT_TOPIC;
+           mqtt_display_mode = DEFAULT_MQTT_DISPLAY_MODE;
+           brightness = DEFAULT_BEIGHTNESS;
+
+           
+  save_values_to_eeprom();
+}
+
 uint32_t Wheel(int WheelPos, int _bright) {
   
    if(_bright > 255){
@@ -598,6 +613,7 @@ void handleSave()
             else {
                 last_error = "Datei-System formatiert Error";
             }
+            
         }
         //LOAD CURRENT SAVED DATA
         if (server.argName(i) == "eepromread") {
@@ -606,15 +622,7 @@ void handleSave()
 
         //LOAD FACOTRY RESET
         if (server.argName(i) == "factreset") {
-           sync_mode = 1;
-           timezone = DEFAULT_TIMEZONE;
-           ntp_server_url = DEFAULT_NTP_SERVER;
-           mqtt_broker_url = DEFAULT_MQTT_BROKER;
-           mqtt_broker_port = DEFAULT_MQTT_BROKER_PORT;
-           mqtt_topic = DEFAULT_MQTT_TOPIC;
-           mqtt_display_mode = DEFAULT_MQTT_DISPLAY_MODE;
-           brightness = DEFAULT_BEIGHTNESS;
-           timeClient.forceUpdate();
+           write_deffault_to_eeprom();
         }
 
          //ANTI BURNOUT CYCLE
@@ -628,6 +636,7 @@ void handleSave()
         }  
     }
     //SAVE THESE DATA
+    timeClient.forceUpdate();
     save_values_to_eeprom();
     //SAVE MQTT STUFF 
     setup_mqtt_client();
