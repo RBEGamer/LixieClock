@@ -22,7 +22,7 @@ This folder contains all svg files for lasercutting all needed peaces for a sing
 * 1x `4x_numbers_2mm_set_300_200` - P,  E + C
 
 
-## CLCOK 4 DIGITS
+## CLOCK 4 DIGITS
 
 * 4x `4x_top_cover`, P, C
 * 4x `4x_pcb_spacer`, P, C
