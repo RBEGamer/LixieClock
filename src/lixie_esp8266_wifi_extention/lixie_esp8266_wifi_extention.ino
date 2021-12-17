@@ -465,6 +465,11 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     const int s_ones = s % 10;
   
     pixels.clear();
+    //JUST INDICATE OVER THE PCB LED THAT THE CLOCK IS WOKRING
+    if(NEOPIXEL_DIGIT_OFFSET > 0){
+      pixels.setPixelColor(0,digit_color(0,0,false, col, _bright));
+    }
+
     
     if(COUNT_CLOCK_DIGITS >= 2){
       pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens] + NEOPIXEL_DIGIT_OFFSET, digit_color(h_tens,0,_disable_leading_zero, col, _bright));
@@ -810,6 +815,7 @@ void setup(void)
     wifiManager.setDebugOutput(false);
     wifiManager.setTimeout(120);
     //TRY TO CONNECT
+    // AND DISPLAY IP ON CLOCKS HOUR DISPLAY (FOR 2 DIGIT CLOCKS)
     if(wifiManager.autoConnect("LixieClockConfiguration")){
       String ip = IpAddress2String(WiFi.localIP());
       for(int i =0; i < strlen(ip.c_str()); i++ ) {
