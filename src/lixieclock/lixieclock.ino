@@ -1,11 +1,23 @@
 
 #define VERSION "1.0"
 
+
+#ifdef ESP8266
 #include <ESP8266WiFi.h>
-#include <WiFiClient.h>
 #include <ESP8266WebServer.h>
-#include <ESP8266HTTPClient.h>
 #include <ESP8266mDNS.h>
+#endif
+
+
+#ifdef ESP32
+#include <WebServer.h>
+#include "SPIFFS.h"
+#define FORMAT_SPIFFS_IF_FAILED true
+#include <ESPmDNS.h>
+#endif
+
+
+#include <WiFiClient.h>
 #include <WiFiUdp.h>
 #include <Wire.h>
 #include <FS.h> //Include File System Headers
@@ -43,7 +55,10 @@
 #define DEFAULT_MQTT_BROKER_PORT "1883"
 #define DEFAULT_MQTT_DISPLAY_MODE 0
 #define DEFAULT_BEIGHTNESS 255
+
+
 // PIN CONFIG -----------------------------------
+
 #ifdef ESP8266
 #define NEOPIXEL_PIN D8
 #endif
@@ -124,7 +139,15 @@ unsigned long timeLast = 0;
 
 
 // INSTANCES --------------------------------------------
+
+#ifdef ESP8266
 ESP8266WebServer server(WEBSERVER_PORT);
+#endif
+
+#ifdef ESP32
+WebServer server(WEBSERVER_PORT);
+#endif
+
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP,DEFAULT_NTP_SERVER,0,60000);
 WiFiClient espClient;
@@ -333,6 +356,20 @@ uint32_t Wheel(int WheelPos, int _bright) {
   return pixels.Color((WheelPos * 3) * brgth_scale, (255 - WheelPos * 3) * brgth_scale, 0);
 }
 
+uint32_t get_esp_chip_id() {
+#if defined(ESP8266)
+  return ESP.getChipId();
+#elif defined(ESP32)
+  uint32_t chipId = 0;
+  for (int i = 0; i < 17; i = i + 8) {
+    chipId |= ((ESP.getEfuseMac() >> (40 - i)) & 0xff) << i;
+  }
+  return chipId;
+#else
+  return 0;
+#endif
+
+}
 
 void mqtt_callback(char* topic, byte* payload, unsigned int length) {
 
@@ -359,7 +396,7 @@ void mqtt_reconnect() {
   // Loop until we're reconnected
  if(client.connected() || sync_mode != 2) {return;}
     // Attempt to connect
-    if (client.connect((MDNS_NAME + String(ESP.getChipId())).c_str())) {
+    if (client.connect((MDNS_NAME + String(get_esp_chip_id())).c_str())) {
       last_error = "MQTT CLICNET CONNCTED";
       client.subscribe(mqtt_topic.c_str());
     } else {
@@ -655,7 +692,7 @@ void handleRoot()
 
 
     String control_forms = "<hr><h2>DEVICE INFO</h2>";
-    control_forms+="<h3>" + String(MDNS_NAME) + String(ESP.getChipId()) + "<br><br>"+BOARD_INFO+"<br>RTC:"+ String(is_rtc_present)+"</h3><br>";
+    control_forms+="<h3>" + String(MDNS_NAME) + String(get_esp_chip_id()) + "<br><br>"+BOARD_INFO+"<br>RTC:"+ String(is_rtc_present)+"</h3><br>";
 
 
 
@@ -864,7 +901,7 @@ void setup(void)
       update_clock_display(42, 42, 42, 192, 255,false); //DISPLAY WIFI ERROR
     }
 
-    if (MDNS.begin((MDNS_NAME + String(ESP.getChipId())).c_str())) {
+    if (MDNS.begin((MDNS_NAME + String(get_esp_chip_id())).c_str())) {
     }
     //WEBSERVER ROUTES
     delay(1000);
@@ -875,7 +912,7 @@ void setup(void)
     server.begin();
     
     //START OTA LIB
-    ArduinoOTA.setHostname((MDNS_NAME + String(ESP.getChipId())).c_str());
+    ArduinoOTA.setHostname((MDNS_NAME + String(get_esp_chip_id())).c_str());
     ArduinoOTA.onStart([]() {
         String type;
         if (ArduinoOTA.getCommand() == U_FLASH) {
@@ -1036,13 +1073,6 @@ void loop(void)
     //HANDLE OTA
     ArduinoOTA.handle();
    
-  
- 
- 
-    
-   
- 
- 
  
     delay(70);
 }
