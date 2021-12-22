@@ -36,7 +36,17 @@
 #include <Wire.h>
 #include "RTClib.h"
 
+
+
+#if defined(ESP32)
+#include "TZ.h"
+#elif defined(ESP8266)
 #include <TZ.h>
+#else
+#include "TZ.h"
+#endif
+
+
 #define MYTZ TZ_Europe_London
 
 
@@ -64,7 +74,7 @@
 #endif
 
 #ifdef ESP32
-#define NEOPIXEL_PIN D2
+#define NEOPIXEL_PIN 4
 #endif
 
 
@@ -154,7 +164,7 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 Adafruit_NeoPixel pixels(NUM_NEOPIXELS, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
 RTC_DS1307 rtc;
-
+WiFiManager wifiManager;
 
 
 
@@ -892,6 +902,10 @@ void setup(void)
     WiFiManager wifiManager;
     wifiManager.setDebugOutput(false);
     wifiManager.setTimeout(120);
+    wifiManager.setConfigPortalTimeout(30);
+    wifiManager.setAPClientCheck(true);
+    wifiManager.setBreakAfterConfig(true);
+    wifiManager.setClass("invert"); 
     //TRY TO CONNECT
     // AND DISPLAY IP ON CLOCKS HOUR DISPLAY (FOR 2 DIGIT CLOCKS)
     if(wifiManager.autoConnect("LixieClockConfiguration")){
