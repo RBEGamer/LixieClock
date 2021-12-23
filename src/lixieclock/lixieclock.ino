@@ -1006,9 +1006,8 @@ void loop(void)
 {
     //HANDLE SERVER
     server.handleClient();
-    //HANDLE NTP
-    timeClient.update();
-    time_last = timeClient.getFormattedTime();
+
+    
 
 
     
@@ -1016,6 +1015,11 @@ void loop(void)
     if ((millis() - last) > 1000 * 60 * NTP_SEND_TIME_INTERVAL) {
         last = millis();   
         if (sync_mode == 1) {
+
+            //HANDLE NTP
+            timeClient.update();
+            time_last = timeClient.getFormattedTime();
+    
             update_rtc_via_ntp();
         }
     }
