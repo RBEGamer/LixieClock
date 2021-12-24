@@ -480,6 +480,10 @@ void update_rtc_via_ntp(){
   rtc_hours = timeClient.getHours();;
   rtc_mins = timeClient.getMinutes();
   rtc_secs = 0;
+ 
+  rtc_year = timeClient.getYear();
+  rtc_month = timeClient.getMonths();
+  rtc_day = timeClient.getDays();
   update_rtc();
 
   }
@@ -1035,11 +1039,9 @@ void loop(void)
     if ((millis() - last) > 1000 * 60 * NTP_SEND_TIME_INTERVAL) {
         last = millis();   
         if (sync_mode == 1) {
-
             //HANDLE NTP
             timeClient.update();
-            time_last = timeClient.getFormattedTime();
-    
+            time_last = timeClient.getFormattedTime(); 
             update_rtc_via_ntp();
         }
     }
@@ -1061,6 +1063,21 @@ void loop(void)
       rtc_hours = now.hour();
       rtc_mins = now.minute();
       rtc_secs = now.second();
+     
+     rtc_day = now.second();
+     rtc_month = now.month();
+     rtc_year = now.year();
+     
+     
+     //CHECK SUMMERTIME IF ENABLED
+      if(dalight_saving_enabled && summertime_EU(rtc_year, rtc_month, rtc_day, rtc_hours,0)){
+       rtc_hours += 1;
+       if(rtc_hours >= 24){
+         rtc_hours = (rtc_hours - 24);
+       }
+      }
+     
+     
     }else{
     
       timeNow = millis()/1000;
