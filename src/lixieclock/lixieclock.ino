@@ -130,7 +130,9 @@ long long last_abi = 0;
 int rtc_hours = 0;
 int rtc_mins = 0;
 int rtc_secs = 0;
-
+int rtc_day = 1;
+int rtc_month = 1;
+int rtc_year = 2000;
 int mqtt_hours = 0;
 int mqtt_mins = 0;
 int mqtt_secs = 0;
@@ -366,6 +368,24 @@ uint32_t Wheel(int WheelPos, int _bright) {
   return pixels.Color((WheelPos * 3) * brgth_scale, (255 - WheelPos * 3) * brgth_scale, 0);
 }
 
+
+
+
+
+//https://forum.arduino.cc/t/time-libary-sommerzeit-winterzeit/221884/2
+boolean summertime_EU(int year, byte month, byte day, byte hour, byte tzHours)
+// European Daylight Savings Time calculation by "jurs" for German Arduino Forum
+// input parameters: "normal time" for year, month, day, hour and tzHours (0=UTC, 1=MEZ)
+// return value: returns true during Daylight Saving Time, false otherwise
+{
+  if (month<3 || month>10) return false; // keine Sommerzeit in Jan, Feb, Nov, Dez
+  if (month>3 && month<10) return true; // Sommerzeit in Apr, Mai, Jun, Jul, Aug, Sep
+  if (month==3 && (hour + 24 * day)>=(1 + tzHours + 24*(31 - (5 * year /4 + 4) % 7)) || month==10 && (hour + 24 * day)<(1 + tzHours + 24*(31 - (5 * year /4 + 1) % 7)))
+    return true;
+  else
+    return false;
+}
+
 uint32_t get_esp_chip_id() {
 #if defined(ESP8266)
   return ESP.getChipId();
@@ -449,7 +469,7 @@ void parse_mqtt_float_to_digits(float _f){
 
 void update_rtc() {
   if(is_rtc_present){
-    rtc.adjust(DateTime(2000, 1, 1, rtc_hours, rtc_mins, rtc_secs));
+    rtc.adjust(DateTime(rtc_year, rtc_month, rtc_day, rtc_hours, rtc_mins, rtc_secs));
   }
 }
 
