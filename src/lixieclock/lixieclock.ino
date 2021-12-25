@@ -1,6 +1,8 @@
 
 #define VERSION "1.0"
 
+#define USE_LITTLEFS
+
 
 #ifdef ESP8266
 #include <ESP8266WiFi.h>
@@ -11,7 +13,12 @@
 
 #ifdef ESP32
 #include <WebServer.h>
+
+#ifdef USE_LITTLEFS
+#include "LittleFS.h"
+#else
 #include "SPIFFS.h"
+#endif
 #define FORMAT_SPIFFS_IF_FAILED true
 #include <ESPmDNS.h>
 #endif
@@ -65,7 +72,7 @@
 #define DEFAULT_MQTT_BROKER_PORT "1883"
 #define DEFAULT_MQTT_DISPLAY_MODE 0
 #define DEFAULT_BEIGHTNESS 255
-
+#define DEFAULT_DLS 0
 
 // PIN CONFIG -----------------------------------
 
@@ -112,7 +119,7 @@ const char* file_mqtt_topic = "/mqtttopic.txt";
 const char* file_mqtt_broker_port = "/mqttbrokerport.txt";
 const char* file_mqtt_display_mode = "/mqttdispmode.txt";
 const char* file_brightness = "/brightness.txt";
-
+const char* file_dalight_saving_enabled = "/enabledls.txt";
 
 
 //VARS
@@ -132,17 +139,17 @@ int rtc_mins = 0;
 int rtc_secs = 0;
 int rtc_day = 1;
 int rtc_month = 1;
-int rtc_year = 2000;
+int rtc_year = 2020;
 int mqtt_hours = 0;
 int mqtt_mins = 0;
 int mqtt_secs = 0;
 //0 FOR 4 DIGIT MODE 1 FOR TWO DIGIT MODE
 int mqtt_display_mode = 0;
-
+int rtc_hours_tmp = 0;
 bool abi_started = false;
 int abi_counter = 0;
 const int ABI_COUNTER_MAX = COUNT_CLOCK_DIGITS * 6; //HOW MANY ABI ITERATIONS
-
+int dalight_saving_enabled = 0;
 //IS SET TO TRUE IN SETUP IF A RTC CLOCK IS DETECTED
 bool is_rtc_present = false;
 //USEDE FOR SOFTWARE CLOCK
@@ -300,6 +307,8 @@ void restore_eeprom_values()
     mqtt_display_mode = read_file(file_mqtt_display_mode, String(DEFAULT_MQTT_DISPLAY_MODE)).toInt();
     brightness = read_file(file_brightness, String(DEFAULT_BEIGHTNESS)).toInt();
 
+    dalight_saving_enabled = read_file(file_dalight_saving_enabled, String(DEFAULT_DLS)).toInt();
+
 }
 
 bool write_file(const char* _file, String _content)
@@ -324,7 +333,7 @@ void save_values_to_eeprom()
     write_file(file_mqtt_broker_port, mqtt_broker_port);
     write_file(file_mqtt_display_mode, String(mqtt_display_mode));
     write_file(file_brightness, String(brightness));
- 
+    write_file(file_dalight_saving_enabled, String(dalight_saving_enabled));
  
 }
 
@@ -339,6 +348,7 @@ void write_deffault_to_eeprom(){
            mqtt_topic = DEFAULT_MQTT_TOPIC;
            mqtt_display_mode = DEFAULT_MQTT_DISPLAY_MODE;
            brightness = DEFAULT_BEIGHTNESS;
+           dalight_saving_enabled = DEFAULT_DLS;
 
            
   save_values_to_eeprom();
@@ -481,9 +491,14 @@ void update_rtc_via_ntp(){
   rtc_mins = timeClient.getMinutes();
   rtc_secs = 0;
  
-  rtc_year = timeClient.getYear();
-  rtc_month = timeClient.getMonths();
-  rtc_day = timeClient.getDays();
+
+  const unsigned long epochTime = timeClient.getEpochTime();
+  const struct tm *ptm = gmtime ((time_t *)&epochTime); 
+  rtc_day = ptm->tm_mday;
+  rtc_month = ptm->tm_mon+1;
+  rtc_year= ptm->tm_year+1900;
+
+  
   update_rtc();
 
   }
@@ -675,6 +690,13 @@ void handleSave()
             last = 0;
         }
 
+        // mqtt_broker_port
+        if (server.argName(i) == "dalight_saving_enabled") {
+            dalight_saving_enabled = server.arg(i).toInt();
+            last_error = "set dalight_saving_enabled to" + dalight_saving_enabled;
+            last = 0;
+        }
+
         
         // formats the filesystem= resets all settings
         if (server.argName(i) == "fsformat") {
@@ -786,6 +808,10 @@ void handleRoot()
                      "<input type='hidden' value='sendtime' name='sendtime' />"
                      "<input type='submit' value='SEND NTP TIME TO CLOCK'/>"
                      "</form><br>"
+                     "<form name='btn_offmq' action='/save' method='GET'>"
+                     "<input type='number' min='0' max='1' value='"+ String(dalight_saving_enabled) + "' name='dalight_saving_enabled' required placeholder='0'/>"
+                     "<input type='submit' value='ENABLE GERMAN DAYLIGHT SAVING'/>"
+                     "</form>"
                      "<br><h3> MQTT SETTINGS </h3>"
                      "<form name='btn_offmq' action='/save' method='GET'>"
                      "<input type='text' value='"+ String(mqtt_broker_url) + "' name='mqtt_broker_url' required placeholder='broker.hivemq.com'/>"
@@ -799,6 +825,7 @@ void handleRoot()
                      "<input type='text' value='"+ String(mqtt_topic) + "' name='mqtt_topic' required placeholder='/iot/sensor/temp'/>"
                      "<input type='submit' value='SET MQTT TOPIC'/>"
                      "</form>";
+
 
 
    control_forms += "<form name='btn_on' action='/save' method='GET' required ><select name='mqtt_display_mode' id='mqtt_display_mode'>";
@@ -1061,19 +1088,20 @@ void loop(void)
     if (is_rtc_present && sync_mode == 1) {
       DateTime now = rtc.now();
       rtc_hours = now.hour();
+      rtc_hours_tmp = now.hour();
       rtc_mins = now.minute();
       rtc_secs = now.second();
      
-     rtc_day = now.second();
-     rtc_month = now.month();
-     rtc_year = now.year();
+      rtc_day = now.second();
+      rtc_month = now.month();
+      rtc_year = now.year();
      
      
      //CHECK SUMMERTIME IF ENABLED
       if(dalight_saving_enabled && summertime_EU(rtc_year, rtc_month, rtc_day, rtc_hours,0)){
-       rtc_hours += 1;
-       if(rtc_hours >= 24){
-         rtc_hours = (rtc_hours - 24);
+       rtc_hours_tmp = rtc_hours + 1;
+       if(rtc_hours_tmp >= 24){
+         rtc_hours_tmp = (rtc_hours_tmp - 24);
        }
       }
      
@@ -1097,6 +1125,7 @@ void loop(void)
         rtc_mins = 0;
         rtc_hours = 0;
       }
+      rtc_hours_tmp = rtc_hours;
     }
      
       
@@ -1104,7 +1133,7 @@ void loop(void)
 
     // SET DISPLAY CLOCK
     if (sync_mode == 1 && !abi_started) {
-     update_clock_display(rtc_hours, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), brightness, false);
+     update_clock_display(rtc_hours_tmp, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), brightness, false);
 
       //MQTT
     }else if (sync_mode == 2 && !abi_started) {
