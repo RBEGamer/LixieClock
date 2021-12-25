@@ -760,7 +760,10 @@ void handleRoot()
    
  
      control_forms+="<hr><h2>CURRENT TIME</h2><h1>" + String(rtc_hours) + ":"+ String(rtc_mins) + ":" + String(rtc_secs) +"</h1>"
-                    "<hr><h2>LAST NTP TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1>";
+                    "<hr><h2>LAST NTP TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1><br>"
+                    "<h2>LAST NTP DATE</h2><h1>" + String(rtc_day) + "."+String(rtc_month)+"."+ String(rtc_year)+"</h1>";
+
+
 
 
 
