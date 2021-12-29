@@ -15,9 +15,10 @@
 #include <WebServer.h>
 
 #ifdef USE_LITTLEFS
-#include "LittleFS.h"
+  #define SPIFFS LITTLEFS
+  #include <LITTLEFS.h>
 #else
-#include "SPIFFS.h"
+#include <SPIFFS.h>
 #endif
 #define FORMAT_SPIFFS_IF_FAILED true
 #include <ESPmDNS.h>
@@ -935,7 +936,7 @@ void setup(void)
 
     Serial.begin(SERIAL_BAUD_RATE);
     // START THE FILESYSTEM
-    if (SPIFFS.begin()) {
+    if (SPIFFS.begin(true)) {
         last_error = "SPIFFS Initialisierung....OK";
     }
     else {
