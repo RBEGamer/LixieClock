@@ -1,6 +1,9 @@
 
 #define VERSION "1.0"
 
+#include <Arduino.h>
+#include "FS.h"
+
 #define USE_LITTLEFS
 
 
@@ -28,7 +31,6 @@
 #include <WiFiClient.h>
 #include <WiFiUdp.h>
 #include <Wire.h>
-#include <FS.h> //Include File System Headers
 #include <TimeLib.h>
 #include <NTPClient.h>
 #include <WiFiManager.h>
@@ -935,6 +937,7 @@ void setup(void)
 
 
     Serial.begin(SERIAL_BAUD_RATE);
+    Serial.println("_setup_started_");
     // START THE FILESYSTEM
     if (SPIFFS.begin(true)) {
         last_error = "SPIFFS Initialisierung....OK";
