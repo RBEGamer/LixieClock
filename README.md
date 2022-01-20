@@ -11,6 +11,7 @@ a simple and smart lixieclock design for the FH Aachen Makerspace
 * solder + flux
 * wood glue
 * philis screw driver
+* 
 # NEEDED PARTS
 
 
@@ -29,6 +30,9 @@ a simple and smart lixieclock design for the FH Aachen Makerspace
 * 4x LED PCB, SEE `./src/pcb`, POPULATED BOTTOM SITE
 * 1x ESP8266 D1 Mini or CONTROL PCB, SEE `./src/pcb`, POPULATED TOP SITE
 
+## ADDITIONAL PARTS
+
+* 8* `1*3 2.54 MALE HEADERS`
 
 # PICTURES
 
