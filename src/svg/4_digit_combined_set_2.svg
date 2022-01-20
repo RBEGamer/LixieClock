@@ -1,0 +1,1322 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:shaper="http://www.shapertools.com/namespaces/shaper"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="153mm"
+   viewBox="0 0 297 153"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="4_digit_combined_set_2.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="619.45867"
+     inkscape:cy="534.51435"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1807"
+     inkscape:window-height="1198"
+     inkscape:window-x="260"
+     inkscape:window-y="155"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1401"
+       transform="matrix(9.9999999,0,0,9.9999999,4.2674911,1.7876142)">
+      <path
+         d="m 27.806621,0 a 0.6,0.6 -90 0 1 0.6,0.6 v 6.002 a 0.6,0.6 0 0 1 -0.6,0.6 H 0 a 0.6,0.6 90 0 1 -0.6,-0.6 V 0.6 A 0.6,0.6 -180 0 1 0,0 Z"
+         fill="rgb(0,0,0)"
+         shaper:cutDepth="0"
+         shaper:pathType="exterior"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path2"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 0.3,1.1019999 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path4"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 5.9000001,1.1019999 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path6"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 14.802207,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path8"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 5.9000001,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path10"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 7.2000001,5.502 h 0.6 V 1.7019999 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path12"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 27.106621,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path14"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 12.602207,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path16"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 22.004414,5.502 h 0.6 V 1.7019999 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path18"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 4.9,1.7019999 V 5.502 H 5.5 V 1.7019999 Z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path20"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1"
+         transform="matrix(1,0,0,-1,0.6,7.202)" />
+      <path
+         d="m 20.404414,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path22"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 12.602207,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path24"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 0.3,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path26"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 11.3,1.7019999 V 5.502 h 0.6 V 1.7019999 Z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path28"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 21.504414,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path30"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 19.402207,1.7019999 V 5.502 h 0.6 V 1.7019999 Z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path32"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 20.404414,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path34"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 26.104414,1.7019999 V 5.502 h 0.6 V 1.7019999 Z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path36"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 14.802207,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path38"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 27.106621,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path40"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 7.0000001,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path42"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 7.0000001,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path44"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 21.504414,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path46"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 15.302207,5.502 h 0.6 V 1.7019999 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path48"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 0.8,1.7019999 V 5.502 H 1.4 V 1.7019999 Z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1"
+         transform="matrix(1,0,0,-1,0.6,7.202)" />
+      <path
+         d="M 2,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-7"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 4.9,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-0-4"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 8.4000001,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-3"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 11.3,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-9"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 16.502207,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-38"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 19.402207,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-1"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 23.204414,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-5"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 26.104414,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-4"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+    </g>
+    <g
+       id="g1601"
+       transform="matrix(9.9999999,0,0,9.9999999,3.5115394,76.248925)">
+      <path
+         d="m 27.806621,0 a 0.6,0.6 -90 0 1 0.6,0.6 v 6.002 a 0.6,0.6 0 0 1 -0.6,0.6 H 0 a 0.6,0.6 90 0 1 -0.6,-0.6 V 0.6 A 0.6,0.6 -180 0 1 0,0 Z"
+         fill="rgb(0,0,0)"
+         shaper:cutDepth="0"
+         shaper:pathType="exterior"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path2-4"
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 0.3,1.1019999 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path4-4"
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 5.9000001,1.1019999 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path6-0"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 14.802207,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path8-07"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 5.9000001,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path10-4"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 8.0500001,1.7019999 h 0.6 V 5.502 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path12-7"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 27.106621,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path14-9"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 12.602207,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path16-7"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 22.561621,1.7 h 0.6 v 3.8000001 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path18-3"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 5.845,5.4980002 V 1.6980001 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path20-3"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 20.404414,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path22-7"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 12.602207,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path24-2"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 0.3,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path26-7"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 12.545,5.502 V 1.7019999 h 0.6 V 5.502 Z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path28-9"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 21.504414,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path30-3"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 20.354414,5.502 V 1.7019999 h 0.6 V 5.502 Z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path32-6"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 20.404414,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path34-0"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 27.056621,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path36-9"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 14.802207,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path38-7"
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 27.106621,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path40-1"
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 7.0000001,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path42-9"
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 7.0000001,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path44-1"
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 21.504414,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path46-5"
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 15.859414,1.7019999 h 0.6 V 5.502 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path48-3"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 1.35,5.4980002 V 1.6980001 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path50-8"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <g
+         id="g892"
+         transform="translate(0.7,0.6980001)"
+         style="display:inline;fill:none;stroke:#0000ff;stroke-opacity:1">
+        <path
+           d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
+           fill="rgb(0,0,0)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="exterior"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path2-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.001 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path4-3"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,1.601 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path6-7"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,4.401 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path8-0"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.801 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path10-9"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,3.601 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path12-5"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.001 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path14-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,1.201 H 2.38 V 1 H 2.205 v 10e-4 h -0.74 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path16-9"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,2.401 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path18-9"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,3.201 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path20-0"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.801 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path22-3"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 0.25,4.802 H 1.03 V 1 H 0.25 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path24-5"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path26-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path28-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path30-0"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path32-0"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 4.565,4.802 V 1 h 0.78 v 3.802 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path34-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+      </g>
+      <g
+         id="g892-5"
+         transform="translate(7.4000001,0.7)"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1">
+        <path
+           d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
+           fill="rgb(0,0,0)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="exterior"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path2-2-4"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.001 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path4-3-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,1.601 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path6-7-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,4.401 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path8-0-7"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.801 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path10-9-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,3.601 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path12-5-5"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.001 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path14-1-6"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,1.201 H 2.38 V 1 H 2.205 v 10e-4 h -0.74 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path16-9-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,2.401 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path18-9-4"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,3.201 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path20-0-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.801 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path22-3-4"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 0.25,4.802 H 1.03 V 1 H 0.25 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path24-5-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path26-8-7"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path28-2-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path30-0-7"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path32-0-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 4.565,4.802 V 1 h 0.78 v 3.802 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path34-8-4"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+      </g>
+      <g
+         id="g892-5-2"
+         transform="translate(15.209414,0.7)"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1">
+        <path
+           d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
+           fill="rgb(0,0,0)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="exterior"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path2-2-4-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.001 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path4-3-1-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,1.601 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path6-7-2-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,4.401 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path8-0-7-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.801 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path10-9-2-9"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,3.601 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path12-5-5-7"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.001 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path14-1-6-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,1.201 H 2.38 V 1 H 2.205 v 10e-4 h -0.74 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path16-9-8-0"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,2.401 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path18-9-4-3"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,3.201 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path20-0-1-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.801 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path22-3-4-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 0.25,4.802 H 1.03 V 1 H 0.25 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path24-5-1-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path26-8-7-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path28-2-2-9"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path30-0-7-6"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path32-0-1-4"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 4.565,4.802 V 1 h 0.78 v 3.802 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path34-8-4-7"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+      </g>
+      <g
+         id="g892-5-2-2"
+         transform="translate(21.911621,0.7)"
+         style="fill:none;stroke:#0000ff;stroke-opacity:1">
+        <path
+           d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
+           fill="rgb(0,0,0)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="exterior"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path2-2-4-1-3"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.001 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path4-3-1-8-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,1.601 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path6-7-2-8-1"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,4.401 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path8-0-7-1-6"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.801 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path10-9-2-9-4"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,3.601 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path12-5-5-7-5"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,2.001 H 2.38 v -0.2 H 1.465 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path14-1-6-2-3"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 1.465,1.201 H 2.38 V 1 H 2.205 v 10e-4 h -0.74 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path16-9-8-0-4"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,2.401 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path18-9-4-3-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,3.201 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path20-0-1-2-5"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 3.215,4.801 H 4.13 v -0.2 H 3.215 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path22-3-4-8-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 0.25,4.802 H 1.03 V 1 H 0.25 Z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path24-5-1-1-2"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path26-8-7-8-5"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path28-2-2-9-9"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m -0.2,5.402 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path30-0-7-6-0"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="m 5.395,0.4 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path32-0-1-4-5"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+        <path
+           d="M 4.565,4.802 V 1 h 0.78 v 3.802 z"
+           fill="rgb(255,255,255)"
+           shaper:cutDepth="0.004"
+           shaper:pathType="interior"
+           stroke="rgb(0,0,0)"
+           transform="matrix(1,0,0,-1,0.4,5.802)"
+           vector-effect="non-scaling-stroke"
+           id="path34-8-4-7-8"
+           style="fill:none;stroke:#0000ff;stroke-opacity:1" />
+      </g>
+    </g>
+  </g>
+</svg>
