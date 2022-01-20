@@ -32,10 +32,15 @@ a simple and smart lixieclock design for the FH Aachen Makerspace
 
 ## ADDITIONAL PARTS
 
-* 8* `1*3 2.54 MALE HEADERS`
+* 8* `1*3 2.54mm MALE HEADERS`
+* 24x `Jumperwires FEMALE<=>FEMALE`
+
+
 
 # PICTURES
 
-
 ![4_digit_complete](./documentation/images/4_digit_complete.jpg)
 
+
+
+## BUILD INSTRUCTIONS
