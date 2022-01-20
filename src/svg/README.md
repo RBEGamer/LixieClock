@@ -24,8 +24,14 @@ This folder contains all svg files for lasercutting all needed peaces for a sing
 
 ## CLOCK 4 DIGITS
 
-* 4x `4x_top_cover`, P, C
-* 4x `4x_pcb_spacer`, P, C
-* 1x `1x_clock_frame_bottom_top_cover _alt` - P, C
-* 1x `1x_clock_frame_bottom_top_cover _clean` - P, C
+### SINGLE FILES / PARTS
+
+* 4x `4x_top_cover` - P, C
+* 4x `4x_pcb_spacer` - P, C
+* 1x `2x_clock_frame_bottom_top_cover` - P, C
+* 1x `1x_clock_frame_bottom_top_cover_clean` - P, C
 * 4x `4x_numbers_2mm_set_300_200` - P, E + C
+
+### SET WORKAREA 200x300mm
+
+* 1x `4_digit_combined_set_1` - P, C
