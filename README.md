@@ -12,7 +12,8 @@ a simple and smart lixieclock design for the FH Aachen Makerspace
 * wood glue
 * philis screw driver
 * small zip ties
-
+* hot glue
+* 
 # NEEDED PARTS
 
 
