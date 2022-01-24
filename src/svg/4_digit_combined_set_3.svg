@@ -8,9 +8,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="297mm"
-   height="153mm"
-   viewBox="0 0 297 153"
+   width="292mm"
+   height="148mm"
+   viewBox="0 0 292 148"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,7 +54,7 @@
      id="layer1">
     <g
        id="g1058"
-       transform="matrix(9.9999999,0,0,9.9999999,3.5115398,1.7876199)">
+       transform="matrix(9.9999999,0,0,9.9999999,0.33653966,0.72928653)">
       <path
          d="M -0.6,0.6 A 0.6,0.6 -180 0 1 0,0 h 27.806621 a 0.6,0.6 -90 0 1 0.6,0.6 v 6.002 a 0.6,0.6 0 0 1 -0.6,0.6 H 0 a 0.6,0.6 90 0 1 -0.6,-0.6 z"
          fill="rgb(0,0,0)"
@@ -157,7 +157,7 @@
     </g>
     <g
        id="g1058-6"
-       transform="matrix(9.9999999,0,0,9.9999999,4.2674918,77.004881)">
+       transform="matrix(9.9999999,0,0,9.9999999,0.56332493,74.888213)">
       <path
          d="M -0.6,0.6 A 0.6,0.6 -180 0 1 0,0 h 27.806621 a 0.6,0.6 -90 0 1 0.6,0.6 v 6.002 a 0.6,0.6 0 0 1 -0.6,0.6 H 0 a 0.6,0.6 90 0 1 -0.6,-0.6 z"
          fill="rgb(0,0,0)"

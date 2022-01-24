@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include "FS.h"
 
-#define USE_LITTLEFS
+
 
 
 #ifdef ESP8266
@@ -16,6 +16,7 @@
 
 #ifdef ESP32
 #include <WebServer.h>
+//#define USE_LITTLEFS
 
 #ifdef USE_LITTLEFS
 #define SPIFFS LITTLEFS
@@ -23,7 +24,9 @@
 #else
 #include <SPIFFS.h>
 #endif
+
 #define FORMAT_SPIFFS_IF_FAILED true
+
 #include <ESPmDNS.h>
 #endif
 
@@ -76,7 +79,7 @@
 #define DEFAULT_MQTT_DISPLAY_MODE 0
 #define DEFAULT_BEIGHTNESS 255
 #define DEFAULT_DLS 0
-
+#define DEFAULT_LED_OFFSET 0
 // PIN CONFIG -----------------------------------
 
 #ifdef ESP8266
@@ -106,8 +109,13 @@ const String BOARD_INFO = "LIXIE_FW_" + String(VERSION) + "_BOARD_" + "ESP32";
 // NEOPIXEL CONF ------------------------------
 
 const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
+<<<<<<< Updated upstream
 const int NEOPIXEL_DIGIT_OFFSET = 1;
 const int NUM_NEOPIXELS = (COUNT_CLOCK_DIGITS * 10) + NEOPIXEL_DIGIT_OFFSET; //10 leds per digit
+=======
+const int NEOPIXEL_DIGIT_OFFSET = 10;
+const int NUM_NEOPIXELS = (COUNT_CLOCK_DIGITS*10) + NEOPIXEL_DIGIT_OFFSET; //10 leds per digit
+>>>>>>> Stashed changes
 //const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8};
 const int led_index_digits[] = {0, 9, 8, 6, 7, 5, 4, 2, 3, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
 const int digit_offsets[6] = {0, 10 , 20 , 30, 40, 50}; //HOUR_TENS HOUR_ONES MINUTES_TENS MINUTES_ONES
@@ -123,7 +131,7 @@ const char* file_mqtt_broker_port = "/mqttbrokerport.txt";
 const char* file_mqtt_display_mode = "/mqttdispmode.txt";
 const char* file_brightness = "/brightness.txt";
 const char* file_dalight_saving_enabled = "/enabledls.txt";
-
+const char* file_led_offset = "/ledoffset.txt";
 
 //VARS
 int sync_mode = 0;
@@ -133,6 +141,7 @@ String ntp_server_url = "";
 String mqtt_broker_url = "";
 String mqtt_topic = "";
 String mqtt_broker_port = "";
+int led_offset = 1;
 
 long long last = 0;
 long long last_abi = 0;
@@ -301,6 +310,7 @@ String read_file(const char* _file, String _default = "")
 
 void restore_eeprom_values()
 {
+<<<<<<< Updated upstream
   ntp_server_url = read_file(file_ntp_server, DEFAULT_NTP_SERVER);
   timezone = read_file(file_timezone, String(DEFAULT_TIMEZONE)).toInt();
   sync_mode = read_file(file_syncmode, "1").toInt();
@@ -311,6 +321,18 @@ void restore_eeprom_values()
   brightness = read_file(file_brightness, String(DEFAULT_BEIGHTNESS)).toInt();
 
   dalight_saving_enabled = read_file(file_dalight_saving_enabled, String(DEFAULT_DLS)).toInt();
+=======
+    ntp_server_url = read_file(file_ntp_server,DEFAULT_NTP_SERVER);
+    timezone = read_file(file_timezone, String(DEFAULT_TIMEZONE)).toInt();
+    sync_mode = read_file(file_syncmode, "1").toInt();
+    mqtt_broker_url = read_file(file_mqtt_server,DEFAULT_MQTT_BROKER);
+    mqtt_topic = read_file(file_mqtt_topic,DEFAULT_MQTT_TOPIC);
+    mqtt_broker_port = read_file(file_mqtt_broker_port, String(DEFAULT_MQTT_BROKER_PORT));
+    mqtt_display_mode = read_file(file_mqtt_display_mode, String(DEFAULT_MQTT_DISPLAY_MODE)).toInt();
+    brightness = read_file(file_brightness, String(DEFAULT_BEIGHTNESS)).toInt();
+    led_offset = read_file(file_led_offset, String(DEFAULT_LED_OFFSET)).toInt();
+    dalight_saving_enabled = read_file(file_dalight_saving_enabled, String(DEFAULT_DLS)).toInt();
+>>>>>>> Stashed changes
 
 }
 
@@ -328,6 +350,7 @@ bool write_file(const char* _file, String _content)
 
 void save_values_to_eeprom()
 {
+<<<<<<< Updated upstream
   write_file(file_ntp_server, ntp_server_url);
   write_file(file_syncmode, String(sync_mode));
   write_file(file_timezone, String(timezone));
@@ -338,6 +361,19 @@ void save_values_to_eeprom()
   write_file(file_brightness, String(brightness));
   write_file(file_dalight_saving_enabled, String(dalight_saving_enabled));
 
+=======
+    write_file(file_ntp_server, ntp_server_url);
+    write_file(file_syncmode, String(sync_mode));
+    write_file(file_timezone, String(timezone));
+    write_file(file_mqtt_server, mqtt_broker_url);
+    write_file(file_mqtt_topic, mqtt_topic);
+    write_file(file_mqtt_broker_port, mqtt_broker_port);
+    write_file(file_mqtt_display_mode, String(mqtt_display_mode));
+    write_file(file_brightness, String(brightness));
+    write_file(file_dalight_saving_enabled, String(dalight_saving_enabled));
+    write_file(file_led_offset, String(led_offset));
+ 
+>>>>>>> Stashed changes
 }
 
 
@@ -353,6 +389,19 @@ void write_deffault_to_eeprom() {
   brightness = DEFAULT_BEIGHTNESS;
   dalight_saving_enabled = DEFAULT_DLS;
 
+<<<<<<< Updated upstream
+=======
+            sync_mode = 1;
+           timezone = DEFAULT_TIMEZONE;
+           ntp_server_url = DEFAULT_NTP_SERVER;
+           mqtt_broker_url = DEFAULT_MQTT_BROKER;
+           mqtt_broker_port = DEFAULT_MQTT_BROKER_PORT;
+           mqtt_topic = DEFAULT_MQTT_TOPIC;
+           mqtt_display_mode = DEFAULT_MQTT_DISPLAY_MODE;
+           brightness = DEFAULT_BEIGHTNESS;
+           dalight_saving_enabled = DEFAULT_DLS;
+           led_offset = DEFAULT_LED_OFFSET;
+>>>>>>> Stashed changes
 
   save_values_to_eeprom();
 }
@@ -595,6 +644,28 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
 
   pixels.show();   // Send the updated pixel colors to the hardware.
 
+<<<<<<< Updated upstream
+=======
+    
+    if(COUNT_CLOCK_DIGITS >= 2){
+      pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens] + led_offset, digit_color(h_tens,0,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones] + led_offset, digit_color(h_ones,0,_disable_leading_zero, col, _bright));
+    }
+ 
+    if(COUNT_CLOCK_DIGITS >= 4){
+      pixels.setPixelColor(digit_offsets[2] + led_index_digits[m_tens] + led_offset, digit_color(m_tens,1,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[3] + led_index_digits[m_ones] + led_offset,digit_color(m_ones,1,_disable_leading_zero, col, _bright));
+    }
+ 
+    if(COUNT_CLOCK_DIGITS >= 6){
+      pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens] + led_offset, digit_color(s_tens,2,_disable_leading_zero, col, _bright));
+      pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones] + led_offset, digit_color(s_ones,2,_disable_leading_zero, col, _bright));
+    }
+    
+   
+    pixels.show();   // Send the updated pixel colors to the hardware.
+ 
+>>>>>>> Stashed changes
 }
 
 
@@ -624,6 +695,7 @@ void unsub_mqtt_client() {
 
 void handleSave()
 {
+<<<<<<< Updated upstream
   // PARSE ALL GET ARGUMENTS
   for (uint8_t i = 0; i < server.args(); i++) {
     // SNY MODE = enable ntc sync
@@ -721,6 +793,121 @@ void handleSave()
     //LOAD FACOTRY RESET
     if (server.argName(i) == "factreset") {
       write_deffault_to_eeprom();
+=======
+    // PARSE ALL GET ARGUMENTS
+    for (uint8_t i = 0; i < server.args(); i++) {
+        // SNY MODE = enable ntc sync
+        if (server.argName(i) == "sync_mode") {
+            sync_mode = server.arg(i).toInt();
+            if(sync_mode < 0 || sync_mode > 2){
+              sync_mode = 0;
+            }
+            last_error = "set sync_mode to" + String(sync_mode);
+        }
+        // timezone +-12hours
+        if (server.argName(i) == "timezone") {
+            timezone = server.arg(i).toInt();
+            if (timezone > 12 || timezone < -12) {
+                timezone = 0;
+            }
+            last_error = "set timezone to" + String(timezone);
+            timeClient.setTimeOffset(timezone*3600);
+            timeClient.forceUpdate();
+            update_rtc_via_ntp();
+        }
+        // ntp_server_url
+        if (server.argName(i) == "ntp_server_url") {
+            ntp_server_url = server.arg(i);
+            last_error = "set ntp_server_url to" + ntp_server_url;
+            if(ntp_server_url != ""){
+              timeClient.setPoolServerName(ntp_server_url.c_str());
+              timeClient.forceUpdate();
+            }
+            last = 0;
+        }
+
+        // mqtt_broker_url
+        if (server.argName(i) == "mqtt_broker_url") {
+            mqtt_broker_url = server.arg(i);
+            last_error = "set mqtt_broker_url to" + mqtt_broker_url;
+            last = 0;
+        }
+       
+     
+
+        // mqtt_broker_port
+        if (server.argName(i) == "mqtt_broker_port") {
+            mqtt_broker_port = server.arg(i);
+            last_error = "set mqtt_broker_port to" + mqtt_broker_port;
+            last = 0;
+        }
+
+        // mqtt_display_mode
+        if (server.argName(i) == "mqtt_display_mode") {
+            mqtt_display_mode = server.arg(i).toInt();
+            last_error = "set mqtt_display_mode to" + String(mqtt_display_mode);
+            last = 0;
+        }
+        
+      // mqtt_display_mode
+        if (server.argName(i) == "brightness") {
+            brightness = server.arg(i).toInt();
+            last_error = "set brightness to" + String(brightness);
+            last = 0;
+        }
+
+        if(server.argName(i) == "led_offset"){
+           led_offset = server.arg(i).toInt();
+           last_error = "set led offset to" + String(led_offset);
+           last = 0;
+           }
+     
+        // mqtt_broker_port
+        if (server.argName(i) == "mqtt_topic") {
+            unsub_mqtt_client();
+            mqtt_topic = server.arg(i);
+            last_error = "set mqtt_topic to" + mqtt_topic;
+            last = 0;
+        }
+
+        // mqtt_broker_port
+        if (server.argName(i) == "dalight_saving_enabled") {
+            dalight_saving_enabled = server.arg(i).toInt();
+            last_error = "set dalight_saving_enabled to" + dalight_saving_enabled;
+            last = 0;
+        }
+
+        
+        // formats the filesystem= resets all settings
+        if (server.argName(i) == "fsformat") {
+            if (SPIFFS.format()) {
+                last_error = "Datei-System formatiert";
+            }
+            else {
+                last_error = "Datei-System formatiert Error";
+            }
+            
+        }
+        //LOAD CURRENT SAVED DATA
+        if (server.argName(i) == "eepromread") {
+            restore_eeprom_values();
+        }
+
+        //LOAD FACOTRY RESET
+        if (server.argName(i) == "factreset") {
+           write_deffault_to_eeprom();
+        }
+
+         //ANTI BURNOUT CYCLE
+        if (server.argName(i) == "abi") {
+            start_abi();
+        }
+
+      if (server.argName(i) == "sendtime") {
+            update_rtc_via_ntp();
+            delay(100);
+        }  
+>>>>>>> Stashed changes
     }
 
     //ANTI BURNOUT CYCLE
@@ -757,6 +944,7 @@ void handleRoot()
 
 
 
+<<<<<<< Updated upstream
 
   String timezonesign = "";
   if (timezone > 0) {
@@ -881,6 +1069,136 @@ void handleRoot()
   control_forms += "<br><hr><h3>LAST SYSTEM MESSAGE</h3><br>" + last_error;
 
   server.send(200, "text/html", phead_1 + WEBSITE_TITLE + phead_2 + pstart + control_forms + pend);
+=======
+  
+    String timezonesign = "";
+    if(timezone > 0){
+      timezonesign = "+";
+    }
+   
+ 
+     control_forms+="<hr><h2>CURRENT TIME</h2><h1>" + String(rtc_hours) + ":"+ String(rtc_mins) + ":" + String(rtc_secs) +"</h1>"
+                    "<hr><h2>LAST NTP TIME</h2><h1>" + time_last + " ("+timezonesign+" "+ String(timezone)+" Hours)</h1><br>"
+                    "<h2>LAST NTP DATE</h2><h1>" + String(rtc_day) + "."+String(rtc_month)+"."+ String(rtc_year)+"</h1>";
+
+
+
+
+
+    control_forms += "<hr><h2>CONTROLS</h2>";
+    control_forms += "<br><h3> MODE CONTROL </h3><br>";
+
+
+        control_forms += "<form name='btn_on' action='/save' method='GET' required ><select name='sync_mode' id='sync_mode'>";
+
+                         if(sync_mode == 0){
+                            control_forms += "<option value='0' selected>DISABLED</option>";
+                         }else{
+                            control_forms += "<option value='0'>DISABLED</option>";
+                         }
+
+                         if(sync_mode == 1){
+                            control_forms += "<option value='1' selected>NTP-SYNC</option>";
+                         }else{
+                            control_forms += "<option value='1'>NTP-SYNC</option>";
+                         }
+
+                         if(sync_mode == 2){
+                            control_forms += "<option value='2' selected>MQTT-SYNC</option>";
+                         }else{
+                            control_forms += "<option value='2'>MQTT-SYNC</option>";
+                         }
+                         
+                     
+        control_forms += "</select><input type='submit' value='SAVE'/></form>";
+    
+    
+                     
+
+
+     control_forms += "<br><h3> CLOCK CONTROLS </h3>"
+                      "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='number' value='"+ String(timezone) + "' name='timezone' min='-12' max='12' required placeholder='1'/>"
+                     "<input type='submit' value='SET TIMEZONE'/>"
+                     "</form><br>"
+                     "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='text' value='"+ ntp_server_url + "' name='ntp_server_url' required placeholder='pool.ntp.org'/>"
+                     "<input type='submit' value='SET NTP SERVER URL'/>"
+                     "</form><br>";
+                     "<form name='btn_offmq' action='/save' method='GET'>"
+                     "<input type='number' min='0' max='1' value='"+ String(dalight_saving_enabled) + "' name='dalight_saving_enabled' required placeholder='0'/>"
+                     "<input type='submit' value='ENABLE GERMAN DAYLIGHT SAVING'/>"
+                     "</form>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
+                     "<input type='hidden' value='sendtime' name='sendtime' />"
+                     "<input type='submit' value='SEND NTP TIME TO CLOCK'/>"
+                     "</form><br>"
+                     "<br><h3> MQTT SETTINGS </h3>"
+                     "<form name='btn_offmq' action='/save' method='GET'>"
+                     "<input type='text' value='"+ String(mqtt_broker_url) + "' name='mqtt_broker_url' required placeholder='broker.hivemq.com'/>"
+                     "<input type='submit' value='SAVE MQTT BROKER'/>"
+                     "</form>"
+                     "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='number' value='"+ String(mqtt_broker_port) + "' name='mqtt_broker_port' min='1' max='65536' required placeholder='1883'/>"
+                     "<input type='submit' value='SET MQTT BROKER PORT'/>"
+                     "</form>"
+                     "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='text' value='"+ String(mqtt_topic) + "' name='mqtt_topic' required placeholder='/iot/sensor/temp'/>"
+                     "<input type='submit' value='SET MQTT TOPIC'/>"
+                     "</form>";
+
+
+
+   control_forms += "<form name='btn_on' action='/save' method='GET' required ><select name='mqtt_display_mode' id='mqtt_display_mode'>";
+
+                         if(mqtt_display_mode == 0){
+                            control_forms += "<option value='0' selected>4 DIGIT MODE</option>";
+                         }else{
+                            control_forms += "<option value='0'>4 DIGIT MODE</option>";
+                         }
+
+                         if(mqtt_display_mode == 1){
+                            control_forms += "<option value='1' selected>2 DIGIT MODE</option>";
+                         }else{
+                            control_forms += "<option value='1'>2 DIGIT MODE</option>";
+                         }
+                                      
+        control_forms += "</select><input type='submit' value='SAVE'/></form>";
+                         
+
+
+     control_forms += "<br><h3>OTHER SETTINGS </h3>"
+                    "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='number' value='"+ String(brightness) + "' name='brightness' min='0' max='255' required placeholder='255'/>"
+                     "<input type='submit' value='SET BRIGHTNESS'/>"
+                     "</form><br><br><br>"
+                      "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='number' value='"+ String(led_offset) + "' name='led_offset' min='0' max='10' required placeholder='0'/>"
+                     "<input type='submit' value='SET LED OFFSET'/>"
+                     "</form><br><br><br>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
+                     "<input type='hidden' value='eepromread' name='eepromread' />"
+                     "<input type='submit' value='READ STORED CONFIG'/>"
+                     "</form><br>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
+                     "<input type='hidden' value='fsformat' name='fsformat' />"
+                     "<input type='submit' value='DELETE CONFIGURATION'/>"
+                     "</form><br>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
+                     "<input type='hidden' value='abi' name='abi' />"
+                     "<input type='submit' value='START ANTI BURN IN CYCLE'/>"
+                     "</form><br>"
+                     "<form name='btn_on' action='/save' method='GET' required >"
+                     "<input type='hidden' value='factreset' name='factreset' />"
+                     "<input type='submit' value='FACTORY RESET'/>"
+                     "</form><br>";
+
+
+
+    control_forms += "<br><hr><h3>LAST SYSTEM MESSAGE</h3><br>" + last_error;
+
+    server.send(200, "text/html", phead_1 + WEBSITE_TITLE + phead_2 + pstart + control_forms + pend);
+>>>>>>> Stashed changes
 }
 
 
@@ -931,12 +1249,18 @@ void display_ip() {
     }
     delay(1000);
   }
+<<<<<<< Updated upstream
 }
+=======
+
+  
+>>>>>>> Stashed changes
 void setup(void)
 {
 
 
 
+<<<<<<< Updated upstream
 
   Serial.begin(SERIAL_BAUD_RATE);
   Serial.println("_setup_started_");
@@ -974,6 +1298,45 @@ void setup(void)
   } else {
     update_clock_display(42, 42, 42, 192, 255, false); //DISPLAY WIFI ERROR
   }
+=======
+    Serial.begin(SERIAL_BAUD_RATE);
+    Serial.println("_setup_started_");
+    // START THE FILESYSTEM
+    if (SPIFFS.begin()) {
+        last_error = "SPIFFS Initialisierung....OK";
+    }
+    else {
+        last_error = "SPIFFS Initialisierung...Fehler!";
+
+    }
+
+    
+    // LOAD SETTINGS
+    restore_eeprom_values();
+
+    //SETUP NEOPIXELS
+    pixels.begin();
+    pixels.clear();
+
+    test_digits();
+    
+    // START WFIFIMANAGER FOR CAPTIVE PORTAL
+    WiFiManager wifiManager;
+    wifiManager.setDebugOutput(true);
+    wifiManager.setTimeout(120);
+    wifiManager.setConfigPortalTimeout(30);
+    wifiManager.setAPClientCheck(true);
+    wifiManager.setBreakAfterConfig(true);
+    wifiManager.setClass("invert"); 
+    //TRY TO CONNECT
+    // AND DISPLAY IP ON CLOCKS HOUR DISPLAY (FOR 2 DIGIT CLOCKS)
+    if(wifiManager.autoConnect("LixieClockConfiguration")){
+      display_ip();
+      
+    }else{
+      update_clock_display(42, 42, 42, 192, 255,false); //DISPLAY WIFI ERROR
+    }
+>>>>>>> Stashed changes
 
   if (MDNS.begin((MDNS_NAME + String(get_esp_chip_id())).c_str())) {
   }
@@ -992,8 +1355,65 @@ void setup(void)
     if (ArduinoOTA.getCommand() == U_FLASH) {
       type = "sketch";
     }
+<<<<<<< Updated upstream
     else { // U_SPIFFS
       type = "filesystem";
+=======
+    //WEBSERVER ROUTES
+    delay(1000);
+    server.on("/", handleRoot);
+    server.on("/save", handleSave);
+    server.on("/index.html", handleRoot);
+    server.onNotFound(handleNotFound);
+    server.begin();
+    
+    //START OTA LIB
+    ArduinoOTA.setHostname((MDNS_NAME + String(get_esp_chip_id())).c_str());
+    ArduinoOTA.onStart([]() {
+        String type;
+        if (ArduinoOTA.getCommand() == U_FLASH) {
+            type = "sketch";
+        }
+        else { // U_SPIFFS
+            type = "filesystem";
+        }
+        SPIFFS.end();
+    });
+    ArduinoOTA.onEnd([]() {});
+    ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {});
+    ArduinoOTA.onError([](ota_error_t error) {});
+    ArduinoOTA.onEnd([]() {
+        //if (SPIFFS.begin(true)) {
+       //     restore_eeprom_values(); // RESTORE FILE SETTINGS
+       // }
+       ESP.restart();
+    });
+    ArduinoOTA.begin();
+
+
+    //SETUP  NTP CLIENT
+    timeClient.setTimeOffset(timezone);
+    timeClient.setPoolServerName(ntp_server_url.c_str());
+    timeClient.begin();
+
+    timeClient.setTimeOffset(timezone*3600);
+    timeClient.forceUpdate();
+
+    //SETUP MQTT
+    setup_mqtt_client();
+    
+  
+    
+  
+  
+    //RTC INIT
+    Wire.begin();
+    is_rtc_present = true;
+    if (!rtc.begin()) {
+      last_error = "_rct_begin_error_";
+      Serial.println(last_error);
+      is_rtc_present = false;
+>>>>>>> Stashed changes
     }
     SPIFFS.end();
   });
