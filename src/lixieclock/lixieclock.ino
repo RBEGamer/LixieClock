@@ -1,5 +1,5 @@
 
-#define VERSION "1.3"
+#define VERSION "1.4"
 //#define USE_LITTLEFS
 #define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
 
@@ -77,7 +77,6 @@
 #define WEBSITE_TITLE "Lixie Clock Configuration" // name your device
 #define SERIAL_BAUD_RATE 9600
 #define NTP_SEND_TIME_INTERVAL 5 //sende zeit an uhr all x minuten
-
 #define DEFAULT_NTP_SERVER "pool.ntp.org"
 #define DEFAULT_TIMEZONE 1
 #define DEFAULT_MQTT_BROKER "192.168.178.89"
@@ -87,6 +86,7 @@
 #define DEFAULT_BEIGHTNESS 255
 #define DEFAULT_DLS 0
 #define DEFAULT_DIGIT_ORDER 0
+#define DEFAULT_DARKMODE_DIMMING 50
 //ON THE ESP32 PCB VERSION IS AN FIRST LED ON THE BOTTOM SIDE OF THE PCB FOR STATUS INDICATION
 //SO FOR INDEXING THE CLOCK DIGITS AN OFFSET OF 1 MUST BE ADDED
 //IF YOU A RE USING A D1 MINI DIRECTLY CONNECTED TO THE FIST DIGIT LED THE OFFSET IS ZERO
@@ -123,7 +123,11 @@ const String BOARD_INFO= "LIXIE_FW_" + String(VERSION) + "_BOARD_" + "ESP32";
 #endif
 
 
+// DARKMODE
+  const int DARKMODE_START_HOURS = 0;
+    const int DARKMODE_STOP_HOURS = 6;
 
+    
 // NEOPIXEL CONF ------------------------------
 
 const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
@@ -152,6 +156,7 @@ const char* file_brightness = "/brightness.txt";
 const char* file_dalight_saving_enabled = "/enabledls.txt";
 const char* file_led_offset = "/ledoffset.txt";
 const char* file_digit_order = "/digitorder.txt";
+const char* file_darkmode_dimming = "/darkmode_dimming.txt";
 //VARS
 int sync_mode = 0;
 int timezone = 0;
@@ -187,6 +192,7 @@ bool is_rtc_present = false;
 unsigned long timeNow = 0;
 unsigned long timeLast = 0;
 int digit_order = 0;
+int darkmode_dimming = 50; // %
 
 // INSTANCES --------------------------------------------
 
@@ -340,6 +346,7 @@ void restore_eeprom_values()
     led_offset = read_file(file_led_offset, String(DEFAULT_LED_OFFSET)).toInt();
     dalight_saving_enabled = read_file(file_dalight_saving_enabled, String(DEFAULT_DLS)).toInt();
     digit_order = read_file(file_digit_order, String(DEFAULT_DIGIT_ORDER)).toInt();
+    darkmode_dimming = read_file(file_darkmode_dimming, String(DEFAULT_DARKMODE_DIMMING)).toInt();
 
 }
 
@@ -368,6 +375,7 @@ void save_values_to_eeprom()
     write_file(file_dalight_saving_enabled, String(dalight_saving_enabled));
     write_file(file_led_offset, String(led_offset));
     write_file(file_digit_order, String(digit_order));
+    write_file(file_darkmode_dimming, String(darkmode_dimming));
  
 }
 
@@ -385,6 +393,7 @@ void write_deffault_to_eeprom(){
            dalight_saving_enabled = DEFAULT_DLS;
            led_offset = DEFAULT_LED_OFFSET;
            digit_order = DEFAULT_DIGIT_ORDER;
+           darkmode_dimming = DEFAULT_DARKMODE_DIMMING;
 
            
   save_values_to_eeprom();
@@ -602,6 +611,10 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     const int s_ones = s % 10;
   
     pixels.clear();
+    
+    
+    
+    
     //JUST INDICATE OVER THE PCB LED THAT THE CLOCK IS WOKRING
     if(led_offset > 0){
       pixels.setPixelColor(0,digit_color(0,0,false, col, _bright));
@@ -723,6 +736,12 @@ void handleSave()
         if(server.argName(i) == "led_offset"){
            led_offset = server.arg(i).toInt();
            last_error = "set led offset to" + String(led_offset);
+           last = 0;
+           }
+
+        if(server.argName(i) == "darkmode_dimming"){
+           darkmode_dimming = server.arg(i).toInt();
+           last_error = "set darkmode_dimming to" + String(darkmode_dimming);
            last = 0;
            }
 
@@ -901,13 +920,20 @@ void handleRoot()
 
      control_forms += "<br><h3>OTHER SETTINGS </h3>"
                     "<form name='btn_off' action='/save' method='GET'>"
-                     "<input type='number' value='"+ String(brightness) + "' name='brightness' min='0' max='255' required placeholder='255'/>"
+                     "<input type='number' value='"+ String(brightness) + "' name='brightness' min='10' max='255' required placeholder='255'/>"
                      "<input type='submit' value='SET BRIGHTNESS'/>"
                      "</form><br><br><br>"
                      "<form name='btn_off' action='/save' method='GET'>"
                      "<input type='number' value='"+ String(led_offset) + "' name='led_offset' min='0' max='10' required placeholder='0'/>"
                      "<input type='submit' value='SET LED OFFSET'/>"
                      "</form><br><br><br>"
+                      "<form name='btn_off' action='/save' method='GET'>"
+                     "<input type='number' value='"+ String(darkmode_dimming) + "' name='darkmode_dimming' min='0' max='90' required placeholder='50'/>"
+                     "<input type='submit' value='SET DARKMODE DIMMING %'/>"
+                     "</form><br><br><br>"
+
+
+                     
                      "<form name='btn_on' action='/save' method='GET' required >"
                      "<input type='hidden' value='eepromread' name='eepromread' />"
                      "<input type='submit' value='READ STORED CONFIG'/>"
@@ -1196,11 +1222,19 @@ void loop(void)
      
       
     //UPDATE CLOCK DISPLAY
-
+  
     // SET DISPLAY CLOCK
     if (sync_mode == 1 && !abi_started) {
-     update_clock_display(rtc_hours_tmp, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), brightness, false);
-
+      int tmp_brightness = brightness;
+      //APPLY DARKMODE
+      if(rtc_hours_tmp >= DARKMODE_START_HOURS && rtc_hours_tmp < DARKMODE_STOP_HOURS){
+        tmp_brightness = (int)(tmp_brightness * (1.0 - ((darkmode_dimming % 100) / 100.0)));
+      }
+      if(tmp_brightness < 10){
+        tmp_brightness = 10;
+       }
+      update_clock_display(rtc_hours_tmp, rtc_mins, rtc_secs, map(rtc_secs,0,60,0,255), tmp_brightness, false);
+      
       //MQTT
     }else if (sync_mode == 2 && !abi_started) {
       update_clock_display(mqtt_hours, mqtt_mins, mqtt_secs, map(mqtt_mins,0,99,0,255), brightness, true);
