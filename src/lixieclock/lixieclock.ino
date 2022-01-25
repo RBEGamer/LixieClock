@@ -1,8 +1,15 @@
 
-#define VERSION "1.2"
+#define VERSION "1.3"
+//#define USE_LITTLEFS
+#define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
+
+
+
 
 #include <Arduino.h>
 #include "FS.h"
+
+
 
 
 
@@ -16,7 +23,7 @@
 
 #ifdef ESP32
 #include <WebServer.h>
-//#define USE_LITTLEFS
+
 
 #ifdef USE_LITTLEFS
   #define SPIFFS LITTLEFS
@@ -79,7 +86,7 @@
 #define DEFAULT_MQTT_DISPLAY_MODE 0
 #define DEFAULT_BEIGHTNESS 255
 #define DEFAULT_DLS 0
-
+#define DEFAULT_DIGIT_ORDER 0
 //ON THE ESP32 PCB VERSION IS AN FIRST LED ON THE BOTTOM SIDE OF THE PCB FOR STATUS INDICATION
 //SO FOR INDEXING THE CLOCK DIGITS AN OFFSET OF 1 MUST BE ADDED
 //IF YOU A RE USING A D1 MINI DIRECTLY CONNECTED TO THE FIST DIGIT LED THE OFFSET IS ZERO
@@ -123,7 +130,13 @@ const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
 const int NEOPIXEL_DIGIT_OFFSET = 10;
 const int NUM_NEOPIXELS = (COUNT_CLOCK_DIGITS*10) + NEOPIXEL_DIGIT_OFFSET; //10 leds per digit
 //const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8};
+
+#if defined(PCB_V1_FIX)
+const int led_index_digits[] = {0, 9, 8, 7, 6, 5, 4, 3, 2, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
+#else
 const int led_index_digits[] = {0, 9, 8, 6, 7, 5, 4, 2, 3, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
+#endif
+
 const int digit_offsets[6] = {0, 10 ,20 ,30, 40, 50}; //HOUR_TENS HOUR_ONES MINUTES_TENS MINUTES_ONES
 
 // END NEOPIXEL CONF ---------------------------
@@ -138,7 +151,7 @@ const char* file_mqtt_display_mode = "/mqttdispmode.txt";
 const char* file_brightness = "/brightness.txt";
 const char* file_dalight_saving_enabled = "/enabledls.txt";
 const char* file_led_offset = "/ledoffset.txt";
-
+const char* file_digit_order = "/digitorder.txt";
 //VARS
 int sync_mode = 0;
 int timezone = 0;
@@ -173,7 +186,7 @@ bool is_rtc_present = false;
 //USEDE FOR SOFTWARE CLOCK
 unsigned long timeNow = 0;
 unsigned long timeLast = 0;
-
+int digit_order = 0;
 
 // INSTANCES --------------------------------------------
 
@@ -326,6 +339,7 @@ void restore_eeprom_values()
     brightness = read_file(file_brightness, String(DEFAULT_BEIGHTNESS)).toInt();
     led_offset = read_file(file_led_offset, String(DEFAULT_LED_OFFSET)).toInt();
     dalight_saving_enabled = read_file(file_dalight_saving_enabled, String(DEFAULT_DLS)).toInt();
+    digit_order = read_file(file_digit_order, String(DEFAULT_DIGIT_ORDER)).toInt();
 
 }
 
@@ -353,6 +367,7 @@ void save_values_to_eeprom()
     write_file(file_brightness, String(brightness));
     write_file(file_dalight_saving_enabled, String(dalight_saving_enabled));
     write_file(file_led_offset, String(led_offset));
+    write_file(file_digit_order, String(digit_order));
  
 }
 
@@ -369,6 +384,7 @@ void write_deffault_to_eeprom(){
            brightness = DEFAULT_BEIGHTNESS;
            dalight_saving_enabled = DEFAULT_DLS;
            led_offset = DEFAULT_LED_OFFSET;
+           digit_order = DEFAULT_DIGIT_ORDER;
 
            
   save_values_to_eeprom();
@@ -587,10 +603,12 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
   
     pixels.clear();
     //JUST INDICATE OVER THE PCB LED THAT THE CLOCK IS WOKRING
-    if(NEOPIXEL_DIGIT_OFFSET > 0){
+    if(led_offset > 0){
       pixels.setPixelColor(0,digit_color(0,0,false, col, _bright));
     }
 
+
+      
     
     if(COUNT_CLOCK_DIGITS >= 2){
       pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens] + led_offset, digit_color(h_tens,0,_disable_leading_zero, col, _bright));
@@ -607,6 +625,7 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
       pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones] + led_offset, digit_color(s_ones,2,_disable_leading_zero, col, _bright));
     }
     
+  
    
     pixels.show();   // Send the updated pixel colors to the hardware.
  
@@ -706,7 +725,13 @@ void handleSave()
            last_error = "set led offset to" + String(led_offset);
            last = 0;
            }
-     
+
+       if(server.argName(i) == "digit_order"){
+           digit_order = server.arg(i).toInt();
+           last_error = "set digit_order to" + String(digit_order);
+           last = 0;
+           }
+           
         // mqtt_broker_port
         if (server.argName(i) == "mqtt_topic") {
             unsub_mqtt_client();
@@ -879,7 +904,7 @@ void handleRoot()
                      "<input type='number' value='"+ String(brightness) + "' name='brightness' min='0' max='255' required placeholder='255'/>"
                      "<input type='submit' value='SET BRIGHTNESS'/>"
                      "</form><br><br><br>"
-                      "<form name='btn_off' action='/save' method='GET'>"
+                     "<form name='btn_off' action='/save' method='GET'>"
                      "<input type='number' value='"+ String(led_offset) + "' name='led_offset' min='0' max='10' required placeholder='0'/>"
                      "<input type='submit' value='SET LED OFFSET'/>"
                      "</form><br><br><br>"
@@ -983,11 +1008,14 @@ void setup(void)
     pixels.begin();
     pixels.clear();
 
+
+
+
     test_digits();
     
     // START WFIFIMANAGER FOR CAPTIVE PORTAL
     WiFiManager wifiManager;
-    wifiManager.setDebugOutput(true);
+    wifiManager.setDebugOutput(false);
     wifiManager.setTimeout(120);
     wifiManager.setConfigPortalTimeout(30);
     wifiManager.setAPClientCheck(true);
@@ -1092,6 +1120,7 @@ void setup(void)
 
 void loop(void)
 {
+
     //HANDLE SERVER
     server.handleClient();
 
