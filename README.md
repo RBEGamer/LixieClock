@@ -106,13 +106,13 @@ Hierzu wird unter dem Punkt `Zusätzliche Boardverwalter-URLs` die folgende Zeil
 
 * `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
-#### OPTIONAL
+#### NOTE
 Falls ein `ESP32` verwendet wird muss diese hinzugefügt werden:
 
 * `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json`
 
 Allgemein ist die Software mit dem `ESP6266` (nicht `ESP6266-01`) und dem `ESP32` kompatibel.
-#### ENDE OPTIONAL
+#### ENDE NOTE
 
 Nach dem Speichern der Einstellungen muss das Board noch installiert werden.
 Dazu wird unter `Werkzeuge -> Board -> Boardverwalter` der `ESP8266` installiert.
