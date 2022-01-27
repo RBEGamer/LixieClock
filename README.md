@@ -64,7 +64,7 @@ Jedes LED MOdul besteht aus drei Schichten:
 Zuerst wird die Schtzfolien von den einzelnen Ziffern entfernt und anschließend mit Glasreiniger entfettet.
 Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in die Halterung kommt man nur noch sehr schwer an die Flächen.
 
-Jetzt werden sie einzelnen Ziffern in den Ziffern-Halter eingesetzt. Dabei müssen diese mit der gravierten Seite alle  in die gleiche Richtung zeigen.
+Jetzt werden sie einzelnen Ziffern in den `Ziffern-Halter` eingesetzt. Dabei müssen diese mit der gravierten Seite alle  in die gleiche Richtung zeigen.
 Auch ist die Reihenfolge wichtig!
 Von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
 
@@ -72,3 +72,7 @@ Von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
 
 
 ![single_digit_digits_only](./documentation/images/single_digit_digits_only.jpg)
+
+Anschließend werden die Ziffern auf den `Lighguide` gesetzt. Dabei muss die gravierte Seite der Ziffern in  Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.
+
+Dieser Prozess, wird für alle vier Ziffern-Blöcke wiederholt.
