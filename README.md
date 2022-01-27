@@ -15,7 +15,7 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * [OPTINAL] Heißkleber
 * Glasreiniger
 * Mikro-USB Kabel
-
+* Holzkleber
 
 # TEILELISTE
 
@@ -121,8 +121,19 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die M
 
 ![led_module_and_top_cover](./documentation/images/led_module_and_top_cover.jpg)
 
+### 3. Montage Bodenplatte
 
-### 3. Montage Elektronik
+Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
+
+Hier werden die folgenden Sperrholzteile benötigt:
+
+* 1x `SPACER_TOP`
+* 1x `SPACER_BOTTOM`
+
+Diese dienen als Abstandshalter zwischen des `TOP_COVERS` und der Bodenplatte `BOTTOM_COVER`.
+
+### 4. Montage Elektronik
 
 Für die Verkabelung und Montage der Elektronik, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
 Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
@@ -153,6 +164,8 @@ Falls dies nicht der Fall ist, ist die Verkabelung zu Prüfen.
 Um den Zusammenbau zu vereinfachen, werden die einzelnen Stifleisten mit dem `Jumperwires` leicht zueinender (ca. 45°) gebogen und mit Heisskleber fixiert.
 Auch die Kabel ziwschen den Elementen werden mit Kabelbindern und/oder Heisskleber an der `TOP_PLATE` fixiert.
 
-### 4. Endmontage
+![electric_complete](./documentation/images/electric_complete.jpg)
+
+### 5. Endmontage
 
 
