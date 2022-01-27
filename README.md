@@ -53,13 +53,12 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 ![single_digit_new](./documentation/images/single_digit_new.jpg)
 
-Jedes LED MOdul besteht aus drei Schichten:
+Jedes LED Modul besteht aus drei Schichten:
 
-* 10x Arcyglglas Ziffern
-* 1x Sperrholz Ziffern-Halter
-* 1x Sperrholz Lightguide
-* 1x PCB Spacer
-* 1x PCB mit Bestückter LED Seite
+* 4x 10x Arcyglglas Ziffern
+* 4x 1x Sperrholz Ziffern-Halter
+* 4x 1x Sperrholz Lightguide
+
 
 Zuerst wird die Schtzfolien von den einzelnen Ziffern entfernt und anschließend mit Glasreiniger entfettet.
 Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in die Halterung kommt man nur noch sehr schwer an die Flächen.
@@ -76,3 +75,46 @@ Von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
 Anschließend werden die Ziffern auf den `Lighguide` gesetzt. Dabei muss die gravierte Seite der Ziffern in  Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.
 
 Dieser Prozess, wird für alle vier Ziffern-Blöcke wiederholt.
+
+
+
+#### NOTE
+
+![pcb_solder](./documentation/images/pcb_solder.jpg)
+
+Sollte bei den vier `LED-PCB`s die zwei Stiftleisten nicht bestückt sein, muss dies zuerst geschehen.
+Dazu werden diese in die beiden vorgesehenden 1x3 Pin Bohrungen gesteckt. Diese sind auf der Platine mit `H1` und `H2` beschriftet.
+Die lange Seite der Stiftleisten zeigt dabei von der LED Seite weg.
+
+### 2. Zusammenbau Oberseite
+
+Nachdem alle vier Module soweit vorbereitet wurden, können diese nun mit der oberen Bodenplatte zusammengeschraubt werden.
+Dabei wird auch die LED PCB und der `PCB Spacer` zusätzlich benötigt.
+
+* 4x PCB Spacer
+* 4x LED_PCB mit Bestückter LED Seite
+* 4x Top-Cover
+
+
+Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten ind die Aussüarungen gelegt.
+
+**WICHTIG ** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
+
+Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TOP_COVER` dafür auf eine Tasse zu stellen.
+
+![led_pcb_placement](./documentation/images/led_pcb_placement.jpg)
+
+
+Anschließend wird auf jede `LED_PCB` der Sperrholz `PCB_SPACER` gelegt, hier ist die Ausrichtung nicht relevant.
+Als letztes wird das im ersten Schritt zusammengebaute Ziffern-Modul auf den `PCB_Spacer` gesetzt.
+Dabei ist die Ziffer `1` die vorderste Ziffer (richtung der `FRONT` MARKIERUNG).
+Nach dem Platzieren der vier Ziffern-Module, sollten diise jeweils mit zwei der `M40x30` Schrauben und `M4` Mutter gesichert werden.
+Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die Montage im folgendnen Schritt.
+
+![led_module_and_top_cover](./documentation/images/led_module_and_top_cover.jpg)
+
+
+### 3. Montage Elektronik
+
+
+
