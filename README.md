@@ -46,7 +46,9 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * 4x 3x`Jumperwires FEMALE<=>FEMALE`
 
 
+## SOFTWARE 
 
+* Arduino IDE
 
 
 
@@ -55,9 +57,62 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 ### 0. PROGRAMMIERUNG BASIS-PROGRAMM
 
+Zum späteren Funktionstest wird hier zuerst der  `ESP8266 D1 Mini` programmiert.
+Somit kann die vollstänige Funktionalität vor dem finalen Zusammenbau überprüft werden.
 
+Hierzu sollte die Arduino IDE installiert und dieses Git-Repository heruntergeladen sein.
+Unter Linux kann dies wie folgt geschehen:
 
+```bash
+# ###### LINUX INSTALL ######
+$ sudo apt update && sudo apt install -y git xz-utils
 
+# CLONE REPOSITORY
+$ cd ~ && git clone https://github.com/RBEGamer/LixieClock ./LixieClock
+
+# INSTALL ARDUINO IDE
+$ wget https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz
+$ tar -xf arduino-1.8.19-linux64.tar.xz
+$ cd arduino-1.8.19-linux64 && bash ./install.sh
+
+# ALLOW USB COMMUNICATION
+$ sudo usermod -a -G dialout $USER
+$ sudo reboot
+```
+
+Das Demo-Programm der Uhr, welches eine vollständige über NTP Synchronisierte Uhr darstellt, benötigt einige Bibliotheken.
+Diese könne über den Library-Manager der Arduino IDE installiert werden oder aus diesem Repository kopiert werden.
+Unter Windows wird der Inhalt des Ordners `./src/lixieclock/required_libs` nach `BENUTZER_VERZEICHNIS/Dokumente/Arduino/libraries` kopiert.
+
+Unter MacOS und Linux befindet sich der `Arduino` Ordner direkt im Benutzer-Ordner.
+Unter Linux muss aufgepasst werden, wie die Arduino IDE installiert wurde.
+Wurde `snap install arduino` verwendet, befindet sich der Library-Order im Snap Verzeichnis `~/.snap/arduino/current/library`.
+
+```bash
+# ###### LINUX LIB COPY ######
+ 
+$ cd ~
+$ cp -Rf ./LixieClock/src/lixieclock/required_libs ~/Arduino/libraries
+```
+
+Anschließend kann die Arduino IDE geäffnet werden.
+Unter den Einstellungen muss zuerst die Konfiguration für den `ESP8266` geladen werden. Hierzu wird unter dem Punkt `Zisätzliche Boardverwalter-URLs` die folgende Zeile hinzugefügt:
+
+* `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
+
+#### OPTIONAL
+Falls ein `ESP32` verwendet wird muss diese hinzugefügt werden:
+
+* `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json`
+
+Allgemein ist die Software mit dem `ESP6266` (nicht `ESP6266-01`) und dem `ESP32` kompatibel.
+#### ENDE OPTIONAL
+
+Nach dem Speichern der Einstellungen muss das Board noch installiert werden.
+Dazu wird unter `Werkzeuge -> Board -> Boardverwalter` der `ESP8266` installiert.
+Anschlißend kann dieser alss Board ausgewählt werden.
+
+![sw_sel_board](./documentation/images/sw_sel_board.PNG)
 
 ### 1. LED MODULE VORBEREITEN
 
