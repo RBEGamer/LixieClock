@@ -5,6 +5,9 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 ![4_digit_complete](./documentation/images/4_digit_complete.jpg)
 
 
+![4_digit_on_2](./documentation/images/4_digit_on_2.jpg)
+
+
 
 
 # WERKZEUG
@@ -116,7 +119,7 @@ Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TO
 Anschließend wird auf jede `LED_PCB` der Sperrholz `PCB_SPACER` gelegt, hier ist die Ausrichtung nicht relevant.
 Als letztes wird das im ersten Schritt zusammengebaute Ziffern-Modul auf den `PCB_Spacer` gesetzt.
 Dabei ist die Ziffer `1` die vorderste Ziffer (richtung der `FRONT` MARKIERUNG).
-Nach dem Platzieren der vier Ziffern-Module, sollten diise jeweils mit zwei der `M40x30` Schrauben und `M4` Mutter gesichert werden.
+Nach dem Platzieren der vier Ziffern-Module, sollten diise jeweils mit einer der `M40x30` Schrauben und `M4` Mutter gesichert werden.
 Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die Montage im folgendnen Schritt.
 
 ![led_module_and_top_cover](./documentation/images/led_module_and_top_cover.jpg)
@@ -127,7 +130,6 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die M
 
 Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
 Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
-
 Hier werden die folgenden Sperrholzteile benötigt:
 
 * 1x `SPACER_TOP`
@@ -141,12 +143,18 @@ Da diese beiden Teile leicht zerbrechlich sind bietet es sich an, diese mit etwa
 
 ![spacers_glue](./documentation/images/spacers_glue.jpg)
 
-Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Arretierung dieser mit zwei Schrauben 
-
-
-![spacers_glue](./documentation/images/spacers_glue.jpg)
+Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Arretierung dieser mit zwei Schrauben für 5 Minuten verschraubt.
+Nach dieser Zeit können diese wieder gelößt werden.
 
 ![spacer_final](./documentation/images/spacer_final.jpg)
+
+
+#### ENDE OPTIONAL
+
+
+Die Schrauben (aus Schritt 2), welche die Module gehalten haben können jetzt wieder gelößt werden.
+Die beiden Spacer (geklebt oder nicht), werden anschlißend auf das `TOP_COVER` gesetzt, sodass sich die Aussparung unten links in der Ecke befindet und sich somit auf der Rückseite der Uhr befindet.
+Anschlißend können die Module wieder mit je einer Schraube fixiert werden. Somit sollten auch die beiden Spacer fixiert sein.
 
 
 ### 4. Montage Elektronik
@@ -183,4 +191,12 @@ Auch die Kabel ziwschen den Elementen werden mit Kabelbindern und/oder Heisskleb
 
 ### 5. Endmontage
 
+Im letzten Schritt wirde der `ESP8266 D1 Mini` in die Aussparung des Spacers mit Heisskleber geklebt, sodass der USB-Anschluss nach aussen zeigt.
+Geklebt wird auf der glatten Seite des `ESP8266 D1 Mini` (auf der gegenüberliegenden Seite des USB Anschluss).
 
+![esp8266_usb](./documentation/images/esp8266_usb.jpg)
+
+Final kann die Bodenplatte `BOTTOM_COVER` Montiert werden. Dazu werden die zuvor zur Montage genutzten Schrauben wieder gelösst und das `BOTTOM_COVER` auf die Spacer gelegt. Alle Schrauben werden dann handfest angezogen.
+
+
+![bottom_screw](./documentation/images/bottom_screw.jpg)
