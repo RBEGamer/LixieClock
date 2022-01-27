@@ -291,6 +291,7 @@ Dieses heisst `LixieClockConfiguration`. Nach dem Vervinden mit diesem öffnet s
 
 **Anschließend die Uhr einmal neustarten!**
 
-Nach einer erfolgreichen Verbindng
+Nach einer erfolgreichen Verbindng, zeigt die Uhr ihre IP-Adresse auf den einzelnen Ziffern per Laufschrift an.
+Wird diese Adresse in einem Browser aus dem gleichen Netz aufgerufen, kann diese umfassend konfiguriert werden.
 
 ![web_config](./documentation/images/web_config.png)
