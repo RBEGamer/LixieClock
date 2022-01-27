@@ -288,3 +288,9 @@ Hierzu wird ein WLAN benötigt, mit welchem die Uhr einen Zeitserver abgragen ka
 Um dieses WLAN festzulegen, wird die Uhr normal mit Spannung versorgt. Mit einem anderen Endgerät z.B. dem Handy kann sich mit dem WLAN-Access-Point der Uhr verbunden werden.
 Dieses heisst `LixieClockConfiguration`. Nach dem Vervinden mit diesem öffnet sich eine Konfigurationsübersicht in der das WLAN gesetzt werden kann.
 **Achtung** Nur 2.4 Ghz Netzwerke werden vom `ESP8266` und `ESP32` unterstützt.
+
+**Anschließend die Uhr einmal neustarten!**
+
+Nach einer erfolgreichen Verbindng
+
+![web_config](./documentation/images/web_config.png)
