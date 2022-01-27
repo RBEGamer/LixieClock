@@ -112,7 +112,7 @@ Nach dem Speichern der Einstellungen muss das Board noch installiert werden.
 Dazu wird unter `Werkzeuge -> Board -> Boardverwalter` der `ESP8266` installiert.
 Anschlißend kann dieser alss Board ausgewählt werden.
 
-![sw_sel_board](./documentation/images/sw_sel_board.PNG)
+![sw_sel_board](./documentation/images/sw_sel_board.png)
 
 ### 1. LED MODULE VORBEREITEN
 
