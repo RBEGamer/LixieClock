@@ -15,14 +15,14 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * Lötkolben + Lötzinn
 * Philips-Kopf Schraubendreher
 * Kleine Kabelbilder
-* [OPTINAL] Heißkleber
+* Heißkleber
 * Glasreiniger
 * Mikro-USB Kabel
-* Holzkleber
+* [OPTINAL] Holzkleber
 
 # TEILELISTE
 
-
+## BIlD ZEIGT ALTE REVISION
 ![4_digit_parts](./documentation/images/4_digit_parts.jpg)
 
 
