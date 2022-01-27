@@ -24,18 +24,25 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="869.84439"
-     inkscape:cy="329.89204"
+     inkscape:zoom="0.9899495"
+     inkscape:cx="386.70401"
+     inkscape:cy="242.01144"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1807"
+     inkscape:window-width="2558"
      inkscape:window-height="1198"
-     inkscape:window-x="260"
-     inkscape:window-y="155"
-     inkscape:window-maximized="0" />
+     inkscape:window-x="274"
+     inkscape:window-y="144"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="43.832201,130.62749"
+       orientation="0,-1"
+       id="guide1029" />
+  </sodipodi:namedview>
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -44,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,7 +61,8 @@
      id="layer1">
     <g
        id="g1401"
-       transform="matrix(9.9999999,0,0,9.9999999,0.39208295,0.3176318)">
+       transform="matrix(9.9999999,0,0,9.9999999,0.39208295,0.3176318)"
+       style="display:inline">
       <path
          d="m 27.806621,0 a 0.6,0.6 -90 0 1 0.6,0.6 v 6.002 a 0.6,0.6 0 0 1 -0.6,0.6 H 0 a 0.6,0.6 90 0 1 -0.6,-0.6 V 0.6 A 0.6,0.6 -180 0 1 0,0 Z"
          fill="rgb(0,0,0)"
@@ -113,7 +121,7 @@
          transform="matrix(1,0,0,-1,0.6,7.202)"
          vector-effect="non-scaling-stroke"
          id="path12"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="m 27.106621,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
          fill="rgb(255,255,255)"
@@ -143,7 +151,7 @@
          transform="matrix(1,0,0,-1,0.6,7.202)"
          vector-effect="non-scaling-stroke"
          id="path18"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="M 4.9,1.7019999 V 5.502 H 5.5 V 1.7019999 Z"
          fill="rgb(255,255,255)"
@@ -293,7 +301,7 @@
          transform="matrix(1,0,0,-1,0.6,7.202)"
          vector-effect="non-scaling-stroke"
          id="path48"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="M 0.8,1.7019999 V 5.502 H 1.4 V 1.7019999 Z"
          fill="rgb(255,255,255)"
@@ -302,7 +310,7 @@
          stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path50"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1"
          transform="matrix(1,0,0,-1,0.6,7.202)" />
       <path
          d="M 2,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
@@ -312,7 +320,7 @@
          stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path50-7"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="M 4.9,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
@@ -330,7 +338,7 @@
          stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path50-3"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="M 11.3,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
@@ -348,7 +356,7 @@
          stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path50-38"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="M 19.402207,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
@@ -366,7 +374,7 @@
          stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path50-5"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="M 26.104414,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
@@ -375,7 +383,67 @@
          stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path50-4"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="display:inline;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.25778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+         x="3.4887493"
+         y="1.9861214"
+         id="text1244"><tspan
+           sodipodi:role="line"
+           x="3.4887493"
+           y="1.9861214"
+           style="font-size:0.388056px;fill:none;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+           id="tspan1254">HOUR TENS</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.25778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+         x="9.857728"
+         y="1.9647439"
+         id="text1244-4"><tspan
+           sodipodi:role="line"
+           x="9.857728"
+           y="1.9647439"
+           style="font-size:0.388056px;fill:none;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+           id="tspan1254-6">HOUR ONES</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.25778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+         x="17.808994"
+         y="2.0048344"
+         id="text1244-7"><tspan
+           sodipodi:role="line"
+           x="17.808994"
+           y="2.0048344"
+           style="font-size:0.388056px;fill:none;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+           id="tspan1254-2">MINUTE TENS</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.25778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+         x="24.652233"
+         y="2.0047395"
+         id="text1244-7-9"><tspan
+           sodipodi:role="line"
+           x="24.652233"
+           y="2.0047395"
+           style="font-size:0.388056px;fill:none;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+           id="tspan1254-2-9">MINUTE ONES</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:2.25778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+         x="3.3382781"
+         y="5.814661"
+         id="text1244-5"><tspan
+           x="3.3382781"
+           y="5.814661"
+           style="font-size:0.388056px;fill:none;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+           id="tspan1254-9"
+           sodipodi:role="line">FRONT</tspan></text>
+      <path
+         d="M 3.650592,3.7178849 H 2.8923187 V 4.5943154 H 2.5214553 l 0.7499229,0.807717 0.7500771,-0.807717 H 3.650592 Z"
+         fill="#0000ff"
+         id="path1018"
+         style="fill:none;stroke:#0000ff;stroke-width:0.00140346;stroke-opacity:1" />
     </g>
     <g
        id="g1601"
@@ -624,7 +692,7 @@
       <g
          id="g892"
          transform="translate(0.7,0.6980001)"
-         style="display:inline;fill:none;stroke:#0000ff;stroke-opacity:1">
+         style="display:none;fill:none;stroke:#0000ff;stroke-opacity:1">
         <path
            d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
            fill="rgb(0,0,0)"
@@ -798,7 +866,7 @@
       <g
          id="g892-5"
          transform="translate(7.4000001,0.7)"
-         style="fill:none;stroke:#0000ff;stroke-opacity:1">
+         style="display:none;fill:none;stroke:#0000ff;stroke-opacity:1">
         <path
            d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
            fill="rgb(0,0,0)"
@@ -972,7 +1040,7 @@
       <g
          id="g892-5-2"
          transform="translate(15.209414,0.7)"
-         style="fill:none;stroke:#0000ff;stroke-opacity:1">
+         style="display:none;fill:none;stroke:#0000ff;stroke-opacity:1">
         <path
            d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
            fill="rgb(0,0,0)"
@@ -1146,7 +1214,7 @@
       <g
          id="g892-5-2-2"
          transform="translate(21.911621,0.7)"
-         style="fill:none;stroke:#0000ff;stroke-opacity:1">
+         style="display:none;fill:none;stroke:#0000ff;stroke-opacity:1">
         <path
            d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
            fill="rgb(0,0,0)"
@@ -1318,5 +1386,21 @@
            style="fill:none;stroke:#0000ff;stroke-opacity:1" />
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="39.484379"
+       y="134.12363"
+       id="text1244-5-6"><tspan
+         x="39.484379"
+         y="134.12363"
+         style="font-size:3.88056px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan1254-9-6"
+         sodipodi:role="line">FRONT</tspan></text>
+    <path
+       d="m 43.079987,113.43935 h -7.582733 v 8.7643 H 31.78862 l 7.499229,8.07717 7.500771,-8.07717 h -3.708633 z"
+       fill="#0000ff"
+       id="path1018-8"
+       style="display:inline;stroke:#0000ff;stroke-width:0.0140346;stroke-opacity:1;fill:none" />
   </g>
 </svg>

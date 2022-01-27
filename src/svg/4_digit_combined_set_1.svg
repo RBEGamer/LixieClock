@@ -6,6 +6,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="272mm"
@@ -16,7 +17,452 @@
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    sodipodi:docname="4_digit_combined_set_1.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient994">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop990" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop992" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient986">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop982" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop984" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient986"
+       id="linearGradient988"
+       x1="37.351688"
+       y1="132.87424"
+       x2="39.327793"
+       y2="132.87424"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-3.4076865,-1.6704345)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient996"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-3.4076865,-1.6704345)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1060"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-6.9355693,2.163698)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1108"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-2.8597102,6.2395537)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1130"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.2696574,10.515866)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1152"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-2.5924407,14.391274)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1174"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.3364748,18.333499)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1196"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-2.5924407,22.208908)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1218"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.6037443,26.284768)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1240"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-2.659258,30.427446)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1262"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-7.0692052,34.503306)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1569"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(64.265141,-2.0126427)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1571"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(60.737259,1.8214903)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1573"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(64.813118,5.8973463)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1575"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(60.403171,10.173658)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1577"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(65.080387,14.049066)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1579"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(60.336353,17.991291)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1581"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(65.080387,21.8667)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1583"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(60.069084,25.94256)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1585"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(65.01357,30.085238)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1587"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(60.603623,34.161098)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1735"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(130.78895,-1.0677021)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1737"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(127.26107,2.7664309)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1739"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(131.33693,6.8422869)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1741"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(126.92698,11.118599)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1743"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(131.6042,14.994007)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1745"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(126.86016,18.936232)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1747"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(131.6042,22.811641)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1749"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(126.59289,26.887501)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1751"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(131.53738,31.030179)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1753"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(127.12743,35.106039)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1901"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(198.44668,-1.6346659)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1903"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(194.9188,2.1994666)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1905"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(198.99466,6.2753226)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1907"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(194.58471,10.551635)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1909"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(199.26193,14.427043)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1911"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(194.5179,18.369268)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1913"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(199.26193,22.244677)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1915"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(194.25063,26.320537)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1917"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(199.19511,30.463215)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1919"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(194.78516,34.539075)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient994"
+       id="linearGradient1983"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(16.230573,-4.5985611)"
+       x1="37.219396"
+       y1="132.87424"
+       x2="39.460084"
+       y2="132.87424" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,18 +470,25 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="777.56693"
-     inkscape:cy="351.79453"
+     inkscape:zoom="2.8"
+     inkscape:cx="257.77491"
+     inkscape:cy="640.06272"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1641"
+     inkscape:window-width="2703"
      inkscape:window-height="1198"
-     inkscape:window-x="418"
-     inkscape:window-y="143"
-     inkscape:window-maximized="0" />
+     inkscape:window-x="47"
+     inkscape:window-y="114"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="230.72042,9.9475035"
+       orientation="0,-1"
+       id="guide1243" />
+  </sodipodi:namedview>
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -44,17 +497,19 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     style="display:inline">
     <g
        id="g841"
-       transform="matrix(10,0,0,10,1.2653981,2.7026992)">
+       transform="matrix(10,0,0,10,1.2653981,2.7026992)"
+       style="display:inline">
       <path
          d="M -0.4,0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -77,7 +532,8 @@
     </g>
     <g
        id="g877"
-       transform="matrix(10,0,0,10,1.8267295,61.642014)">
+       transform="matrix(10,0,0,10,1.8267295,61.642014)"
+       style="display:inline">
       <path
          d="M -0.4,5.402 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 90 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -230,7 +686,8 @@
     </g>
     <g
        id="g917"
-       transform="matrix(10,0,0,10,1.2428068,120.26747)">
+       transform="matrix(10,0,0,10,1.2428068,120.26747)"
+       style="display:inline">
       <path
          d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
          fill="rgb(0,0,0)"
@@ -403,7 +860,8 @@
     </g>
     <g
        id="g841-0"
-       transform="matrix(10,0,0,10,68.892077,2.520996)">
+       transform="matrix(10,0,0,10,68.892077,2.520996)"
+       style="display:inline">
       <path
          d="M -0.4,0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -426,7 +884,8 @@
     </g>
     <g
        id="g877-2"
-       transform="matrix(10,0,0,10,69.453408,61.460311)">
+       transform="matrix(10,0,0,10,69.453408,61.460311)"
+       style="display:inline">
       <path
          d="M -0.4,5.402 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 90 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -579,7 +1038,8 @@
     </g>
     <g
        id="g917-9"
-       transform="matrix(10,0,0,10,68.869486,120.08577)">
+       transform="matrix(10,0,0,10,68.869486,120.08577)"
+       style="display:inline">
       <path
          d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
          fill="rgb(0,0,0)"
@@ -752,7 +1212,8 @@
     </g>
     <g
        id="g841-9"
-       transform="matrix(10,0,0,10,135.26929,2.9629621)">
+       transform="matrix(10,0,0,10,135.26929,2.9629621)"
+       style="display:inline">
       <path
          d="M -0.4,0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -775,7 +1236,8 @@
     </g>
     <g
        id="g877-1"
-       transform="matrix(10,0,0,10,135.83062,61.902277)">
+       transform="matrix(10,0,0,10,135.83062,61.902277)"
+       style="display:inline">
       <path
          d="M -0.4,5.402 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 90 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -928,7 +1390,8 @@
     </g>
     <g
        id="g917-3"
-       transform="matrix(10,0,0,10,135.2467,120.52774)">
+       transform="matrix(10,0,0,10,135.2467,120.52774)"
+       style="display:inline">
       <path
          d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
          fill="rgb(0,0,0)"
@@ -1101,7 +1564,8 @@
     </g>
     <g
        id="g841-0-1"
-       transform="matrix(10,0,0,10,202.89597,2.7812591)">
+       transform="matrix(10,0,0,10,202.89597,2.7812591)"
+       style="display:inline">
       <path
          d="M -0.4,0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -1124,7 +1588,8 @@
     </g>
     <g
        id="g877-2-5"
-       transform="matrix(10,0,0,10,203.4573,61.720574)">
+       transform="matrix(10,0,0,10,203.4573,61.720574)"
+       style="display:inline">
       <path
          d="M -0.4,5.402 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 90 0 1 -0.4,-0.4 z"
          fill="rgb(0,0,0)"
@@ -1277,7 +1742,8 @@
     </g>
     <g
        id="g917-9-7"
-       transform="matrix(10,0,0,10,202.87337,120.34604)">
+       transform="matrix(10,0,0,10,202.87337,120.34604)"
+       style="display:inline">
       <path
          d="m 5.995,0.4 v 5.002 a 0.4,0.4 0 0 1 -0.4,0.4 H 0 a 0.4,0.4 89.999999 0 1 -0.4,-0.4 V 0.4 A 0.4,0.4 -180 0 1 0,0 h 5.595 a 0.4,0.4 -90 0 1 0.4,0.4 z"
          fill="rgb(0,0,0)"
@@ -1448,5 +1914,549 @@
          id="path34-65-5"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient996);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="34.945488"
+       y="132.69931"
+       id="text980"><tspan
+         sodipodi:role="line"
+         id="tspan978"
+         x="34.945488"
+         y="132.69931"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient996);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1060);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="31.417606"
+       y="136.53345"
+       id="text980-1"><tspan
+         sodipodi:role="line"
+         id="tspan978-6"
+         x="31.417606"
+         y="136.53345"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1060);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1108);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="35.493465"
+       y="140.60931"
+       id="text980-1-5"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-2"
+         x="35.493465"
+         y="140.60931"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1108);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">8</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1130);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="31.083519"
+       y="144.88562"
+       id="text980-1-58"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-9"
+         x="31.083519"
+         y="144.88562"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1130);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">7</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1152);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="35.760735"
+       y="148.76102"
+       id="text980-1-0"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-8"
+         x="35.760735"
+         y="148.76102"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1152);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">6</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1174);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="31.016701"
+       y="152.70325"
+       id="text980-1-2"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-99"
+         x="31.016701"
+         y="152.70325"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1174);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1196);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="35.760735"
+       y="156.57866"
+       id="text980-1-09"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-5"
+         x="35.760735"
+         y="156.57866"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1196);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">4</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1218);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="30.74943"
+       y="160.65451"
+       id="text980-1-4"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-27"
+         x="30.74943"
+         y="160.65451"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1218);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1240);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="35.69392"
+       y="164.7972"
+       id="text980-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-7"
+         x="35.69392"
+         y="164.7972"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1240);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1262);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="31.283972"
+       y="168.87305"
+       id="text980-1-1"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-79"
+         x="31.283972"
+         y="168.87305"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1262);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1569);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="102.61832"
+       y="132.3571"
+       id="text980-14"><tspan
+         sodipodi:role="line"
+         id="tspan978-7"
+         x="102.61832"
+         y="132.3571"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1569);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1571);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="99.090439"
+       y="136.19124"
+       id="text980-1-3"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-6"
+         x="99.090439"
+         y="136.19124"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1571);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1573);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="103.1663"
+       y="140.26711"
+       id="text980-1-5-6"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-2-6"
+         x="103.1663"
+         y="140.26711"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1573);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">8</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1575);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="98.756348"
+       y="144.54341"
+       id="text980-1-58-0"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-9-7"
+         x="98.756348"
+         y="144.54341"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1575);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">7</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1577);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="103.43356"
+       y="148.41881"
+       id="text980-1-0-6"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-8-4"
+         x="103.43356"
+         y="148.41881"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1577);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">6</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1579);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="98.689529"
+       y="152.36104"
+       id="text980-1-2-4"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-99-1"
+         x="98.689529"
+         y="152.36104"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1579);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1581);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="103.43356"
+       y="156.23645"
+       id="text980-1-09-7"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-5-8"
+         x="103.43356"
+         y="156.23645"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1581);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">4</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1583);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="98.422264"
+       y="160.3123"
+       id="text980-1-4-2"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-27-5"
+         x="98.422264"
+         y="160.3123"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1583);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1585);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="103.36675"
+       y="164.45499"
+       id="text980-1-9-6"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-7-5"
+         x="103.36675"
+         y="164.45499"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1585);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1587);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="98.956802"
+       y="168.53084"
+       id="text980-1-1-2"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-79-7"
+         x="98.956802"
+         y="168.53084"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1587);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1735);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="169.14214"
+       y="133.30203"
+       id="text980-8"><tspan
+         sodipodi:role="line"
+         id="tspan978-8"
+         x="169.14214"
+         y="133.30203"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1735);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1737);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="165.61424"
+       y="137.13617"
+       id="text980-1-01"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-22"
+         x="165.61424"
+         y="137.13617"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1737);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1739);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="169.69011"
+       y="141.21204"
+       id="text980-1-5-4"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-2-4"
+         x="169.69011"
+         y="141.21204"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1739);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">8</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1741);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="165.28015"
+       y="145.48834"
+       id="text980-1-58-9"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-9-2"
+         x="165.28015"
+         y="145.48834"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1741);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">7</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1743);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="169.95737"
+       y="149.36374"
+       id="text980-1-0-9"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-8-9"
+         x="169.95737"
+         y="149.36374"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1743);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">6</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1745);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="165.21333"
+       y="153.30597"
+       id="text980-1-2-1"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-99-7"
+         x="165.21333"
+         y="153.30597"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1745);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1747);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="169.95737"
+       y="157.18138"
+       id="text980-1-09-1"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-5-4"
+         x="169.95737"
+         y="157.18138"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1747);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">4</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1749);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="164.94608"
+       y="161.25723"
+       id="text980-1-4-4"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-27-7"
+         x="164.94608"
+         y="161.25723"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1749);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1751);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="169.89056"
+       y="165.39992"
+       id="text980-1-9-1"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-7-2"
+         x="169.89056"
+         y="165.39992"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1751);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1753);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="165.48061"
+       y="169.47577"
+       id="text980-1-1-9"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-79-2"
+         x="165.48061"
+         y="169.47577"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1753);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1901);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="236.79988"
+       y="132.73508"
+       id="text980-7"><tspan
+         sodipodi:role="line"
+         id="tspan978-4"
+         x="236.79988"
+         y="132.73508"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1901);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1903);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="233.27199"
+       y="136.56921"
+       id="text980-1-6"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-93"
+         x="233.27199"
+         y="136.56921"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1903);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1905);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="237.34785"
+       y="140.64508"
+       id="text980-1-5-5"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-2-5"
+         x="237.34785"
+         y="140.64508"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1905);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">8</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1907);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="232.93791"
+       y="144.92139"
+       id="text980-1-58-99"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-9-76"
+         x="232.93791"
+         y="144.92139"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1907);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">7</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1909);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="237.61513"
+       y="148.79678"
+       id="text980-1-0-7"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-8-0"
+         x="237.61513"
+         y="148.79678"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1909);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">6</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1911);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="232.87108"
+       y="152.73901"
+       id="text980-1-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-99-5"
+         x="232.87108"
+         y="152.73901"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1911);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">5</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1913);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="237.61513"
+       y="156.61443"
+       id="text980-1-09-75"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-5-6"
+         x="237.61513"
+         y="156.61443"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1913);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">4</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1915);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="232.60381"
+       y="160.69028"
+       id="text980-1-4-46"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-27-1"
+         x="232.60381"
+         y="160.69028"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1915);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1917);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="237.54829"
+       y="164.83296"
+       id="text980-1-9-0"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-7-1"
+         x="237.54829"
+         y="164.83296"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1917);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:'Braton Composer Stamp Rough';-inkscape-font-specification:'Braton Composer Stamp Rough';text-align:center;text-anchor:middle;display:inline;fill:url(#linearGradient1919);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="233.13835"
+       y="168.90881"
+       id="text980-1-1-0"><tspan
+         sodipodi:role="line"
+         id="tspan978-6-79-8"
+         x="233.13835"
+         y="168.90881"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Arial;-inkscape-font-specification:Arial;fill:url(#linearGradient1919);fill-opacity:1;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="34.129433"
+       y="173.4666"
+       id="text1108"><tspan
+         sodipodi:role="line"
+         id="tspan1106"
+         x="34.129433"
+         y="173.4666"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">GRAVIERTE SEITE</tspan><tspan
+         sodipodi:role="line"
+         x="34.129433"
+         y="176.48285"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan1123">FRONT</tspan></text>
+    <path
+       d="m 17.729074,171.0525 h -1.855157 v 2.14424 H 14.96658 l 1.834727,1.97612 1.835104,-1.97612 h -0.907337 z"
+       fill="#0000ff"
+       id="path1158"
+       style="stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <path
+       d="m 85.117479,171.0525 h -1.855157 v 2.14424 h -0.907337 l 1.834727,1.97612 1.835104,-1.97612 h -0.907337 z"
+       fill="#0000ff"
+       id="path1158-3"
+       style="display:inline;stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <path
+       d="m 52.310145,171.0525 h -1.855157 v 2.14424 h -0.907337 l 1.834727,1.97612 1.835104,-1.97612 h -0.907337 z"
+       fill="#0000ff"
+       id="path1158-9"
+       style="display:inline;stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <path
+       d="m 118.99389,171.0525 h -1.85515 v 2.14424 h -0.90734 l 1.83473,1.97612 1.8351,-1.97612 h -0.90734 z"
+       fill="#0000ff"
+       id="path1158-35"
+       style="display:inline;stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <path
+       d="m 150.59852,171.0525 h -1.85516 v 2.14424 h -0.90734 l 1.83473,1.97612 1.83511,-1.97612 h -0.90734 z"
+       fill="#0000ff"
+       id="path1158-5"
+       style="display:inline;stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <path
+       d="m 185.20992,171.0525 h -1.85516 v 2.14424 h -0.90734 l 1.83473,1.97612 1.8351,-1.97612 h -0.90733 z"
+       fill="#0000ff"
+       id="path1158-6"
+       style="display:inline;stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <path
+       d="m 219.15314,171.0525 h -1.85516 v 2.14424 h -0.90734 l 1.83473,1.97612 1.8351,-1.97612 h -0.90733 z"
+       fill="#0000ff"
+       id="path1158-0"
+       style="display:inline;stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <path
+       d="m 254.83363,171.0525 h -1.85516 v 2.14424 h -0.90734 l 1.83473,1.97612 1.8351,-1.97612 h -0.90733 z"
+       fill="#0000ff"
+       id="path1158-01"
+       style="display:inline;stroke-width:0.00343364;fill:none;stroke:#0000ff;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
+       x="101.95985"
+       y="173.4028"
+       id="text1108-16"><tspan
+         sodipodi:role="line"
+         id="tspan1106-1"
+         x="101.95985"
+         y="173.4028"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">GRAVIERTE SEITE</tspan><tspan
+         sodipodi:role="line"
+         x="101.95985"
+         y="176.41905"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan1123-0">FRONT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
+       x="168.01118"
+       y="173.59178"
+       id="text1108-8"><tspan
+         sodipodi:role="line"
+         id="tspan1106-0"
+         x="168.01118"
+         y="173.59178"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">GRAVIERTE SEITE</tspan><tspan
+         sodipodi:role="line"
+         x="168.01118"
+         y="176.60803"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan1123-4">FRONT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:0;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke-width:0.264583"
+       x="235.47993"
+       y="173.4028"
+       id="text1108-5"><tspan
+         sodipodi:role="line"
+         id="tspan1106-9"
+         x="235.47993"
+         y="173.4028"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">GRAVIERTE SEITE</tspan><tspan
+         sodipodi:role="line"
+         x="235.47993"
+         y="176.41905"
+         style="font-size:3.175px;line-height:0.95;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan1123-09">FRONT</tspan></text>
   </g>
 </svg>
