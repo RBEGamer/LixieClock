@@ -46,7 +46,9 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * 4x 3x`Jumperwires FEMALE<=>FEMALE`
 
 
+## SOFTWARE 
 
+* Arduino IDE
 
 
 
@@ -55,7 +57,28 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 ### 0. PROGRAMMIERUNG BASIS-PROGRAMM
 
+Zum späteren Funktionstest wird hier zuerst der  `ESP8266 D1 Mini` programmiert.
+Somit kann die vollstänige Funktionalität vor dem finalen Zusammenbau überprüft werden.
 
+Hierzu sollte die Arduino IDE installiert und dieses Git-Repository heruntergeladen sein.
+Unter Linux kann dies wie folgt geschehen:
+
+```bash
+# ###### LINUX INSTALL ######
+$ sudo apt update && sudo apt install -y git xz-utils
+
+# CLONE REPOSITORY
+$ cd ~ && git clone https://github.com/RBEGamer/LixieClock ./LixieClock
+
+# INSTALL ARDUINO IDE
+$ wget https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz
+$ tar -xf arduino-1.8.19-linux64.tar.xz
+$ cd arduino-1.8.19-linux64 && bash ./install.sh
+
+# ALLOW USB COMMUNICATION
+$ sudo usermod -a -G dialout $USER
+$ sudo reboot
+```
 
 
 
