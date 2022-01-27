@@ -24,17 +24,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="147.48769"
-     inkscape:cy="386.44474"
+     inkscape:zoom="1.4"
+     inkscape:cx="365.88096"
+     inkscape:cy="161.37441"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
      inkscape:window-width="2280"
      inkscape:window-height="1198"
-     inkscape:window-x="260"
-     inkscape:window-y="155"
+     inkscape:window-x="210"
+     inkscape:window-y="99"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
@@ -313,5 +313,27 @@
          x="74.04657"
          y="80.796692"
          style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">D1 MINI CUTOUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="144.83295"
+       y="80.513206"
+       id="text856-5-5"><tspan
+         sodipodi:role="line"
+         id="tspan854-3-8"
+         x="144.83295"
+         y="80.513206"
+         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">SPACER_BOTTOM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="145.39694"
+       y="6.413044"
+       id="text856-5-5-2"><tspan
+         sodipodi:role="line"
+         id="tspan854-3-8-7"
+         x="145.39694"
+         y="6.413044"
+         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">SPACER_TOP</tspan></text>
   </g>
 </svg>
