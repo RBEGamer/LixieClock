@@ -26,10 +26,11 @@
 //IF YOU A RE USING A D1 MINI DIRECTLY CONNECTED TO THE FIST DIGIT LED THE OFFSET IS ZERO
 #if defined(ESP32)
 #define DEFAULT_LED_OFFSET 1
+const int led_offset = 1;
 #elif defined(ESP8266)
-#define DEFAULT_LED_OFFSET 0
+const int led_offset = 0; //WEMOS D1 MINI VERSION
 #else
-#define DEFAULT_LED_OFFSET 0
+const int led_offset = 0;
 #endif
 
 
@@ -81,17 +82,22 @@ uint32_t Wheel(int WheelPos, int _bright) {
   return pixels.Color((WheelPos * 3) * brgth_scale, (255 - WheelPos * 3) * brgth_scale, 0);
 }
 
+uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright){
+  //EACH DIGIT PAIR SHOULS HAVE AN DIFFERENT COLOR SO 
+    const int MAX_COLOR = 255;
+    const int color_offset_per_digit = MAX_COLOR / COUNT_CLOCK_DIGITS*2;
+   
+   if(_banked && _val <= 0){
+      return pixels.Color(0, 0, 0);
+   }else{
+      return Wheel((_base_color + color_offset_per_digit*_index) % MAX_COLOR, _bright);
+   }
+}
 
 //h: 0-99, m:0-99, s:0-99 col: 0-255, _bright: 0-255, _disable_leading_zero:0-1
 //_disable_leading_zero =>
 void update_clock_display(int h, int m, int s, int col, int _bright, bool _disable_leading_zero){
-    
-    //LEGACY SEND TO ARDUINO BASED CLOCK
-    Serial.flush();
-    Serial.println();
-    last_error = "_st_" + String(h) + "_" + String(m) + "_"+ String(s) + "_" + String(col) +"_" + String(_bright) +"_";
-    Serial.println(last_error);          
-    delay(100);
+
   
     //UPDATE NEOPIXEL
     //SPLIT HOURS MINS,.. INTO SEPERATE DIGITS
