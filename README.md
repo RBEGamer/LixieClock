@@ -80,6 +80,34 @@ $ sudo usermod -a -G dialout $USER
 $ sudo reboot
 ```
 
+Das Demo-Programm der Uhr, welches eine vollständige über NTP Synchronisierte Uhr darstellt, benötigt einige Bibliotheken.
+Diese könne über den Library-Manager der Arduino IDE installiert werden oder aus diesem Repository kopiert werden.
+Unter Windows wird der Inhalt des Ordners `./src/lixieclock/required_libs` nach `BENUTZER_VERZEICHNIS/Dokumente/Arduino/libraries` kopiert.
+
+Unter MacOS und Linux befindet sich der `Arduino` Ordner direkt im Benutzer-Ordner.
+Unter Linux muss aufgepasst werden, wie die Arduino IDE installiert wurde.
+Wurde `snap install arduino` verwendet, befindet sich der Library-Order im Snap Verzeichnis `~/.snap/arduino/current/library`.
+
+```bash
+# ###### LINUX LIB COPY ######
+ 
+$ cd ~
+$ cp -Rf ./LixieClock/src/lixieclock/required_libs ~/Arduino/libraries
+```
+
+Anschließend kann die Arduino IDE geäffnet werden.
+Unter den Einstellungen muss zuerst die Konfiguration für den `ESP8266` geladen werden. Hierzu wird unter dem Punkt `Zisätzliche Boardverwalter-URLs` die folgende Zeile hinzugefügt:
+
+* `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
+
+#### OPTIONAL
+Falls ein `ESP32` verwendet wird muss diese hinzugefügt werden:
+
+* `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json`
+
+Allgemein ist die Software mit dem `ESP6266` (nicht `ESP6266-01`) und dem `ESP32` kompatibel.
+#### ENDE OPTIONAL
+
 
 
 ### 1. LED MODULE VORBEREITEN
