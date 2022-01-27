@@ -25,7 +25,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="386.70401"
+     inkscape:cx="314.98318"
      inkscape:cy="242.01144"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -113,16 +113,6 @@
          id="path10"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="m 7.2000001,5.502 h 0.6 V 1.7019999 h -0.6 z"
-         fill="rgb(255,255,255)"
-         shaper:cutDepth="0"
-         shaper:pathType="interior"
-         stroke="rgb(0,0,0)"
-         transform="matrix(1,0,0,-1,0.6,7.202)"
-         vector-effect="non-scaling-stroke"
-         id="path12"
-         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
-      <path
          d="m 27.106621,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
@@ -142,26 +132,6 @@
          vector-effect="non-scaling-stroke"
          id="path16"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
-      <path
-         d="m 22.004414,5.502 h 0.6 V 1.7019999 h -0.6 z"
-         fill="rgb(255,255,255)"
-         shaper:cutDepth="0"
-         shaper:pathType="interior"
-         stroke="rgb(0,0,0)"
-         transform="matrix(1,0,0,-1,0.6,7.202)"
-         vector-effect="non-scaling-stroke"
-         id="path18"
-         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
-      <path
-         d="M 4.9,1.7019999 V 5.502 H 5.5 V 1.7019999 Z"
-         fill="rgb(255,255,255)"
-         shaper:cutDepth="0"
-         shaper:pathType="interior"
-         stroke="rgb(0,0,0)"
-         vector-effect="non-scaling-stroke"
-         id="path20"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1"
-         transform="matrix(1,0,0,-1,0.6,7.202)" />
       <path
          d="m 20.404414,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
          fill="rgb(255,255,255)"
@@ -193,16 +163,6 @@
          id="path26"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 11.3,1.7019999 V 5.502 h 0.6 V 1.7019999 Z"
-         fill="rgb(255,255,255)"
-         shaper:cutDepth="0"
-         shaper:pathType="interior"
-         stroke="rgb(0,0,0)"
-         transform="matrix(1,0,0,-1,0.6,7.202)"
-         vector-effect="non-scaling-stroke"
-         id="path28"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
-      <path
          d="m 21.504414,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
@@ -213,16 +173,6 @@
          id="path30"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 19.402207,1.7019999 V 5.502 h 0.6 V 1.7019999 Z"
-         fill="rgb(255,255,255)"
-         shaper:cutDepth="0"
-         shaper:pathType="interior"
-         stroke="rgb(0,0,0)"
-         transform="matrix(1,0,0,-1,0.6,7.202)"
-         vector-effect="non-scaling-stroke"
-         id="path32"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
-      <path
          d="m 20.404414,1.1 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
@@ -231,16 +181,6 @@
          transform="matrix(1,0,0,-1,0.6,7.202)"
          vector-effect="non-scaling-stroke"
          id="path34"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
-      <path
-         d="M 26.104414,1.7019999 V 5.502 h 0.6 V 1.7019999 Z"
-         fill="rgb(255,255,255)"
-         shaper:cutDepth="0"
-         shaper:pathType="interior"
-         stroke="rgb(0,0,0)"
-         transform="matrix(1,0,0,-1,0.6,7.202)"
-         vector-effect="non-scaling-stroke"
-         id="path36"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
          d="m 14.802207,6.102 a 0.2,0.2 0 1 1 0.4,0 0.2,0.2 0 1 1 -0.4,0 z"
@@ -291,29 +231,82 @@
          transform="matrix(1,0,0,-1,0.6,7.202)"
          vector-effect="non-scaling-stroke"
          id="path46"
-         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+         style="fill:none;stroke:#ff0000;stroke-opacity:1"
+         inkscape:label="dot" />
       <path
-         d="m 15.302207,5.502 h 0.6 V 1.7019999 h -0.6 z"
+         d="m 8.3291671,1.7 h 0.6 v 3.8000001 h -0.6 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
          stroke="rgb(0,0,0)"
-         transform="matrix(1,0,0,-1,0.6,7.202)"
+         vector-effect="non-scaling-stroke"
+         id="path12"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 6.029167,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path20"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 23.133584,1.7 h 0.6 v 3.8000001 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path18"
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 12.42917,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path28"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 20.531377,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path32"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="M 27.233584,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
+         vector-effect="non-scaling-stroke"
+         id="path36"
+         style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      <path
+         d="m 16.431377,1.7 h 0.6 v 3.8000001 h -0.6 z"
+         fill="rgb(255,255,255)"
+         shaper:cutDepth="0"
+         shaper:pathType="interior"
+         stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path48"
          style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 0.8,1.7019999 V 5.502 H 1.4 V 1.7019999 Z"
+         d="M 1.929167,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
          stroke="rgb(0,0,0)"
          vector-effect="non-scaling-stroke"
          id="path50"
-         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1"
-         transform="matrix(1,0,0,-1,0.6,7.202)" />
+         style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 2,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 2.529167,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -322,7 +315,7 @@
          id="path50-7"
          style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 4.9,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 5.429167,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -331,7 +324,7 @@
          id="path50-0-4"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 8.4000001,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 8.9291671,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -340,7 +333,7 @@
          id="path50-3"
          style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 11.3,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 11.82917,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -349,7 +342,7 @@
          id="path50-9"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 16.502207,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 17.031377,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -358,7 +351,7 @@
          id="path50-38"
          style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 19.402207,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 19.931377,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -367,7 +360,7 @@
          id="path50-1"
          style="fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 23.204414,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 23.733584,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -376,7 +369,7 @@
          id="path50-5"
          style="display:none;fill:none;stroke:#ff0000;stroke-opacity:1" />
       <path
-         d="M 26.104414,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
+         d="M 26.633584,5.5000001 V 1.7 h 0.6 v 3.8000001 z"
          fill="rgb(255,255,255)"
          shaper:cutDepth="0"
          shaper:pathType="interior"
@@ -387,11 +380,11 @@
       <text
          xml:space="preserve"
          style="font-size:2.25778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
-         x="3.4887493"
+         x="4.0179167"
          y="1.9861214"
          id="text1244"><tspan
            sodipodi:role="line"
-           x="3.4887493"
+           x="4.0179167"
            y="1.9861214"
            style="font-size:0.388056px;fill:none;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
            id="tspan1254">HOUR TENS</tspan></text>
@@ -444,10 +437,22 @@
          fill="#0000ff"
          id="path1018"
          style="fill:none;stroke:#0000ff;stroke-width:0.00140346;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-size:2.25778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+         x="3.3229876"
+         y="3.367909"
+         id="text1244-6"><tspan
+           sodipodi:role="line"
+           x="3.3229876"
+           y="3.367909"
+           style="font-size:0.388056px;fill:none;stroke:#0000ff;stroke-width:0.0264583;stroke-opacity:1"
+           id="tspan1254-27">TOP_COVER</tspan></text>
     </g>
     <g
        id="g1601"
-       transform="matrix(9.9999999,0,0,9.9999999,0.5715746,73.30896)">
+       transform="matrix(9.9999999,0,0,9.9999999,0.5715746,73.30896)"
+       style="display:inline">
       <path
          d="m 27.806621,0 a 0.6,0.6 -90 0 1 0.6,0.6 v 6.002 a 0.6,0.6 0 0 1 -0.6,0.6 H 0 a 0.6,0.6 90 0 1 -0.6,-0.6 V 0.6 A 0.6,0.6 -180 0 1 0,0 Z"
          fill="rgb(0,0,0)"
@@ -1401,6 +1406,17 @@
        d="m 43.079987,113.43935 h -7.582733 v 8.7643 H 31.78862 l 7.499229,8.07717 7.500771,-8.07717 h -3.708633 z"
        fill="#0000ff"
        id="path1018-8"
-       style="display:inline;stroke:#0000ff;stroke-width:0.0140346;stroke-opacity:1;fill:none" />
+       style="display:inline;fill:none;stroke:#0000ff;stroke-width:0.0140346;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-size:22.5778px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;display:inline;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+       x="40.336853"
+       y="110.34117"
+       id="text1244-6-3"><tspan
+         sodipodi:role="line"
+         x="40.336853"
+         y="110.34117"
+         style="font-size:3.88056px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1"
+         id="tspan1254-27-8">BOTTOM_COVER</tspan></text>
   </g>
 </svg>
