@@ -279,5 +279,12 @@ Geklebt wird auf der glatten Seite des `ESP8266 D1 Mini` (auf der gegenüberlieg
 
 Final kann die Bodenplatte `BOTTOM_COVER` Montiert werden. Dazu werden die zuvor zur Montage genutzten Schrauben wieder gelösst und das `BOTTOM_COVER` auf die Spacer gelegt. Alle Schrauben werden dann handfest angezogen.
 
-
 ![bottom_screw](./documentation/images/bottom_screw.jpg)
+
+### 6. Bedienung
+
+Wenn die Uhr mit dem Basis-Programm programmiert wurde, agiert diese nach dem Starten als NTP-Synchronierte Uhr.
+Hierzu wird ein WLAN benötigt, mit welchem die Uhr einen Zeitserver abgragen kann.
+Um dieses WLAN festzulegen, wird die Uhr normal mit Spannung versorgt. Mit einem anderen Endgerät z.B. dem Handy kann sich mit dem WLAN-Access-Point der Uhr verbunden werden.
+Dieses heisst `LixieClockConfiguration`. Nach dem Vervinden mit diesem öffnet sich eine Konfigurationsübersicht in der das WLAN gesetzt werden kann.
+** Achtung ** Nur 2.4 Ghz Netzwerke werden vom `ESP8266` und `ESP32` unterstützt.
