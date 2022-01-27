@@ -131,7 +131,7 @@ Anschlißend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
 
 #### NOTE
 
-Im VErzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelnen Segemente ansteuert.
+Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelnen Segemente ansteuert.
 Dies kann als Basisfür eigene Projekte verewendet werden.
 Mittels der Funktion `update_clock_display` können alle Segmente der Uhr einzeln verändert werden.
 Zur Bestimmung der Farbe können die Funktionen `Wheel` und `digit_color` verwendet werden.
@@ -191,7 +191,7 @@ Dabei wird auch die LED PCB und der `PCB Spacer` zusätzlich benötigt.
 
 Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten ind die Aussüarungen gelegt.
 
-**WICHTIG ** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
+**WICHTIG** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
 
 Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TOP_COVER` dafür auf eine Tasse zu stellen.
 
@@ -279,5 +279,19 @@ Geklebt wird auf der glatten Seite des `ESP8266 D1 Mini` (auf der gegenüberlieg
 
 Final kann die Bodenplatte `BOTTOM_COVER` Montiert werden. Dazu werden die zuvor zur Montage genutzten Schrauben wieder gelösst und das `BOTTOM_COVER` auf die Spacer gelegt. Alle Schrauben werden dann handfest angezogen.
 
-
 ![bottom_screw](./documentation/images/bottom_screw.jpg)
+
+### 6. Bedienung
+
+Wenn die Uhr mit dem Basis-Programm programmiert wurde, agiert diese nach dem Starten als NTP-Synchronierte Uhr.
+Hierzu wird ein WLAN benötigt, mit welchem die Uhr einen Zeitserver abgragen kann.
+Um dieses WLAN festzulegen, wird die Uhr normal mit Spannung versorgt. Mit einem anderen Endgerät z.B. dem Handy kann sich mit dem WLAN-Access-Point der Uhr verbunden werden.
+Dieses heisst `LixieClockConfiguration`. Nach dem Vervinden mit diesem öffnet sich eine Konfigurationsübersicht in der das WLAN gesetzt werden kann.
+**Achtung** Nur 2.4 Ghz Netzwerke werden vom `ESP8266` und `ESP32` unterstützt.
+
+**Anschließend die Uhr einmal neustarten!**
+
+Nach einer erfolgreichen Verbindng, zeigt die Uhr ihre IP-Adresse auf den einzelnen Ziffern per Laufschrift an.
+Wird diese Adresse in einem Browser aus dem gleichen Netz aufgerufen, kann diese umfassend konfiguriert werden.
+
+![web_config](./documentation/images/web_config.png)
