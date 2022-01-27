@@ -131,7 +131,7 @@ Anschlißend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
 
 #### NOTE
 
-Im VErzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelnen Segemente ansteuert.
+Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelnen Segemente ansteuert.
 Dies kann als Basisfür eigene Projekte verewendet werden.
 Mittels der Funktion `update_clock_display` können alle Segmente der Uhr einzeln verändert werden.
 Zur Bestimmung der Farbe können die Funktionen `Wheel` und `digit_color` verwendet werden.
@@ -191,7 +191,7 @@ Dabei wird auch die LED PCB und der `PCB Spacer` zusätzlich benötigt.
 
 Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten ind die Aussüarungen gelegt.
 
-**WICHTIG ** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
+**WICHTIG** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
 
 Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TOP_COVER` dafür auf eine Tasse zu stellen.
 
