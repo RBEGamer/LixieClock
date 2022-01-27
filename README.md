@@ -22,7 +22,7 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 # TEILELISTE
 
-## BIlD ZEIGT ALTE REVISION
+## BILD ZEIGT ALTE REVISION
 ![4_digit_parts](./documentation/images/4_digit_parts.jpg)
 
 
