@@ -86,7 +86,7 @@ Das Demo-Programm der Uhr, welches eine vollständige über NTP Synchronisierte 
 Diese könne über den Library-Manager der Arduino IDE installiert werden oder aus diesem Repository kopiert werden.
 Unter Windows wird der Inhalt des Ordners `./src/required_libs` nach `BENUTZER_VERZEICHNIS/Dokumente/Arduino/libraries` kopiert.
 
-Unter MacOS und Linux befindet sich der `Arduino` Ordner direkt im Benutzer-Ordner.
+Unter MacOS und Linux befindet sich der `Arduino`-Ordner direkt im Benutzer-Ordner `~/`.
 Unter Linux muss aufgepasst werden, wie die Arduino IDE installiert wurde.
 Wurde `snap install arduino` verwendet, befindet sich der Library-Order im Snap Verzeichnis `~/.snap/arduino/current/library`.
 
