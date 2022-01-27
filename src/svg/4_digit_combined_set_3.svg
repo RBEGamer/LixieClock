@@ -24,14 +24,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="365.88096"
-     inkscape:cy="161.37441"
+     inkscape:zoom="0.7"
+     inkscape:cx="51.752848"
+     inkscape:cy="201.40734"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="2280"
+     inkscape:window-width="2555"
      inkscape:window-height="1198"
      inkscape:window-x="210"
      inkscape:window-y="99"
@@ -272,7 +272,7 @@
        inkscape:label="d1mini_cutout" />
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583;stroke:#0000ff;stroke-opacity:1;fill:none;"
        x="30.388815"
        y="70.24221"
        id="text856"><tspan
@@ -280,10 +280,10 @@
          id="tspan854"
          x="30.388815"
          y="70.24221"
-         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">FRONT</tspan></text>
+         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1;">FRONT</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583;stroke:#0000ff;stroke-opacity:1;fill:none;"
        x="33.739197"
        y="143.8468"
        id="text856-6"><tspan
@@ -291,7 +291,7 @@
          id="tspan854-9"
          x="33.739197"
          y="143.8468"
-         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">FRONT</tspan></text>
+         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1;">FRONT</tspan></text>
     <path
        d="m 48.929627,139.546 h -2.522168 v 2.91517 h -1.233564 l 2.494391,2.68663 2.494904,-2.68663 h -1.233563 z"
        fill="#0000ff"
@@ -304,7 +304,7 @@
        style="fill:none;stroke:#0000ff;stroke-width:0.00466817;stroke-opacity:1" />
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583;stroke:#0000ff;stroke-opacity:1;fill:none;"
        x="74.04657"
        y="80.796692"
        id="text856-5"><tspan
@@ -312,10 +312,10 @@
          id="tspan854-3"
          x="74.04657"
          y="80.796692"
-         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">D1 MINI CUTOUT</tspan></text>
+         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1;">D1 MINI CUTOUT</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583;stroke:#0000ff;stroke-opacity:1;fill:none;"
        x="144.83295"
        y="80.513206"
        id="text856-5-5"><tspan
@@ -323,10 +323,10 @@
          id="tspan854-3-8"
          x="144.83295"
          y="80.513206"
-         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">SPACER_BOTTOM</tspan></text>
+         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1;">SPACER_BOTTOM</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       style="font-size:4.23333px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;text-anchor:middle;stroke-width:0.264583;stroke:#0000ff;stroke-opacity:1;fill:none;"
        x="145.39694"
        y="6.413044"
        id="text856-5-5-2"><tspan
@@ -334,6 +334,6 @@
          id="tspan854-3-8-7"
          x="145.39694"
          y="6.413044"
-         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1">SPACER_TOP</tspan></text>
+         style="font-size:4.23333px;fill:none;stroke:#0000ff;stroke-width:0.264583;stroke-opacity:1;">SPACER_TOP</tspan></text>
   </g>
 </svg>
