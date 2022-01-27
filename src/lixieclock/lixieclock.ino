@@ -1,3 +1,7 @@
+//FH AACHEN LIXIECLOCK https://github.com/RBEGamer/LixieClock/
+//--- CHANGELOG ----
+//VERSION 1.0 Marcel Ochsendorf info@marcelochsendorf.com 12.12.2021
+//VERSION 1.4 Marcel Ochsendorf info@marcelochsendorf.com 10.01.2022
 
 #define VERSION "1.4"
 //#define USE_LITTLEFS
