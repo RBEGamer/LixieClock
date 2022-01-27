@@ -86,13 +86,12 @@ Das Demo-Programm der Uhr, welches eine vollständige über NTP Synchronisierte 
 Diese könne über den Library-Manager der Arduino IDE installiert werden oder aus diesem Repository kopiert werden.
 Unter Windows wird der Inhalt des Ordners `./src/required_libs` nach `BENUTZER_VERZEICHNIS/Dokumente/Arduino/libraries` kopiert.
 
-Unter MacOS und Linux befindet sich der `Arduino` Ordner direkt im Benutzer-Ordner.
+Unter MacOS und Linux befindet sich der `Arduino`-Ordner direkt im Benutzer-Ordner `~/`.
 Unter Linux muss aufgepasst werden, wie die Arduino IDE installiert wurde.
 Wurde `snap install arduino` verwendet, befindet sich der Library-Order im Snap Verzeichnis `~/.snap/arduino/current/library`.
 
 ```bash
 # ###### LINUX LIB COPY ######
- 
 $ cd ~
 $ cp -Rf ./LixieClock/src/required_libs ~/Arduino/libraries
 ```
@@ -101,12 +100,13 @@ Anschließend kann die Arduino IDE geäffnet werden.
 
 Unter `Datei -> Öffnen` kann das Programm geöffnet werden, dies befindet sich in diesem Repository unter dem Pfad `./src/lixieclock/lixieclock.ino`
 
-Unter den Einstellungen muss danach zuerst die Konfiguration für den `ESP8266` geladen werden.
+Unter den Einstellungen muss danach zuerst der Support für den `ESP8266` geladen werden.
 Hierzu wird unter dem Punkt `Zusätzliche Boardverwalter-URLs` die folgende Zeile hinzugefügt:
 
 * `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
 #### NOTE
+
 Falls ein `ESP32` verwendet wird muss diese hinzugefügt werden:
 
 * `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json`
@@ -120,7 +120,7 @@ Anschlißend kann dieser als Board ausgewählt werden.
 
 ![sw_sel_board](./documentation/images/sw_sel_board.png)
 
-Unter `Port` wird der Serielle Port ausgewählt, an welchem sich das Board befindet.
+Unter `Port` wird der Serielle-Port ausgewählt, an welchem sich das Board befindet.
 
 * Windows `COMx`
 * MacOS `/dev/ttyXXxxxXXxxx`
@@ -131,7 +131,7 @@ Anschlißend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
 
 #### NOTE
 
-Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelnen Segemente ansteuert.
+Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelne Segemente ansteuert.
 Dies kann als Basisfür eigene Projekte verewendet werden.
 Mittels der Funktion `update_clock_display` können alle Segmente der Uhr einzeln verändert werden.
 Zur Bestimmung der Farbe können die Funktionen `Wheel` und `digit_color` verwendet werden.
@@ -141,8 +141,9 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
 uint32_t Wheel(int WheelPos, int _bright);
 uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright);
 ```
-### 1. LED MODULE VORBEREITEN
 
+
+### 1. LED MODULE VORBEREITEN
 
 ![single_digit_new](./documentation/images/single_digit_new.jpg)
 
@@ -154,18 +155,17 @@ Jedes LED Modul besteht aus drei Schichten:
 
 
 Zuerst wird die Schtzfolien von den einzelnen Ziffern entfernt und anschließend mit Glasreiniger entfettet.
-Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in die Halterung kommt man nur noch sehr schwer an die Flächen.
+**Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in der Halterung kommt man nur noch sehr schwer an die Flächen.**
 
 Jetzt werden sie einzelnen Ziffern in den `Ziffern-Halter` eingesetzt. Dabei müssen diese mit der gravierten Seite alle  in die gleiche Richtung zeigen.
-Auch ist die Reihenfolge wichtig!
-Von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
+Auch ist die Reihenfolge wichtig, von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
 
 `0` - `9`- `8` - `7` - `6` - `5` - `4` - `3` - `2` - `1`  
 
 
 ![single_digit_digits_only](./documentation/images/single_digit_digits_only.jpg)
 
-Anschließend werden die Ziffern auf den `Lighguide` gesetzt. Dabei muss die gravierte Seite der Ziffern in  Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.
+Anschließend werden die Ziffern auf den `Lighguide` gesetzt. Dabei muss die gravierte Seite der Ziffern in Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.
 
 Dieser Prozess, wird für alle vier Ziffern-Blöcke wiederholt.
 
@@ -182,14 +182,14 @@ Die lange Seite der Stiftleisten zeigt dabei von der LED Seite weg.
 ### 2. Zusammenbau Oberseite
 
 Nachdem alle vier Module soweit vorbereitet wurden, können diese nun mit der oberen Bodenplatte zusammengeschraubt werden.
-Dabei wird auch die LED PCB und der `PCB Spacer` zusätzlich benötigt.
+Dabei wird zusätzlich auch die `LED_PCB` und der `PCB Spacer` benötigt.
 
 * 4x PCB Spacer
 * 4x LED_PCB mit Bestückter LED Seite
 * 4x Top-Cover
 
 
-Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten ind die Aussüarungen gelegt.
+Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten in die Aussparungen gelegt.
 
 **WICHTIG** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
 
@@ -210,8 +210,8 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die M
 
 ![spacers](./documentation/images/spacers.jpg)
 
-Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
-Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
+**Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.**
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken Seite befinden.
 Hier werden die folgenden Sperrholzteile benötigt:
 
 * 1x `SPACER_TOP`
@@ -241,10 +241,11 @@ Anschlißend können die Module wieder mit je einer Schraube fixiert werden. Som
 ### 4. Montage Elektronik
 
 Für die Verkabelung und Montage der Elektronik, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
-Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken Seite befinden.
 Für diesen Schritt werden die `Jumper-Wires`, sowie der `ESP8266 D1 MINI` benötigt.
 
-Jetzt werden mit den 4x 3x `Jumper-Wires` die einzelnen Module miteinander Verbunden. Auf den `LED-PCB`s sollten die Stiftleisten durch das `TOP_COVER` zugänglich sein. Bei diesen sind die einzelnen Pins beschriftet. Für `H1 => 5V D0 GND` und für `H2 => 5V DIN GND`. Das Ziel ist es die einzelnen Platinen zu einer Kette zu verbinden. 
+Jetzt werden mit den 4x drei `Jumper-Wires` die einzelnen Module miteinander Verbunden. Auf den `LED-PCB`s sollten die Stiftleisten durch das `TOP_COVER` zugänglich sein. Bei diesen sind die einzelnen Pins beschriftet. Für `H1 => 5V D0 GND` und für `H2 => 5V DIN GND`.
+Das Ziel ist es die einzelnen Platinen zu einer Kette zu verbinden. 
 Angefangen von der Zehner-Stunden, wird die `H2`-Stiftleiste über drei `Jumper-Wires` mit der `H1`-Stiftleiste des Stunden-Einer-Moduls verbunden.
 Dabei wird `5V->5V`, `GND->GND` und `DI->D0` verbunden.
 Dieser Prozess wird anschließend noch zweimal wiederholt:
@@ -286,7 +287,7 @@ Final kann die Bodenplatte `BOTTOM_COVER` Montiert werden. Dazu werden die zuvor
 Wenn die Uhr mit dem Basis-Programm programmiert wurde, agiert diese nach dem Starten als NTP-Synchronierte Uhr.
 Hierzu wird ein WLAN benötigt, mit welchem die Uhr einen Zeitserver abgragen kann.
 Um dieses WLAN festzulegen, wird die Uhr normal mit Spannung versorgt. Mit einem anderen Endgerät z.B. dem Handy kann sich mit dem WLAN-Access-Point der Uhr verbunden werden.
-Dieses heisst `LixieClockConfiguration`. Nach dem Vervinden mit diesem öffnet sich eine Konfigurationsübersicht in der das WLAN gesetzt werden kann.
+Dieses heisst `LixieClockConfiguration`. Nach dem Verbinden mit diesem öffnet sich eine Konfigurationsübersicht in der das WLAN gesetzt werden kann.
 **Achtung** Nur 2.4 Ghz Netzwerke werden vom `ESP8266` und `ESP32` unterstützt.
 
 **Anschließend die Uhr einmal neustarten!**
