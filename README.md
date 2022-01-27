@@ -108,7 +108,11 @@ Falls ein `ESP32` verwendet wird muss diese hinzugefügt werden:
 Allgemein ist die Software mit dem `ESP6266` (nicht `ESP6266-01`) und dem `ESP32` kompatibel.
 #### ENDE OPTIONAL
 
+Nach dem Speichern der Einstellungen muss das Board noch installiert werden.
+Dazu wird unter `Werkzeuge -> Board -> Boardverwalter` der `ESP8266` installiert.
+Anschlißend kann dieser alss Board ausgewählt werden.
 
+![sw_sel_board](./documentation/images/sw_sel_board.PNG)
 
 ### 1. LED MODULE VORBEREITEN
 
