@@ -92,7 +92,6 @@ Wurde `snap install arduino` verwendet, befindet sich der Library-Order im Snap 
 
 ```bash
 # ###### LINUX LIB COPY ######
- 
 $ cd ~
 $ cp -Rf ./LixieClock/src/required_libs ~/Arduino/libraries
 ```
