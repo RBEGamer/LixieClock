@@ -79,6 +79,7 @@ $ cd arduino-1.8.19-linux64 && bash ./install.sh
 $ sudo usermod -a -G dialout $USER
 $ sudo reboot
 ```
+Nach dem Neustart kann der `ESP8266 D1 MINI` per USB Kabel mit dem Computer verbunden werden.
 
 Das Demo-Programm der Uhr, welches eine vollständige über NTP Synchronisierte Uhr darstellt, benötigt einige Bibliotheken.
 Diese könne über den Library-Manager der Arduino IDE installiert werden oder aus diesem Repository kopiert werden.
@@ -96,7 +97,11 @@ $ cp -Rf ./LixieClock/src/lixieclock/required_libs ~/Arduino/libraries
 ```
 
 Anschließend kann die Arduino IDE geäffnet werden.
-Unter den Einstellungen muss zuerst die Konfiguration für den `ESP8266` geladen werden. Hierzu wird unter dem Punkt `Zisätzliche Boardverwalter-URLs` die folgende Zeile hinzugefügt:
+
+Unter `Datei -> Öffnen` kann das Programm geöffnet werden, dies befindet sich in diesem Repository unter dem Pfad `./src/lixieclock/lixieclock.ino`
+
+Unter den Einstellungen muss danach zuerst die Konfiguration für den `ESP8266` geladen werden.
+Hierzu wird unter dem Punkt `Zusätzliche Boardverwalter-URLs` die folgende Zeile hinzugefügt:
 
 * `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
@@ -110,9 +115,18 @@ Allgemein ist die Software mit dem `ESP6266` (nicht `ESP6266-01`) und dem `ESP32
 
 Nach dem Speichern der Einstellungen muss das Board noch installiert werden.
 Dazu wird unter `Werkzeuge -> Board -> Boardverwalter` der `ESP8266` installiert.
-Anschlißend kann dieser alss Board ausgewählt werden.
+Anschlißend kann dieser als Board ausgewählt werden.
 
 ![sw_sel_board](./documentation/images/sw_sel_board.png)
+
+Unter `Port` wird der Serielle Port ausgewählt, an welchem sich das Board befindet.
+
+* Windows `COMx`
+* MacOS `/dev/ttyXXxxxXXxxx`
+* Linux `/dev/ttyUSBx`
+
+Anschlißend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
+
 
 ### 1. LED MODULE VORBEREITEN
 
@@ -202,6 +216,7 @@ Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Ar
 Nach dieser Zeit können diese wieder gelößt werden.
 
 ![spacer_final](./documentation/images/spacer_final.jpg)
+
 
 
 #### ENDE OPTIONAL
