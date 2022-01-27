@@ -112,7 +112,7 @@ Falls ein `ESP32` verwendet wird muss diese hinzugefügt werden:
 * `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json`
 
 Allgemein ist die Software mit dem `ESP6266` (nicht `ESP6266-01`) und dem `ESP32` kompatibel.
-#### ENDE NOTE
+#### END NOTE
 
 Nach dem Speichern der Einstellungen muss das Board noch installiert werden.
 Dazu wird unter `Werkzeuge -> Board -> Boardverwalter` der `ESP8266` installiert.
@@ -129,6 +129,18 @@ Unter `Port` wird der Serielle Port ausgewählt, an welchem sich das Board befin
 Anschlißend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
 
 
+#### NOTE
+
+Im VErzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelnen Segemente ansteuert.
+Dies kann als Basisfür eigene Projekte verewendet werden.
+Mittels der Funktion `update_clock_display` können alle Segmente der Uhr einzeln verändert werden.
+Zur Bestimmung der Farbe können die Funktionen `Wheel` und `digit_color` verwendet werden.
+
+```c++
+void update_clock_display(int h, int m, int s, int col, int _bright, bool _disable_leading_zero);
+uint32_t Wheel(int WheelPos, int _bright);
+uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright);
+```
 ### 1. LED MODULE VORBEREITEN
 
 
@@ -218,9 +230,7 @@ Nach dieser Zeit können diese wieder gelößt werden.
 
 ![spacer_final](./documentation/images/spacer_final.jpg)
 
-
-
-#### ENDE OPTIONAL
+#### END OPTIONAL
 
 
 Die Schrauben (aus Schritt 2), welche die Module gehalten haben können jetzt wieder gelößt werden.
