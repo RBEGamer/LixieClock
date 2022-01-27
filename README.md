@@ -14,6 +14,8 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * Kleine Kabelbilder
 * [OPTINAL] Heißkleber
 * Glasreiniger
+* Mikro-USB Kabel
+
 
 # TEILELISTE
 
@@ -46,6 +48,12 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 
 ## BUILD INSTRUCTIONS
+
+
+### 0. PROGRAMMIERUNG BASIS-PROGRAMM
+
+
+
 
 
 ### 1. LED MODULE VORBEREITEN
@@ -116,5 +124,35 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die M
 
 ### 3. Montage Elektronik
 
+Für die Verkabelung und Montage der Elektronik, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
+
+Für diesen Schritt werden die `Jumper-Wires`, sowie der `ESP8266 D1 MINI`.
+
+Jetzt werden mit den 4x 3x `Jumper-Wires` die einzelnen Module miteinander Verbunden. Auf den `LED-PCB`s sollten die Stiftleisten durch das `TOP_COVER` zugänglich sein. Bei diesen sind die einzelnen Pins beschriftet. Für `H1 => 5V D0 GND` und für `H2 => 5V DIN GND`. Das Ziel ist es die einzelnen Platinen zu einer Kette zu verbinden. 
+Angefangen von der Zehner-Stunden, wird die `H2`-Stiftleiste über drei `Jumper-Wires` mit der `H1`-Stiftleiste des Stunden-Einer-Moduls verbunden.
+Dabei wird `5V->5V`, `GND->GND` und `DI->D0` verbunden.
+Dieser Prozess wird anschließend noch zweimal wiederholt:
+
+* Stunden-Zehner `H2` => Stunden-Einer `H1`
+* Stunden-Einer `H2` => Minuten-Zehner `H1`
+* Minuten-Zehner `H2` => Minuten-Einer `H1`
+
+Nach diesem Schritt sind die Stiftleisten  `Stunden-Zehner H1` und `Minuten-Einer H2` nicht verbunden.
+Im letzten Schritt wird der `ESP8266 D1 Mini` mit der `Stunden-Zehner H1` verbunden.
+Dabei werden werden die folgenden Pins am `ESP8266 D1 Mini` verunden:
+
+* `(ESP8266 D1 MINI) 5V` => `(Zehner Stunden H1) 5V`
+* `(ESP8266 D1 MINI) D8` => `(Zehner Stunden H1) DIN`
+* `(ESP8266 D1 MINI) GND` => `(Zehner Stunden H1) GND`
+
+Anschließend kann vor dem finalen Zusammenbau die Funktion getestet werden.
+Mit einem USB-Kabel wird der `ESP8266 D1 Mini` verbunden. Jede Ziffer sollte einmal aufleuchten.
+Falls dies nicht der Fall ist, ist die Verkabelung zu Prüfen.
+
+Um den Zusammenbau zu vereinfachen, werden die einzelnen Stifleisten mit dem `Jumperwires` leicht zueinender (ca. 45°) gebogen und mit Heisskleber fixiert.
+Auch die Kabel ziwschen den Elementen werden mit Kabelbindern und/oder Heisskleber an der `TOP_PLATE` fixiert.
+
+### 4. Endmontage
 
 
