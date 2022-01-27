@@ -5,6 +5,9 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 ![4_digit_complete](./documentation/images/4_digit_complete.jpg)
 
 
+![4_digit_on_2](./documentation/images/4_digit_on_2.jpg)
+
+
 
 
 # WERKZEUG
@@ -196,4 +199,4 @@ Geklebt wird auf der glatten Seite des `ESP8266 D1 Mini` (auf der gegenüberlieg
 Final kann die Bodenplatte `BOTTOM_COVER` Montiert werden. Dazu werden die zuvor zur Montage genutzten Schrauben wieder gelösst und das `BOTTOM_COVER` auf die Spacer gelegt. Alle Schrauben werden dann handfest angezogen.
 
 
-![esp8266_usb](./documentation/images/esp8266_usb.jpg)
+![bottom_screw](./documentation/images/bottom_screw.jpg)
