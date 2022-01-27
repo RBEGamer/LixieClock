@@ -159,15 +159,14 @@ Zuerst wird die Schtzfolien von den einzelnen Ziffern entfernt und anschließend
 **Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in der Halterung kommt man nur noch sehr schwer an die Flächen.**
 
 Jetzt werden sie einzelnen Ziffern in den `Ziffern-Halter` eingesetzt. Dabei müssen diese mit der gravierten Seite alle  in die gleiche Richtung zeigen.
-Auch ist die Reihenfolge wichtig!
-Von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
+Auch ist die Reihenfolge wichtig, von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
 
 `0` - `9`- `8` - `7` - `6` - `5` - `4` - `3` - `2` - `1`  
 
 
 ![single_digit_digits_only](./documentation/images/single_digit_digits_only.jpg)
 
-Anschließend werden die Ziffern auf den `Lighguide` gesetzt. Dabei muss die gravierte Seite der Ziffern in  Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.
+Anschließend werden die Ziffern auf den `Lighguide` gesetzt. Dabei muss die gravierte Seite der Ziffern in Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.
 
 Dieser Prozess, wird für alle vier Ziffern-Blöcke wiederholt.
 
@@ -184,14 +183,14 @@ Die lange Seite der Stiftleisten zeigt dabei von der LED Seite weg.
 ### 2. Zusammenbau Oberseite
 
 Nachdem alle vier Module soweit vorbereitet wurden, können diese nun mit der oberen Bodenplatte zusammengeschraubt werden.
-Dabei wird auch die LED PCB und der `PCB Spacer` zusätzlich benötigt.
+Dabei wird zusätzlich auch die `LED_PCB` und der `PCB Spacer` benötigt.
 
 * 4x PCB Spacer
 * 4x LED_PCB mit Bestückter LED Seite
 * 4x Top-Cover
 
 
-Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten ind die Aussüarungen gelegt.
+Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten in die Aussparungen gelegt.
 
 **WICHTIG** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
 
