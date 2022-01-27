@@ -132,7 +132,7 @@ Anschlißend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
 
 #### NOTE
 
-Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelnen Segemente ansteuert.
+Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelne Segemente ansteuert.
 Dies kann als Basisfür eigene Projekte verewendet werden.
 Mittels der Funktion `update_clock_display` können alle Segmente der Uhr einzeln verändert werden.
 Zur Bestimmung der Farbe können die Funktionen `Wheel` und `digit_color` verwendet werden.
@@ -142,8 +142,9 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
 uint32_t Wheel(int WheelPos, int _bright);
 uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _bright);
 ```
-### 1. LED MODULE VORBEREITEN
 
+
+### 1. LED MODULE VORBEREITEN
 
 ![single_digit_new](./documentation/images/single_digit_new.jpg)
 
@@ -155,7 +156,7 @@ Jedes LED Modul besteht aus drei Schichten:
 
 
 Zuerst wird die Schtzfolien von den einzelnen Ziffern entfernt und anschließend mit Glasreiniger entfettet.
-Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in die Halterung kommt man nur noch sehr schwer an die Flächen.
+**Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in der Halterung kommt man nur noch sehr schwer an die Flächen.**
 
 Jetzt werden sie einzelnen Ziffern in den `Ziffern-Halter` eingesetzt. Dabei müssen diese mit der gravierten Seite alle  in die gleiche Richtung zeigen.
 Auch ist die Reihenfolge wichtig!
