@@ -13,7 +13,7 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * Philips-Kopf Schraubendreher
 * Kleine Kabelbilder
 * [OPTINAL] Heißkleber
-
+* Glasreiniger
 
 # TEILELISTE
 
@@ -51,7 +51,7 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 ### 1. LED MODULE VORBEREITEN
 
 
-![single_digit](./documentation/images/single_digit.jpg)
+![single_digit_new](./documentation/images/single_digit_new.jpg)
 
 Jedes LED MOdul besteht aus drei Schichten:
 
@@ -61,5 +61,14 @@ Jedes LED MOdul besteht aus drei Schichten:
 * 1x PCB Spacer
 * 1x PCB mit Bestückter LED Seite
 
+Zuerst wird die Schtzfolien von den einzelnen Ziffern entfernt und anschließend mit Glasreiniger entfettet.
+Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in die Halterung kommt man nur noch sehr schwer an die Flächen.
+
+Jetzt werden sie einzelnen Ziffern in den Ziffern-Halter eingesetzt. Dabei müssen diese mit der gravierten Seite alle  in die gleiche Richtung zeigen.
+Auch ist die Reihenfolge wichtig!
+Von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
+
+`0` - `9`- `8` - `7` - `6` - `5` - `4` - `3` - `2` - `1`  
 
 
+![single_digit_digits_only](./documentation/images/single_digit_digits_only.jpg)
