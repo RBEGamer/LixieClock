@@ -211,8 +211,8 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die M
 
 ![spacers](./documentation/images/spacers.jpg)
 
-Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
-Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
+**Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.**
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken Seite befinden.
 Hier werden die folgenden Sperrholzteile benötigt:
 
 * 1x `SPACER_TOP`
@@ -242,10 +242,11 @@ Anschlißend können die Module wieder mit je einer Schraube fixiert werden. Som
 ### 4. Montage Elektronik
 
 Für die Verkabelung und Montage der Elektronik, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
-Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken Seite befinden.
 Für diesen Schritt werden die `Jumper-Wires`, sowie der `ESP8266 D1 MINI` benötigt.
 
-Jetzt werden mit den 4x 3x `Jumper-Wires` die einzelnen Module miteinander Verbunden. Auf den `LED-PCB`s sollten die Stiftleisten durch das `TOP_COVER` zugänglich sein. Bei diesen sind die einzelnen Pins beschriftet. Für `H1 => 5V D0 GND` und für `H2 => 5V DIN GND`. Das Ziel ist es die einzelnen Platinen zu einer Kette zu verbinden. 
+Jetzt werden mit den 4x drei `Jumper-Wires` die einzelnen Module miteinander Verbunden. Auf den `LED-PCB`s sollten die Stiftleisten durch das `TOP_COVER` zugänglich sein. Bei diesen sind die einzelnen Pins beschriftet. Für `H1 => 5V D0 GND` und für `H2 => 5V DIN GND`.
+Das Ziel ist es die einzelnen Platinen zu einer Kette zu verbinden. 
 Angefangen von der Zehner-Stunden, wird die `H2`-Stiftleiste über drei `Jumper-Wires` mit der `H1`-Stiftleiste des Stunden-Einer-Moduls verbunden.
 Dabei wird `5V->5V`, `GND->GND` und `DI->D0` verbunden.
 Dieser Prozess wird anschließend noch zweimal wiederholt:
