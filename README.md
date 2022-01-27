@@ -101,12 +101,13 @@ Anschließend kann die Arduino IDE geäffnet werden.
 
 Unter `Datei -> Öffnen` kann das Programm geöffnet werden, dies befindet sich in diesem Repository unter dem Pfad `./src/lixieclock/lixieclock.ino`
 
-Unter den Einstellungen muss danach zuerst die Konfiguration für den `ESP8266` geladen werden.
+Unter den Einstellungen muss danach zuerst der Support für den `ESP8266` geladen werden.
 Hierzu wird unter dem Punkt `Zusätzliche Boardverwalter-URLs` die folgende Zeile hinzugefügt:
 
 * `https://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
 #### NOTE
+
 Falls ein `ESP32` verwendet wird muss diese hinzugefügt werden:
 
 * `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_dev_index.json`
@@ -120,7 +121,7 @@ Anschlißend kann dieser als Board ausgewählt werden.
 
 ![sw_sel_board](./documentation/images/sw_sel_board.png)
 
-Unter `Port` wird der Serielle Port ausgewählt, an welchem sich das Board befindet.
+Unter `Port` wird der Serielle-Port ausgewählt, an welchem sich das Board befindet.
 
 * Windows `COMx`
 * MacOS `/dev/ttyXXxxxXXxxx`
