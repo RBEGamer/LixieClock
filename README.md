@@ -123,6 +123,8 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die M
 
 ### 3. Montage Bodenplatte
 
+![spacers](./documentation/images/spacers.jpg)
+
 Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
 Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
 
@@ -132,13 +134,26 @@ Hier werden die folgenden Sperrholzteile benötigt:
 * 1x `SPACER_BOTTOM`
 
 Diese dienen als Abstandshalter zwischen des `TOP_COVERS` und der Bodenplatte `BOTTOM_COVER`.
+Am `SPACER_BOTTOM` befindet sich eine Aussparung für den `ESP8266 D1 MINI`.
+
+#### OPTINAL 
+Da diese beiden Teile leicht zerbrechlich sind bietet es sich an, diese mit etwas Holzleim zu verkleben.
+
+![spacers_glue](./documentation/images/spacers_glue.jpg)
+
+Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Arretierung dieser mit zwei Schrauben 
+
+
+![spacers_glue](./documentation/images/spacers_glue.jpg)
+
+![spacer_final](./documentation/images/spacer_final.jpg)
+
 
 ### 4. Montage Elektronik
 
 Für die Verkabelung und Montage der Elektronik, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
 Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
-
-Für diesen Schritt werden die `Jumper-Wires`, sowie der `ESP8266 D1 MINI`.
+Für diesen Schritt werden die `Jumper-Wires`, sowie der `ESP8266 D1 MINI` benötigt.
 
 Jetzt werden mit den 4x 3x `Jumper-Wires` die einzelnen Module miteinander Verbunden. Auf den `LED-PCB`s sollten die Stiftleisten durch das `TOP_COVER` zugänglich sein. Bei diesen sind die einzelnen Pins beschriftet. Für `H1 => 5V D0 GND` und für `H2 => 5V DIN GND`. Das Ziel ist es die einzelnen Platinen zu einer Kette zu verbinden. 
 Angefangen von der Zehner-Stunden, wird die `H2`-Stiftleiste über drei `Jumper-Wires` mit der `H1`-Stiftleiste des Stunden-Einer-Moduls verbunden.
