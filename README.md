@@ -15,7 +15,7 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * [OPTINAL] Heißkleber
 * Glasreiniger
 * Mikro-USB Kabel
-
+* Holzkleber
 
 # TEILELISTE
 
@@ -121,13 +121,39 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die M
 
 ![led_module_and_top_cover](./documentation/images/led_module_and_top_cover.jpg)
 
+### 3. Montage Bodenplatte
 
-### 3. Montage Elektronik
+![spacers](./documentation/images/spacers.jpg)
+
+Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
+
+Hier werden die folgenden Sperrholzteile benötigt:
+
+* 1x `SPACER_TOP`
+* 1x `SPACER_BOTTOM`
+
+Diese dienen als Abstandshalter zwischen des `TOP_COVERS` und der Bodenplatte `BOTTOM_COVER`.
+Am `SPACER_BOTTOM` befindet sich eine Aussparung für den `ESP8266 D1 MINI`.
+
+#### OPTINAL 
+Da diese beiden Teile leicht zerbrechlich sind bietet es sich an, diese mit etwas Holzleim zu verkleben.
+
+![spacers_glue](./documentation/images/spacers_glue.jpg)
+
+Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Arretierung dieser mit zwei Schrauben 
+
+
+![spacers_glue](./documentation/images/spacers_glue.jpg)
+
+![spacer_final](./documentation/images/spacer_final.jpg)
+
+
+### 4. Montage Elektronik
 
 Für die Verkabelung und Montage der Elektronik, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.
 Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken  Seite befinden.
-
-Für diesen Schritt werden die `Jumper-Wires`, sowie der `ESP8266 D1 MINI`.
+Für diesen Schritt werden die `Jumper-Wires`, sowie der `ESP8266 D1 MINI` benötigt.
 
 Jetzt werden mit den 4x 3x `Jumper-Wires` die einzelnen Module miteinander Verbunden. Auf den `LED-PCB`s sollten die Stiftleisten durch das `TOP_COVER` zugänglich sein. Bei diesen sind die einzelnen Pins beschriftet. Für `H1 => 5V D0 GND` und für `H2 => 5V DIN GND`. Das Ziel ist es die einzelnen Platinen zu einer Kette zu verbinden. 
 Angefangen von der Zehner-Stunden, wird die `H2`-Stiftleiste über drei `Jumper-Wires` mit der `H1`-Stiftleiste des Stunden-Einer-Moduls verbunden.
@@ -153,6 +179,8 @@ Falls dies nicht der Fall ist, ist die Verkabelung zu Prüfen.
 Um den Zusammenbau zu vereinfachen, werden die einzelnen Stifleisten mit dem `Jumperwires` leicht zueinender (ca. 45°) gebogen und mit Heisskleber fixiert.
 Auch die Kabel ziwschen den Elementen werden mit Kabelbindern und/oder Heisskleber an der `TOP_PLATE` fixiert.
 
-### 4. Endmontage
+![electric_complete](./documentation/images/electric_complete.jpg)
+
+### 5. Endmontage
 
 
