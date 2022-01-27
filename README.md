@@ -79,11 +79,12 @@ $ cd arduino-1.8.19-linux64 && bash ./install.sh
 $ sudo usermod -a -G dialout $USER
 $ sudo reboot
 ```
+
 Nach dem Neustart kann der `ESP8266 D1 MINI` per USB Kabel mit dem Computer verbunden werden.
 
 Das Demo-Programm der Uhr, welches eine vollständige über NTP Synchronisierte Uhr darstellt, benötigt einige Bibliotheken.
 Diese könne über den Library-Manager der Arduino IDE installiert werden oder aus diesem Repository kopiert werden.
-Unter Windows wird der Inhalt des Ordners `./src/lixieclock/required_libs` nach `BENUTZER_VERZEICHNIS/Dokumente/Arduino/libraries` kopiert.
+Unter Windows wird der Inhalt des Ordners `./src/required_libs` nach `BENUTZER_VERZEICHNIS/Dokumente/Arduino/libraries` kopiert.
 
 Unter MacOS und Linux befindet sich der `Arduino` Ordner direkt im Benutzer-Ordner.
 Unter Linux muss aufgepasst werden, wie die Arduino IDE installiert wurde.
@@ -93,7 +94,7 @@ Wurde `snap install arduino` verwendet, befindet sich der Library-Order im Snap 
 # ###### LINUX LIB COPY ######
  
 $ cd ~
-$ cp -Rf ./LixieClock/src/lixieclock/required_libs ~/Arduino/libraries
+$ cp -Rf ./LixieClock/src/required_libs ~/Arduino/libraries
 ```
 
 Anschließend kann die Arduino IDE geäffnet werden.
