@@ -77,6 +77,7 @@ $ sudo apt update && sudo apt install -y git xz-utils
 $ cd ~ && git clone https://github.com/RBEGamer/LixieClock ./LixieClock
 
 # INSTALL ARDUINO IDE
+# # sudo snap install arduino => SEE NOTE!
 $ wget https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz
 $ tar -xf arduino-1.8.19-linux64.tar.xz
 $ cd arduino-1.8.19-linux64 && bash ./install.sh
