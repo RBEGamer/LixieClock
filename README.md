@@ -40,8 +40,8 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 ## ELECTRICAL
 
-* 4x LED PCB, SEE `./src/pcb`, LED SEITE BESTÜCKT
-* 1x ESP8266 D1 Mini
+* 4x `LED_PCB`, SEE `./src/pcb`, LED SEITE BESTÜCKT
+* 1x `ESP8266 D1 Mini`
 * 8* `1*3 2.54mm  90° MALE HEADERS`
 * 4x 3x`Jumperwires FEMALE<=>FEMALE`
 
