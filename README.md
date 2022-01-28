@@ -298,6 +298,10 @@ Dazu werden die  `M4 THREAD INSERTS` mit dem Lötkolben erwärmt und in die Bohr
 Nach dem Abkühlen können die Muttern an den Ecken ersetzt werden.
 
 
+![lixie_feet](./documentation/images/lixie_feet.png)
+
+
+
 
 ### 6. Bedienung
 
