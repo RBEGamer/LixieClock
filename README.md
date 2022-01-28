@@ -57,8 +57,8 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 ### 0. PROGRAMMIERUNG BASIS-PROGRAMM
 
-Zum späteren Funktionstest wird hier zuerst der  `ESP8266 D1 Mini` programmiert.
-Somit kann die vollstänige Funktionalität vor dem finalen Zusammenbau überprüft werden.
+Zum späteren Funktionstest wird hier zuerst der `ESP8266 D1 Mini` programmiert.
+Somit kann die vollständige  Funktionalität vor dem finalen Zusammenbau überprüft werden.
 
 Hierzu sollte die Arduino IDE installiert und dieses Git-Repository heruntergeladen sein.
 Unter Linux kann dies wie folgt geschehen:
@@ -96,7 +96,7 @@ $ cd ~
 $ cp -Rf ./LixieClock/src/required_libs ~/Arduino/libraries
 ```
 
-Anschließend kann die Arduino IDE geäffnet werden.
+Anschließend kann die Arduino IDE geöffnet werden.
 
 Unter `Datei -> Öffnen` kann das Programm geöffnet werden, dies befindet sich in diesem Repository unter dem Pfad `./src/lixieclock/lixieclock.ino`
 
@@ -126,13 +126,13 @@ Unter `Port` wird der Serielle-Port ausgewählt, an welchem sich das Board befin
 * MacOS `/dev/ttyXXxxxXXxxx`
 * Linux `/dev/ttyUSBx`
 
-Anschlißend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
+Anschließend kann über `Sketch -> Hochladen` das Programm hochgeladen werden.
 
 
 #### NOTE
 
-Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelne Segemente ansteuert.
-Dies kann als Basisfür eigene Projekte verewendet werden.
+Im Verzeichnis `./src/lixieclock__base` befindet sich ein Demo-Programm, welches nur die einzelne Segmente ansteuert.
+Dies kann als Basis für eigene Projekte verwendet werden.
 Mittels der Funktion `update_clock_display` können alle Segmente der Uhr einzeln verändert werden.
 Zur Bestimmung der Farbe können die Funktionen `Wheel` und `digit_color` verwendet werden.
 
@@ -149,16 +149,17 @@ uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _br
 
 Jedes LED Modul besteht aus drei Schichten:
 
-* 4x 10x Arcyglglas Ziffern
+* 4x 10x Acryglas Ziffern
 * 4x 1x Sperrholz Ziffern-Halter
 * 4x 1x Sperrholz Lightguide
 
 
-Zuerst wird die Schtzfolien von den einzelnen Ziffern entfernt und anschließend mit Glasreiniger entfettet.
+Zuerst wird die Schutzfolien von den einzelnen Ziffern entfernt und 
+ließend mit Glasreiniger entfettet.
 **Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in der Halterung kommt man nur noch sehr schwer an die Flächen.**
 
-Jetzt werden sie einzelnen Ziffern in den `Ziffern-Halter` eingesetzt. Dabei müssen diese mit der gravierten Seite alle  in die gleiche Richtung zeigen.
-Auch ist die Reihenfolge wichtig, von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzten:
+Jetzt werden sie einzelnen Ziffern in den `Ziffern-Halter` eingesetzt. Dabei müssen diese mit der gravierten Seite alle in die gleiche Richtung zeigen.
+Auch ist die Reihenfolge wichtig, von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzen:
 
 `0` - `9`- `8` - `7` - `6` - `5` - `4` - `3` - `2` - `1`  
 
@@ -176,12 +177,12 @@ Dieser Prozess, wird für alle vier Ziffern-Blöcke wiederholt.
 ![pcb_solder](./documentation/images/pcb_solder.jpg)
 
 Sollte bei den vier `LED-PCB`s die zwei Stiftleisten nicht bestückt sein, muss dies zuerst geschehen.
-Dazu werden diese in die beiden vorgesehenden 1x3 Pin Bohrungen gesteckt. Diese sind auf der Platine mit `H1` und `H2` beschriftet.
+Dazu werden diese in die beiden vorgesehenen 1x3 Pin Bohrungen gesteckt. Diese sind auf der Platine mit `H1` und `H2` beschriftet.
 Die lange Seite der Stiftleisten zeigt dabei von der LED Seite weg.
 
 ### 2. Zusammenbau Oberseite
 
-Nachdem alle vier Module soweit vorbereitet wurden, können diese nun mit der oberen Bodenplatte zusammengeschraubt werden.
+Nachdem alle vier Module so weit vorbereitet wurden, können diese nun mit der oberen Bodenplatte zusammengeschraubt werden.
 Dabei wird zusätzlich auch die `LED_PCB` und der `PCB Spacer` benötigt.
 
 * 4x PCB Spacer
@@ -189,9 +190,9 @@ Dabei wird zusätzlich auch die `LED_PCB` und der `PCB Spacer` benötigt.
 * 4x Top-Cover
 
 
-Für den Zusammenbau, wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten in die Aussparungen gelegt.
+Für den Zusammenbau wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten in die Aussparungen gelegt.
 
-**WICHTIG** Die `FRONT` Markeierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
+**WICHTIG** Die `FRONT` Markierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
 
 Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TOP_COVER` dafür auf eine Tasse zu stellen.
 
@@ -200,9 +201,9 @@ Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TO
 
 Anschließend wird auf jede `LED_PCB` der Sperrholz `PCB_SPACER` gelegt, hier ist die Ausrichtung nicht relevant.
 Als letztes wird das im ersten Schritt zusammengebaute Ziffern-Modul auf den `PCB_Spacer` gesetzt.
-Dabei ist die Ziffer `1` die vorderste Ziffer (richtung der `FRONT` MARKIERUNG).
+Dabei ist die Ziffer `1` die vorderste Ziffer (Richtung der `FRONT` MARKIERUNG).
 Nach dem Platzieren der vier Ziffern-Module, sollten diise jeweils mit einer der `M40x30` Schrauben und `M4` Mutter gesichert werden.
-Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichter die Montage im folgendnen Schritt.
+Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichtert die Montage im folgenden Schritt.
 
 ![led_module_and_top_cover](./documentation/images/led_module_and_top_cover.jpg)
 
@@ -226,7 +227,7 @@ Da diese beiden Teile leicht zerbrechlich sind bietet es sich an, diese mit etwa
 ![spacers_glue](./documentation/images/spacers_glue.jpg)
 
 Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Arretierung dieser mit zwei Schrauben für 5 Minuten verschraubt.
-Nach dieser Zeit können diese wieder gelößt werden.
+Nach dieser Zeit können diese wieder gelöst werden.
 
 ![spacer_final](./documentation/images/spacer_final.jpg)
 
@@ -234,8 +235,8 @@ Nach dieser Zeit können diese wieder gelößt werden.
 
 
 Die Schrauben (aus Schritt 2), welche die Module gehalten haben können jetzt wieder gelößt werden.
-Die beiden Spacer (geklebt oder nicht), werden anschlißend auf das `TOP_COVER` gesetzt, sodass sich die Aussparung unten links in der Ecke befindet und sich somit auf der Rückseite der Uhr befindet.
-Anschlißend können die Module wieder mit je einer Schraube fixiert werden. Somit sollten auch die beiden Spacer fixiert sein.
+Die beiden Spacer (geklebt oder nicht), werden anschließend auf das `TOP_COVER` gesetzt, sodass sich die Aussparung unten links in der Ecke befindet und sich somit auf der Rückseite der Uhr befindet.
+Anschließend können die Module wieder mit je einer Schraube fixiert werden. Somit sollten auch die beiden Spacer fixiert sein.
 
 
 ### 4. Montage Elektronik
@@ -254,9 +255,9 @@ Dieser Prozess wird anschließend noch zweimal wiederholt:
 * Stunden-Einer `H2` => Minuten-Zehner `H1`
 * Minuten-Zehner `H2` => Minuten-Einer `H1`
 
-Nach diesem Schritt sind die Stiftleisten  `Stunden-Zehner H1` und `Minuten-Einer H2` nicht verbunden.
+Nach diesem Schritt sind die Stiftleisten `Stunden-Zehner H1` und `Minuten-Einer H2` nicht verbunden.
 Im letzten Schritt wird der `ESP8266 D1 Mini` mit der `Stunden-Zehner H1` verbunden.
-Dabei werden werden die folgenden Pins am `ESP8266 D1 Mini` verunden:
+Dabei werden die folgenden Pins am `ESP8266 D1 Mini` verbunden:
 
 * `(ESP8266 D1 MINI) 5V` => `(Zehner Stunden H1) 5V`
 * `(ESP8266 D1 MINI) D8` => `(Zehner Stunden H1) DIN`
@@ -266,33 +267,33 @@ Anschließend kann vor dem finalen Zusammenbau die Funktion getestet werden.
 Mit einem USB-Kabel wird der `ESP8266 D1 Mini` verbunden. Jede Ziffer sollte einmal aufleuchten.
 Falls dies nicht der Fall ist, ist die Verkabelung zu Prüfen.
 
-Um den Zusammenbau zu vereinfachen, werden die einzelnen Stifleisten mit dem `Jumperwires` leicht zueinender (ca. 45°) gebogen und mit Heisskleber fixiert.
-Auch die Kabel ziwschen den Elementen werden mit Kabelbindern und/oder Heisskleber an der `TOP_PLATE` fixiert.
+Um den Zusammenbau zu vereinfachen, werden die einzelnen Stiftleisten mit dem `Jumperwires` leicht zueinander (ca. 45°) gebogen und mit Heisskleber fixiert.
+Auch die Kabel ziewschen den Elementen werden mit Kabelbindern und/oder Heißkleber an der `TOP_PLATE` fixiert.
 
 ![electric_complete](./documentation/images/electric_complete.jpg)
 
 ### 5. Endmontage
 
-Im letzten Schritt wirde der `ESP8266 D1 Mini` in die Aussparung des Spacers mit Heisskleber geklebt, sodass der USB-Anschluss nach aussen zeigt.
-Geklebt wird auf der glatten Seite des `ESP8266 D1 Mini` (auf der gegenüberliegenden Seite des USB Anschluss).
+Im letzten Schritt wird der `ESP8266 D1 Mini` in die Aussparung des Spacers mit Heißkleber geklebt, sodass der USB-Anschluss nach aussen zeigt.
+Geklebt wird auf der glatten Seite des `ESP8266 D1 Mini` (auf der gegenüberliegenden Seite des USB-Anschluss).
 
 ![esp8266_usb](./documentation/images/esp8266_usb.jpg)
 
-Final kann die Bodenplatte `BOTTOM_COVER` Montiert werden. Dazu werden die zuvor zur Montage genutzten Schrauben wieder gelösst und das `BOTTOM_COVER` auf die Spacer gelegt. Alle Schrauben werden dann handfest angezogen.
+Final kann die Bodenplatte `BOTTOM_COVER` montiert werden. Dazu werden die zuvor zur Montage genutzten Schrauben wieder gelöst und das `BOTTOM_COVER` auf die Spacer gelegt. Alle Schrauben werden dann handfest angezogen.
 
 ![bottom_screw](./documentation/images/bottom_screw.jpg)
 
 ### 6. Bedienung
 
-Wenn die Uhr mit dem Basis-Programm programmiert wurde, agiert diese nach dem Starten als NTP-Synchronierte Uhr.
+Wenn die Uhr mit dem Basis-Programm programmiert wurde, agiert diese nach dem Starten als NTP-Synchronisierte Uhr.
 Hierzu wird ein WLAN benötigt, mit welchem die Uhr einen Zeitserver abgragen kann.
 Um dieses WLAN festzulegen, wird die Uhr normal mit Spannung versorgt. Mit einem anderen Endgerät z.B. dem Handy kann sich mit dem WLAN-Access-Point der Uhr verbunden werden.
-Dieses heisst `LixieClockConfiguration`. Nach dem Verbinden mit diesem öffnet sich eine Konfigurationsübersicht in der das WLAN gesetzt werden kann.
+Dieses heißt `LixieClockConfiguration`. Nach dem Verbinden mit diesem öffnet sich eine Konfigurationsübersicht, in der das WLAN gesetzt werden kann.
 **Achtung** Nur 2.4 Ghz Netzwerke werden vom `ESP8266` und `ESP32` unterstützt.
 
 **Anschließend die Uhr einmal neustarten!**
 
-Nach einer erfolgreichen Verbindng, zeigt die Uhr ihre IP-Adresse auf den einzelnen Ziffern per Laufschrift an.
+Nach einer erfolgreichen Verbindung, zeigt die Uhr ihre IP-Adresse auf den einzelnen Ziffern per Laufschrift an.
 Wird diese Adresse in einem Browser aus dem gleichen Netz aufgerufen, kann diese umfassend konfiguriert werden.
 
 ![web_config](./documentation/images/web_config.png)
