@@ -30,9 +30,9 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 * LASERCUT TEILE
 * *  4x `./src/svg/4x_numbers_2mm_set_300_200` - acrylglas gs 2mm, engrave (blue lines), cut (red lines)
-* *  1x `./src/svg/4_digit_combined_set_1` - playwood 4mm, cut (red lines), engrave (blue lines)
-* *  1x `./src/svg/4_digit_combined_set_2` - playwood 4mm, cut (red lines), engrave (blue lines)
-* *  1x `./src/svg/4_digit_combined_set_3` - playwood 4mm, cut (red lines), engrave (blue lines)
+* *  1x `./src/svg/4_digit_combined_set_1` - playwood 4mm, engrave (blue lines), cut (red lines)
+* *  1x `./src/svg/4_digit_combined_set_2` - playwood 4mm, engrave (blue lines), cut (red lines)
+* *  1x `./src/svg/4_digit_combined_set_3` - playwood 4mm, engrave (blue lines), cut (red lines)
 
 
 * 16x `M4x30 Philips Head Type PH2 - DIN7985`
