@@ -34,9 +34,15 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * *  1x `./src/svg/4_digit_combined_set_2` - playwood 4mm, engrave (blue lines), cut (red lines)
 * *  1x `./src/svg/4_digit_combined_set_3` - playwood 4mm, engrave (blue lines), cut (red lines)
 
+* 3D DRUCK
+* * 4x `./src/3d_print/4x_lixie_feet.stl` - 0.2mm PLA
 
-* 16x `M4x30 Philips Head Type PH2 - DIN7985`
-* 16x `M4 Nut - DIN934`
+* MISC
+* * 16x `M4x30 Philips Head Type PH2 - DIN7985`
+* * 16x `M4 Nut - DIN934`
+* * 4x `M4 THREAD INSERTS`
+
+
 
 ## ELECTRICAL
 
