@@ -35,12 +35,12 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 * *  1x `./src/svg/4_digit_combined_set_3` - playwood 4mm, engrave (blue lines), cut (red lines)
 
 * 3D DRUCK
-* * 4x `./src/3d_print/4x_lixie_feet.stl` - 0.2mm PLA
+* * [OPTINAL] 4x `./src/3d_print/4x_lixie_feet.stl` - 0.2mm PLA
 
 * MISC
 * * 16x `M4x30 Philips Head Type PH2 - DIN7985`
 * * 16x `M4 Nut - DIN934`
-* * 4x `M4 THREAD INSERTS`
+* * [OPTINAL] 4x `M4 THREAD INSERTS`
 
 
 
@@ -288,6 +288,15 @@ Geklebt wird auf der glatten Seite des `ESP8266 D1 Mini` (auf der gegenüberlieg
 Final kann die Bodenplatte `BOTTOM_COVER` montiert werden. Dazu werden die zuvor zur Montage genutzten Schrauben wieder gelöst und das `BOTTOM_COVER` auf die Spacer gelegt. Alle Schrauben werden dann handfest angezogen.
 
 ![bottom_screw](./documentation/images/bottom_screw.jpg)
+
+
+#### OPTIONAL
+
+Anstatt der vier M4 Muttern an den Ecken können auch die 3D gedruckten Füße angeschraubt werden.
+Dazu werden die  `M4 THREAD INSERTS` mit dem Lötkolben erwärmt und in die Bohrung des Fußes bündig einschmelzen.
+Nach dem Abkühlen können die Muttern an den Ecken ersetzt werden.
+
+
 
 ### 6. Bedienung
 
