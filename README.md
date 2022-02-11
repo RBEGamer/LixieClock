@@ -173,7 +173,9 @@ Auch ist die Reihenfolge wichtig, von hinten nach vorne, sind die Ziffern in die
 
 ![single_digit_digits_only](./documentation/images/single_digit_digits_only.jpg)
 
-Anschließend werden die Ziffern auf den `Lighguide` gesetzt. Dabei muss die gravierte Seite der Ziffern in Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.
+Anschließend werden die Ziffern auf den `Lighguide` gesetzt.
+
+**Dabei muss die gravierte Seite der Ziffern in Richtung der `FRONT` Markierung zeigen und die Markierungen auf dem `Lightguide` müssen mit den Ziffern übereinstimmen.**
 
 Dieser Prozess, wird für alle vier Ziffern-Blöcke wiederholt.
 
@@ -189,7 +191,7 @@ Die lange Seite der Stiftleisten zeigt dabei von der LED Seite weg.
 
 ### 2. Zusammenbau Oberseite
 
-Nachdem alle vier Module so weit vorbereitet wurden, können diese nun mit der oberen Bodenplatte zusammengeschraubt werden.
+Nachdem alle vier Module vorbereitet wurden, können diese nun mit der oberen Bodenplatte zusammengeschraubt werden.
 Dabei wird zusätzlich auch die `LED_PCB` und der `PCB Spacer` benötigt.
 
 * 4x PCB Spacer
@@ -197,20 +199,24 @@ Dabei wird zusätzlich auch die `LED_PCB` und der `PCB Spacer` benötigt.
 * 4x Top-Cover
 
 
-Für den Zusammenbau wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s mit den Stiftleisten in die Aussparungen gelegt.
+Für den Zusammenbau wird das `TOP_COVER` mit der Beschriftung nach oben gelegt und die `LED-PCB`s jeweils mit den Stiftleisten in die Aussparungen des `TOP_COVER` gelegt, sodass die Platine flach aufliegt.
 
 **WICHTIG** Die `FRONT` Markierung auf dem `TOP_COVER` und der Pfeil zeigt dabei zur Tischkante!
 
-Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TOP_COVER` dafür auf eine Tasse zu stellen.
+Diese werden dadurch nicht flach auf dem Tisch liegen, es empfiehlt sich das `TOP_COVER` dafür auf eine Tasse zu stellen.
 
 ![led_pcb_placement](./documentation/images/led_pcb_placement.jpg)
 
 
 Anschließend wird auf jede `LED_PCB` der Sperrholz `PCB_SPACER` gelegt, hier ist die Ausrichtung nicht relevant.
+
+
 Als letztes, wird das im ersten Schritt zusammengebaute Ziffern-Modul auf den `PCB_Spacer` gesetzt.
-Dabei ist die Ziffer `1` die vorderste Ziffer (richtung der `FRONT` Markierung).
+
+**Dabei ist die Ziffer `1` die vorderste Ziffer (richtung der `FRONT` Markierung).**
+
 Nach dem Platzieren der vier Ziffern-Module, sollten diese jeweils mit einer der `M40x30` Schrauben und `M4` Mutter gesichert werden.
-Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichtert die Montage im folgenden Schritt.
+Hier reicht es diese nicht fest anzuziehen. Dieser Schritt erleichtert die Montage im folgenden Schritt.
 
 ![led_module_and_top_cover](./documentation/images/led_module_and_top_cover.jpg)
 
@@ -219,7 +225,9 @@ Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichtert die 
 ![spacers](./documentation/images/spacers.jpg)
 
 **Für diesen Schritt, wird alles umgedreht, sodass die LED Module mit der runden Seite auf der Tischplatte stehen.**
-Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken Seite befinden.
+Die `FRONT` Markierung sollte jetzt in die andere Richtung Zeigen und somit das LED-Modul welches die Zehner-Stunden darstellen auf der linken Seite befindet.
+
+
 Hier werden die folgenden Sperrholzteile benötigt:
 
 * 1x `SPACER_TOP`
@@ -233,7 +241,7 @@ Da diese beiden Teile leicht zerbrechlich sind bietet es sich an, diese mit etwa
 
 ![spacers_glue](./documentation/images/spacers_glue.jpg)
 
-Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Arretierung dieser mit zwei Schrauben für 5 Minuten verschraubt.
+Dabei wird der  `SPACER_TOP` auf den `SPACER_BOTTOM` geklebt und zu einfachen Arretierung dieser mit zwei Schrauben (oder Wäscheklammern) für 5 Minuten fixiert.
 Nach dieser Zeit können diese wieder gelöst werden.
 
 ![spacer_final](./documentation/images/spacer_final.jpg)
@@ -242,6 +250,7 @@ Nach dieser Zeit können diese wieder gelöst werden.
 
 
 Die Schrauben (aus Schritt 2), welche die Module gehalten haben können jetzt wieder gelößt werden.
+
 Die beiden Spacer (geklebt oder nicht), werden anschließend auf das `TOP_COVER` gesetzt, sodass sich die Aussparung unten links in der Ecke befindet und sich somit auf der Rückseite der Uhr befindet.
 Anschließend können die Module wieder mit je einer Schraube fixiert werden. Somit sollten auch die beiden Spacer fixiert sein.
 
