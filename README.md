@@ -123,11 +123,9 @@ Allgemein ist die Software mit dem `ESP6266` (nicht `ESP6266-01`) und dem `ESP32
 
 Nach dem Speichern der Einstellungen muss das Board noch installiert werden.
 Dazu wird unter `Werkzeuge -> Board -> Boardverwalter` der `ESP8266` installiert.
-Anschlißend kann dieser als Board ausgewählt werden.
+Anschlißend kann das `LOLIN (WEMOS) D1 MINI (CLONE)` als Board ausgewählt werden.
 
-![sw_sel_board](./documentation/images/sw_sel_board.png)
-
-![board_settings](./documentation/images/board_settings.png)
+![board_settings](./documentation/images/board_settings_2.png)
 
 Unter `Port` wird der Serielle-Port ausgewählt, an welchem sich das Board befindet.
 
