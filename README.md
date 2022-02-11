@@ -152,6 +152,10 @@ uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _br
 
 ### 1. LED MODULE VORBEREITEN
 
+** HINWEIS: Alle Sperrholzteile sind mit deren Namen markiert. Soweit nicht anders angegeben, zeigt diese nach oben.**
+
+
+
 ![single_digit_new](./documentation/images/single_digit_new.jpg)
 
 Jedes LED Modul besteht aus drei Schichten:
