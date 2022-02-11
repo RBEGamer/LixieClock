@@ -1,12 +1,13 @@
 //FH AACHEN LIXIECLOCK https://github.com/RBEGamer/LixieClock/
 //--- CHANGELOG ----
-//VERSION 1.0 Marcel Ochsendorf info@marcelochsendorf.com 12.12.2021
-//VERSION 1.4 Marcel Ochsendorf info@marcelochsendorf.com 10.01.2022
+// 12.12.2021 - VERSION 1.0; fixing LED NUMBERING, FIRST STABLE RELEASE
+// 10.01.2022 - VERSION 1.4; fixing ESP32 SUPPORT
+// 11.02.2022 - VERSION 1.5; fixing SPIFFS INIT AND FORMAT WITH DBG MSG
 
-#define VERSION "1.4"
+#define VERSION "1.5"
 //#define USE_LITTLEFS
 #define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
-
+//#define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR ELEMENT PRESENT; SO ONE ADDITIONAL LED IS ADDED
 
 
 
@@ -28,18 +29,16 @@
 #ifdef ESP32
 #include <WebServer.h>
 
-
+#define FORMAT_SPIFFS_IF_FAILED true
 #ifdef USE_LITTLEFS
   #define SPIFFS LITTLEFS
   #include <LITTLEFS.h>
 #else
 #include <SPIFFS.h>
 #endif
-
-#define FORMAT_SPIFFS_IF_FAILED true
-
 #include <ESPmDNS.h>
 #endif
+
 
 
 #include <WiFiClient.h>
@@ -97,7 +96,13 @@
 #if defined(ESP32)
 #define DEFAULT_LED_OFFSET 1
 #elif defined(ESP8266)
+#ifdef PCB_V0_FIX
+
+#define DEFAULT_LED_OFFSET 1
+#else
 #define DEFAULT_LED_OFFSET 0
+#endif
+
 #else
 #define DEFAULT_LED_OFFSET 0
 #endif
@@ -1016,19 +1021,28 @@ void display_ip(){
 void setup(void)
 { 
 
-   
-
 
     Serial.begin(SERIAL_BAUD_RATE);
     Serial.println("_setup_started_");
     // START THE FILESYSTEM
-    if (SPIFFS.begin()) {
-        last_error = "SPIFFS Initialisierung....OK";
-    }
-    else {
-        last_error = "SPIFFS Initialisierung...Fehler!";
+    int fsok = SPIFFS.begin();
 
-    }
+
+      if(fsok){
+        
+      }
+      else {
+        last_error = "__err_spiffs_init_error_try_to_format__";
+        Serial.println(last_error);
+        SPIFFS.format();
+        
+        fsok = SPIFFS.begin();
+        if(!fsok){
+          last_error = "__err_spiffs_format failed__";
+          Serial.println(last_error);
+         }
+          
+      }
 
     
     // LOAD SETTINGS

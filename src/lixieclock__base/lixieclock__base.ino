@@ -1,12 +1,13 @@
 //FH AACHEN LIXIECLOCK https://github.com/RBEGamer/LixieClock/
 //--- CHANGELOG ----
-//VERSION 1.0 Marcel Ochsendorf info@marcelochsendorf.com 27.01.2022
+//VERSION 1.0; FIRST STABLE RELEASE; Marcel Ochsendorf info@marcelochsendorf.com 27.01.2022
 
 
 #define VERSION "1.0"
 #include <Arduino.h>
 
 #define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
+//#define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR ELEMENT PRESENT; SO ONE ADDITIONAL LED IS ADDED
 
 //LED PIN CONFIG
 #ifdef ESP8266
@@ -28,7 +29,14 @@
 #define DEFAULT_LED_OFFSET 1
 const int led_offset = 1;
 #elif defined(ESP8266)
-const int led_offset = 0; //WEMOS D1 MINI VERSION
+
+#ifdef PCB_V0_FIX
+const int led_offset = 1;
+#else
+const int led_offset = 0;
+#endif
+
+
 #else
 const int led_offset = 0;
 #endif
