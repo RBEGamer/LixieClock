@@ -28,7 +28,7 @@ Die Lixie-Uhr des Makerspace der FH Aachen
 
 ## MECHANICAL
 
-* LASERCUT TEILE `SVG - ./src/svg` or `DXF - ./src/dxf`
+* LASERCUT TEILE `SVG - ./src/svg` oder `DXF - ./src/dxf`
 * *  4x `4x_numbers_2mm_set_300_200_simplified` - acrylglas gs 2mm, engrave (blue lines), cut (red lines)
 * *  1x `4_digit_combined_set_1` - playwood 4mm, engrave (blue lines), cut (red lines)
 * *  1x `4_digit_combined_set_2` - playwood 4mm, engrave (blue lines), cut (red lines)
@@ -156,14 +156,14 @@ uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _br
 
 Jedes LED Modul besteht aus drei Schichten:
 
-* 4x 10x Acryglas Ziffern
-* 4x 1x Sperrholz Ziffern-Halter
-* 4x 1x Sperrholz Lightguide
+* 4x jeweils 10x Acryglas Ziffern
+* 4x jeweils 1x Sperrholz Ziffern-Halter
+* 4x jeweils 1x Sperrholz Lightguide
 
 
 Zuerst wird die Schutzfolien von den einzelnen Ziffern entfernt und 
 ließend mit Glasreiniger entfettet.
-**Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in der Halterung kommt man nur noch sehr schwer an die Flächen.**
+**Ab jetzt dürfen die Ziffern nur noch an den Seiten angefasst werden, denn nach der Montage in der Halterung kommt man nur noch sehr schwer an die inneren Flächen der Ziffern.**
 
 Jetzt werden sie einzelnen Ziffern in den `Ziffern-Halter` eingesetzt. Dabei müssen diese mit der gravierten Seite alle in die gleiche Richtung zeigen.
 Auch ist die Reihenfolge wichtig, von hinten nach vorne, sind die Ziffern in dieser Reihenfolge einzusetzen:
