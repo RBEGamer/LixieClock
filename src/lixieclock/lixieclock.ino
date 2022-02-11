@@ -6,8 +6,8 @@
 
 #define VERSION "1.5"
 //#define USE_LITTLEFS
-#define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
-//#define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR ELEMENT PRESENT; SO ONE ADDITIONAL LED IS ADDED
+//#define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
+#define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR ELEMENT PRESENT; SO ONE ADDITIONAL LED IS ADDED
 
 
 
@@ -30,6 +30,7 @@
 #include <WebServer.h>
 
 #define FORMAT_SPIFFS_IF_FAILED true
+
 #ifdef USE_LITTLEFS
   #define SPIFFS LITTLEFS
   #include <LITTLEFS.h>
@@ -1059,7 +1060,7 @@ void setup(void)
     
     // START WFIFIMANAGER FOR CAPTIVE PORTAL
     WiFiManager wifiManager;
-    wifiManager.setDebugOutput(false);
+    wifiManager.setDebugOutput(true);
     wifiManager.setTimeout(120);
     wifiManager.setConfigPortalTimeout(30);
     wifiManager.setAPClientCheck(true);
