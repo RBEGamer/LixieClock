@@ -127,7 +127,7 @@ Anschlißend kann dieser als Board ausgewählt werden.
 
 ![sw_sel_board](./documentation/images/sw_sel_board.png)
 
-![sw_sel_board](./documentation/images/board_settings.png)
+![board_settings](./documentation/images/board_settings.png)
 
 Unter `Port` wird der Serielle-Port ausgewählt, an welchem sich das Board befindet.
 
