@@ -207,9 +207,9 @@ Diese werden dadurch nicht flach auf dem Tisch liegen, es Empfiehlt sich das `TO
 
 
 Anschließend wird auf jede `LED_PCB` der Sperrholz `PCB_SPACER` gelegt, hier ist die Ausrichtung nicht relevant.
-Als letztes wird das im ersten Schritt zusammengebaute Ziffern-Modul auf den `PCB_Spacer` gesetzt.
-Dabei ist die Ziffer `1` die vorderste Ziffer (Richtung der `FRONT` MARKIERUNG).
-Nach dem Platzieren der vier Ziffern-Module, sollten diise jeweils mit einer der `M40x30` Schrauben und `M4` Mutter gesichert werden.
+Als letztes, wird das im ersten Schritt zusammengebaute Ziffern-Modul auf den `PCB_Spacer` gesetzt.
+Dabei ist die Ziffer `1` die vorderste Ziffer (richtung der `FRONT` Markierung).
+Nach dem Platzieren der vier Ziffern-Module, sollten diese jeweils mit einer der `M40x30` Schrauben und `M4` Mutter gesichert werden.
 Hier reicht es diese nicht ganz fest anzuziehen. Dieser Schritt erleichtert die Montage im folgenden Schritt.
 
 ![led_module_and_top_cover](./documentation/images/led_module_and_top_cover.jpg)
