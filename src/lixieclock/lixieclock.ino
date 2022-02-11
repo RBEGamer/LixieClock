@@ -1061,14 +1061,14 @@ void setup(void)
     // START WFIFIMANAGER FOR CAPTIVE PORTAL
     WiFiManager wifiManager;
     wifiManager.setDebugOutput(true);
-    wifiManager.setTimeout(120);
-    wifiManager.setConfigPortalTimeout(120);
+    wifiManager.setTimeout(60);
+    wifiManager.setConfigPortalTimeout(180);
     wifiManager.setAPClientCheck(true);
     wifiManager.setBreakAfterConfig(true);
     wifiManager.setClass("invert"); 
     //TRY TO CONNECT
     // AND DISPLAY IP ON CLOCKS HOUR DISPLAY (FOR 2 DIGIT CLOCKS)
-    if(wifiManager.autoConnect("LixieClockConfiguration")){
+    if(wifiManager.autoConnect(("LixieClockConfiguration_" + String(get_esp_chip_id())).c_str()))){
       display_ip();
       
     }else{
