@@ -1062,7 +1062,7 @@ void setup(void)
     WiFiManager wifiManager;
     wifiManager.setDebugOutput(true);
     wifiManager.setTimeout(120);
-    wifiManager.setConfigPortalTimeout(30);
+    wifiManager.setConfigPortalTimeout(60);
     wifiManager.setAPClientCheck(true);
     wifiManager.setBreakAfterConfig(true);
     wifiManager.setClass("invert"); 
