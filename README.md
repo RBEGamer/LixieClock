@@ -320,13 +320,21 @@ Nach dem Abkühlen können die Muttern an den Ecken ersetzt werden.
 
 Wenn die Uhr mit dem Basis-Programm programmiert wurde, agiert diese nach dem Starten als NTP-Synchronisierte Uhr.
 Hierzu wird ein WLAN benötigt, mit welchem die Uhr einen Zeitserver abgragen kann.
-Um dieses WLAN festzulegen, wird die Uhr normal mit Spannung versorgt. Mit einem anderen Endgerät z.B. dem Handy kann sich mit dem WLAN-Access-Point der Uhr verbunden werden. Die WLAN-Konfigurations-Website ist nach dem Start der Uhr für 60 Sekunden sichtbar.
+Um dieses WLAN festzulegen, wird die Uhr normal mit Spannung versorgt. Mit einem anderen Endgerät z.B. dem Handy kann sich mit dem WLAN-Access-Point der Uhr verbunden werden.
+
+Die WLAN-Konfigurations-Website ist nach dem Start der Uhr für 120 Sekunden sichtbar.
+
+**Der aktive Access-Point wir vonder Uhr mit `00:00:00` angezeigt!**
+
 Dieses heißt `LixieClockConfiguration_xxXXxxXX`. Nach dem Verbinden mit diesem öffnet sich eine Konfigurationsübersicht, in der das WLAN gesetzt werden kann.
 Falls sich die Konfigutationsseite nicht automatisch öffnet (z.B. auf einem PC), kann die IP `http://192.168.4.1/` in einem Browser angegeben werden.
 
 **Achtung** Nur 2.4 Ghz Netzwerke werden vom `ESP8266` und `ESP32` unterstützt.
 
-**Anschließend die Uhr einmal neustarten!**
+
+**Bei einer fehlerhaften Verbindungsaufbau zeigt das Display der Uhr `42:42:42` an.**
+Wenn dies der Fall ist, kann die Uhr neugstartet werden und die Konfiguration kann erneut durchgeführt werden.
+
 
 Nach einer erfolgreichen Verbindung, zeigt die Uhr ihre IP-Adresse auf den einzelnen Ziffern per Laufschrift an.
 Wird diese Adresse in einem Browser aus dem gleichen Netz aufgerufen, kann diese umfassend konfiguriert werden.
