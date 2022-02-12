@@ -1068,6 +1068,8 @@ void setup(void)
     wifiManager.setClass("invert"); 
     //TRY TO CONNECT
     // AND DISPLAY IP ON CLOCKS HOUR DISPLAY (FOR 2 DIGIT CLOCKS)
+    update_clock_display(0, 0, 0, 192, 255,true); //DISPLAY WIFI ERROR
+    delay(1000);
     if(wifiManager.autoConnect(("LixieClockConfiguration_" + String(get_esp_chip_id())).c_str())){
       display_ip();
       
