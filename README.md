@@ -340,3 +340,16 @@ Nach einer erfolgreichen Verbindung, zeigt die Uhr ihre IP-Adresse auf den einze
 Wird diese Adresse in einem Browser aus dem gleichen Netz aufgerufen, kann diese umfassend konfiguriert werden.
 
 ![web_config](./documentation/images/web_config.png)
+
+
+# Troubleshooting
+
+## Ziffern 3,4 und 7,8 sind getauscht
+
+Dann hast du eine Platine der ersten Version verwendet. Diese hat einen Fehler in der Platzierung der LEDs bzw. deren Reihenfolge.
+Dieser Fehler kann einfach per Software behoben werden. 
+In der beigliegenden Demo-Software `/src/lixieclock` und `/src/lixieclock_base` gibt es ein passendes Makro welches gesetzt werden kann.
+
+```c++
+#define PCB_V1_FIX //FIX DIGIT 3,4 and 7,8 SWAPPING ERROR ON PCB_V1 
+```
