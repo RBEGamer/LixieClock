@@ -363,3 +363,19 @@ Hierzu bietet die Software ein Define, welches diesen Fehler behebt.
 ```c++
 9 | #define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR LED PRESENT
 ``` 
+
+## ESP32 Version speichert Konfiguration nicht
+
+Je nach verwendeter Arduino-IDE Version, sowie der verwendeten Libraries kann es bei der ESP32 Software zu Fehlern mit dem Dateisystem FS kommen.
+Hierzu gib es eine neue Version `LitteFS`, welche die Default-Version `Filesystem` ersetzt.
+Mittels Flag kann erzwungen werden, dass die neue `LittleFS` Bibliothek verwendet werden soll.
+
+```c++
+7 | #define USE_LITTLEFS
+```
+
+
+
+
+
+
