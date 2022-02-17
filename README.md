@@ -353,3 +353,13 @@ In der beigliegenden Demo-Software `/src/lixieclock` und `/src/lixieclock_base` 
 ```c++
 10 | #define PCB_V1_FIX //FIX DIGIT 3,4 and 7,8 SWAPPING ERROR ON PCB_V1 
 ```
+
+## Ziffern sind um eine Stelle vertauscht
+
+Wenn alle Ziffern um eine Stelle nach hinten verschoben ist, dann ist die Entwicklungsversion der Uhr bevor diese als Bausatz konzepiert wurde.
+Hier existiert keine Error-LED auf der Platine, somit fehlt bei der Berechnung des LED-Index eine LED.
+Hierzu bietet die Software ein Define, welches diesen Fehler behebt.
+
+```c++
+9 | #define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR LED PRESENT
+``` 
