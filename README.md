@@ -357,7 +357,7 @@ In der beigliegenden Demo-Software `/src/lixieclock` und `/src/lixieclock_base` 
 ## Ziffern sind um eine Stelle vertauscht
 
 Wenn alle Ziffern um eine Stelle nach hinten verschoben ist, dann ist die Entwicklungsversion der Uhr bevor diese als Bausatz konzepiert wurde.
-Hier existiert keine Error-LED auf der Platine, somit fehlt bei der Berechnung des LED-Index eine LED.
+Hier existiert eine Error-LED auf der Platine, somit gibt es eine zusätzliche LED bei der Berechnung des LED-Index.
 Hierzu bietet die Software ein Define, welches diesen Fehler behebt.
 
 ```c++
