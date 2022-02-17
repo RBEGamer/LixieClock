@@ -351,5 +351,5 @@ Dieser Fehler kann einfach per Software behoben werden.
 In der beigliegenden Demo-Software `/src/lixieclock` und `/src/lixieclock_base` gibt es ein passendes Makro welches gesetzt werden kann.
 
 ```c++
-#define PCB_V1_FIX //FIX DIGIT 3,4 and 7,8 SWAPPING ERROR ON PCB_V1 
+10 | #define PCB_V1_FIX //FIX DIGIT 3,4 and 7,8 SWAPPING ERROR ON PCB_V1 
 ```
