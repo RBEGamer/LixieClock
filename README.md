@@ -152,7 +152,7 @@ uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _br
 
 ### 1. LED MODULE VORBEREITEN
 
-** HINWEIS: Alle Sperrholzteile sind mit deren Namen markiert. Soweit nicht anders angegeben, zeigt diese nach oben.**
+**HINWEIS: Alle Sperrholzteile sind mit deren Namen markiert. Soweit nicht anders angegeben, zeigt diese nach oben.**
 
 
 
