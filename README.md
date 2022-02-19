@@ -316,7 +316,7 @@ Nach dem Abkühlen können die Muttern an den Ecken ersetzt werden.
 
 
 
-### 6. Bedienung
+### 6. Bedienung und Ersteinrichtung
 
 Wenn die Uhr mit dem Basis-Programm programmiert wurde, agiert diese nach dem Starten als NTP-Synchronisierte Uhr.
 Hierzu wird ein WLAN benötigt, mit welchem die Uhr einen Zeitserver abgragen kann.
