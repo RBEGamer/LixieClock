@@ -11,6 +11,8 @@
 #define WORDCLOCK_V0
 
 
+//#define ENABLE_RTC
+
 #include <Arduino.h>
 #include "FS.h"
 
@@ -158,8 +160,8 @@ const int DARKMODE_STOP_HOURS = 6;
 #define M_ZWANZIG 4
 #define M_VIERTEL 5
 #define M_VOR 6
-#define M_NACH 8
-#define M_HALB 7
+#define M_NACH 7
+#define M_HALB 8
 #define M_UHR 21
 #define H_EINS 11
 #define H_ZWEI 12
@@ -679,7 +681,7 @@ void set_word(int word, uint32_t _color) {
 }
 
 
-void getHourWord(int _h, int _m, uint32_t _col)
+void getHourWord(int _h, int _m, uint32_t _col,  uint32_t _col_oth)
 {
   switch(_h)
   {
@@ -758,7 +760,7 @@ void getHourWord(int _h, int _m, uint32_t _col)
   }
 }
 
-void getMinuteWord(int _m, uint32_t _col)
+void getMinuteWord(int _m, uint32_t _col,  uint32_t _col_oth)
 {
   /*
   get word for current "minute"
@@ -766,127 +768,127 @@ void getMinuteWord(int _m, uint32_t _col)
   switch(_m)
   {
     case 0:
-    set_word(M_UHR, _col);break;
+      {set_word(M_UHR, _col);break;}
     case 1:
-    set_word(M_UHR, _col);break;
+      {set_word(M_UHR, _col);break;}
     case 2:
-    set_word(M_UHR, _col);break;
+      {set_word(M_UHR, _col);break;}
     case 3:
-    set_word(M_UHR, _col);break;
+      {set_word(M_UHR, _col);break;}
     case 4:
-      set_word(M_UHR, _col);break;
+      {set_word(M_UHR, _col);break;}
     case 5:
-    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col); break;}
     case 6:
-    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col); break;}
     case 7:
-    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col); break;}
     case 8:
-    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col); break;}
     case 9:
-      set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col); break;}
     case 10:
-     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+     {set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;}
     case 11:
-     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+     {set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;}
     case 12:
-     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+     {set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;}
     case 13:
-     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+     {set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;}
     case 14:
-      set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+      {set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;}
     case 15:
-      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;}
     case 16:
-      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;}
     case 17:
-      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;}
     case 18:
-      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;}
     case 19:
-      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;}
     case 20:
-      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;}
     case 21:
-      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;}
     case 22:
-      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;}
     case 23:
-      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;}
     case 24:
-      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;}
     case 25:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;}
     case 26:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;}
     case 27:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;}
     case 28:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;}
     case 29:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;}
     case 30:
-      set_word(M_HALB, _col); break;
+      {set_word(M_HALB, _col); break;}
     case 31:
-      set_word(M_HALB, _col); break;
+      {set_word(M_HALB, _col); break;}
     case 32:
-      set_word(M_HALB, _col); break;
+      {set_word(M_HALB, _col); break;}
     case 33:
-      set_word(M_HALB, _col); break;
+      {set_word(M_HALB, _col); break;}
     case 34:
-      set_word(M_HALB, _col); break;
+      {set_word(M_HALB, _col); break;}
     case 35:
-      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;}
     case 36:
-      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;}
     case 37:
-      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;}
     case 38:
-      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+     {set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;}
     case 39:
-      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;}
     case 40:
-      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;}
     case 41:
-      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;}
     case 42:
-      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;}
     case 43:
-      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;}
     case 44:
-      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;}
     case 45:
-      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;}
     case 46:
-      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;}
     case 47:
-      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;}
     case 48:
-      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;}
     case 49:
-      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+      {set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;}
     case 50:
-      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;}
     case 51:
-      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;}
     case 52:
-      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;}
     case 53:
-      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;}
     case 54:
-      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+      {set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;}
     case 55:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); break;}
     case 56:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); break;}
     case 57:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); break;}
     case 58:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); break;}
     case 59:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); break;}
     case 60:
-      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+      {set_word(M_FUENF, _col); set_word(M_VOR, _col); break;}
   }
 }
 #endif
@@ -902,33 +904,45 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     Serial.println(last_error);          
     delay(100);
   
-    //UPDATE NEOPIXEL
-    
+   
   
     pixels.clear();
     
     
     
 #ifdef WORDCLOCK_V0
+  const uint32_t col_oth = Wheel((col + (255/4)*0) % 255, _bright);
+  const uint32_t col_m = Wheel((col + (255/4)*1) % 255, _bright);
+  const uint32_t col_h =Wheel((col + (255/4)*2) % 255, _bright);
   //ES
-  set_word(M_ES, digit_color(0,0,false, col, _bright));
+  set_word(M_ES, col_oth);
   // IST
-  set_word(M_IST, digit_color(0,0,false, col, _bright));
+  set_word(M_IST, col_oth);
+  //UHR
 
-  uint32_t col_m = digit_color(m,1 ,false, col, _bright);
-  uint32_t col_h = digit_color(h,2 ,false, col, _bright);
 
-  //getHourWord(h, m, col_h);
-  getMinuteWord(m, col_m);
+  getMinuteWord(m, col_m, col_oth);
+
+if(m >= 25){
+ getHourWord((h+1)%24, m, col_h, col_oth);
+}else{
+  getHourWord(h, m, col_h, col_oth);
+}
+ 
+
+  
 
 #else
-  //SPLIT HOURS MINS,.. INTO SEPERATE DIGITS
+
+   //UPDATE NEOPIXEL
+     //SPLIT HOURS MINS,.. INTO SEPERATE DIGITS
     const int m_tens = m / 10;      // tens now = 2
     const int m_ones = m % 10;      // ones now = 6 
     const int h_tens = h / 10;      // tens now = 2
     const int h_ones = h % 10;      // ones now = 6 
     const int s_tens = s / 10;
     const int s_ones = s % 10;
+
     //JUST INDICATE OVER THE PCB LED THAT THE CLOCK IS WOKRING
     if(led_offset > 0){
       pixels.setPixelColor(0,digit_color(0,0,false, col, _bright));
@@ -1364,7 +1378,6 @@ void setup(void)
 
 
 
-
     test_digits();
     
     // START WFIFIMANAGER FOR CAPTIVE PORTAL
@@ -1380,7 +1393,7 @@ void setup(void)
     update_clock_display(0, 0, 0, 192, 255,true); //DISPLAY WIFI ERROR
     delay(1000);
     if(wifiManager.autoConnect(( ap_name +"_" + String(get_esp_chip_id())).c_str())){
-     // display_ip();
+      display_ip();
       
     }else{
       update_clock_display(42, 42, 42, 192, 255,false); //DISPLAY WIFI ERROR
@@ -1436,6 +1449,7 @@ void setup(void)
   
   
     //RTC INIT
+    #ifdef ENABLE_RTC
     Wire.begin();
     is_rtc_present = true;
     if (!rtc.begin()) {
@@ -1458,7 +1472,9 @@ void setup(void)
     rtc_mins = now.minute();
     rtc_secs = now.second();
   }
- 
+  #else
+  is_rtc_present = false;
+ #endif
 
 
 
