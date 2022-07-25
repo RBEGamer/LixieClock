@@ -112,13 +112,21 @@
 
 // PIN CONFIG -----------------------------------
 
-#ifdef ESP8266
-#define NEOPIXEL_PIN D8
+#ifdef WORDCLOCK_V0
+  #define NEOPIXEL_PIN D1
+#else
+
+  #ifdef ESP8266
+    #define NEOPIXEL_PIN D8
+  #endif
+
+  #ifdef ESP32
+    #define NEOPIXEL_PIN 4
+  #endif
+
 #endif
 
-#ifdef ESP32
-#define NEOPIXEL_PIN 4
-#endif
+
 
 
 
@@ -142,10 +150,63 @@ const int DARKMODE_STOP_HOURS = 6;
     
 // NEOPIXEL CONF ------------------------------
 #ifdef WORDCLOCK_V0
-const int NUM_NEOPIXELS = 43;
+
+#define M_ES 0
+#define M_IST 1
+#define M_FUENF 2
+#define M_ZEHN 3
+#define M_ZWANZIG 4
+#define M_VIERTEL 5
+#define M_VOR 6
+#define M_NACH 8
+#define M_HALB 7
+#define M_UHR 21
+#define H_EINS 11
+#define H_ZWEI 12
+#define H_DREI 13
+#define H_VIER 14
+#define H_FUENF 10
+#define H_SECHS 15
+#define H_SIEBEN 17
+#define H_ACHT 16
+#define H_NEUN 9
+#define H_ZEHN 19
+#define H_ELF 20
+#define H_ZWOELF 18
+
+const int NUM_NEOPIXELS = 10*11;
 const int ABI_COUNTER_MAX = 10;
 const int COUNT_CLOCK_DIGITS = 2;
+const String ap_name = "WordClockConfiguration";
+const int WORD_ARR_LEN = 22;
+int clockWords[WORD_ARR_LEN][10] = {
+  {9,10,-1,-1,-1,-1,-1,-1,-1,-1}, // es 0 X OK
+  {5,6,7,-1,-1,-1,-1,-1,-1,-1},  // ist 1 X OK
+  {0,1,2,3,-1,-1,-1,-1,-1,-1},  // fuenf 2 X OK
+  {11,12,13,14,-1,-1,-1,-1,-1,-1},  // zehn 3 X OK
+  {15,16,17,18,19,20,21,-1,-1,-1}, //  zwanzig 4 X OK
+  {22,23,24,25,26,27,28,-1,-1,-1},  // viertel 5 X OK
+  {33,34,35,-1,-1,-1,-1,-1,-1,-1},  // vor 6 X OK
+  {43,42,41,40,-1,-1,-1,-1,-1,-1},  // nach 8 X OK
+  {54,53,52,51,-1,-1,-1,-1,-1,-1},  // halb 7 X OK
+  {102,103,104,105,-1,-1,-1,-1,-1,-1},  // neun 9  X OK
+  {44,45,46,47, -1,-1,-1,-1,-1,-1},  // fuenf 10 X OK
+  {55,56,57,58,-1,-1,-1,-1,-1,-1},  // eins 11 X OK
+  {65,64,63,62,-1,-1,-1,-1,-1,-1},  // zwei 12 X OK
+  {29,30,31,32,-1,-1,-1,-1,-1,-1},  // drei 13 X OK
+  {66,67,68,69,-1,-1,-1,-1,-1,-1},  // vier 14 X OK
+  {77,78,79,80,81,-1,-1,-1,-1,-1},  // sechs 15 X OK
+  {87,86,85,84,-1,-1,-1,-1,-1,-1},  // acht 16 X OK
+  {93,94,95,96,97,98, -1,-1,-1,-1},  // sieben 17 X OK
+  {88,89,90,91,92,-1,-1,-1,-1,-1}, // zwölf 18 X OK
+  {99,100,101,102,-1,-1,-1,-1,-1,-1},  // zehn 19 X OK
+  {47,48,49,-1,-1,-1,-1,-1,-1,-1},  // elf 20 X OK
+  {109,108,107,-1,-1,-1,-1,-1,-1, -1},  // uhr 21 X X
+};
+
+
 #else
+const String ap_name = "LixieClockConfiguration";
 const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
 const int NEOPIXEL_DIGIT_OFFSET = 10;
 const int NUM_NEOPIXELS = (COUNT_CLOCK_DIGITS*10) + NEOPIXEL_DIGIT_OFFSET; //10 leds per digit
@@ -604,6 +665,232 @@ uint32_t digit_color(int _val,int _index, bool _banked, int _base_color, int _br
 
 
 
+#ifdef WORDCLOCK_V0
+void set_word(int word, uint32_t _color) {
+  int wordlen = sizeof(clockWords[word])/sizeof(clockWords[word][0]);
+
+  for (int i=0; i<wordlen; i++)
+  {
+    if (clockWords[word][i] >= 0)
+    {
+      pixels.setPixelColor(clockWords[word][i], _color);
+    }
+  }
+}
+
+
+void getHourWord(int _h, int _m, uint32_t _col)
+{
+  switch(_h)
+  {
+    case 12:
+      set_word(H_ZWOELF, _col);
+      break;
+    case 0:
+      set_word(H_ZWOELF, _col);
+      break;
+    case 1:
+      set_word(H_EINS, _col);
+        break;
+    case 13:
+        set_word(H_EINS, _col);
+        break;
+    case 2:
+      set_word(H_ZWEI, _col);
+      break;
+    case 14:
+      set_word(H_ZWEI, _col);
+      break;
+    case 3:
+      set_word(H_DREI, _col);
+      break;
+    case 15:
+      set_word(H_DREI, _col);
+      break;
+    case 4:
+      set_word(H_VIER, _col);
+      break;
+    case 16:
+      set_word(H_VIER, _col);
+      break;
+    case 5:
+      set_word(H_FUENF, _col);
+      break;
+    case 17:
+      set_word(H_FUENF, _col);
+      break;
+    case 6:
+      set_word(H_SECHS, _col);
+      break;
+    case 18:
+      set_word(H_SECHS, _col);
+      break;
+    case 7:
+      set_word(H_SIEBEN, _col);
+      break;
+    case 19:
+      set_word(H_SIEBEN, _col);
+      break;
+    case 8:
+      set_word(H_ACHT, _col);
+      break;
+    case 20:
+      set_word(H_ACHT, _col);
+      break;
+    case 9:
+      set_word(H_NEUN, _col);
+      break;
+    case 21:
+      set_word(H_NEUN, _col);
+      break;
+    case 10:
+      set_word(H_ZEHN, _col);
+      break;
+    case 22:
+      set_word(H_ZEHN, _col);
+      break;
+    case 11:
+      set_word(H_ELF, _col);
+      break;
+    case 23:
+      set_word(H_ELF, _col);
+      break;
+  }
+}
+
+void getMinuteWord(int _m, uint32_t _col)
+{
+  /*
+  get word for current "minute"
+  */
+  switch(_m)
+  {
+    case 0:
+    set_word(M_UHR, _col);break;
+    case 1:
+    set_word(M_UHR, _col);break;
+    case 2:
+    set_word(M_UHR, _col);break;
+    case 3:
+    set_word(M_UHR, _col);break;
+    case 4:
+      set_word(M_UHR, _col);break;
+    case 5:
+    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+    case 6:
+    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+    case 7:
+    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+    case 8:
+    set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+    case 9:
+      set_word(M_FUENF, _col); set_word(M_NACH, _col); break;
+    case 10:
+     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+    case 11:
+     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+    case 12:
+     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+    case 13:
+     set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+    case 14:
+      set_word(M_ZEHN, _col); set_word(M_NACH, _col); break;
+    case 15:
+      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+    case 16:
+      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+    case 17:
+      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+    case 18:
+      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+    case 19:
+      set_word(M_VIERTEL, _col); set_word(M_NACH, _col); break;
+    case 20:
+      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+    case 21:
+      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+    case 22:
+      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+    case 23:
+      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+    case 24:
+      set_word(M_ZWANZIG, _col); set_word(M_NACH, _col); break;
+    case 25:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+    case 26:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+    case 27:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+    case 28:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+    case 29:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); set_word(M_HALB, _col); break;
+    case 30:
+      set_word(M_HALB, _col); break;
+    case 31:
+      set_word(M_HALB, _col); break;
+    case 32:
+      set_word(M_HALB, _col); break;
+    case 33:
+      set_word(M_HALB, _col); break;
+    case 34:
+      set_word(M_HALB, _col); break;
+    case 35:
+      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+    case 36:
+      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+    case 37:
+      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+    case 38:
+      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+    case 39:
+      set_word(M_FUENF, _col); set_word(M_NACH, _col);set_word(M_HALB, _col); break;
+    case 40:
+      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+    case 41:
+      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+    case 42:
+      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+    case 43:
+      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+    case 44:
+      set_word(M_ZWANZIG, _col); set_word(M_VOR, _col); break;
+    case 45:
+      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+    case 46:
+      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+    case 47:
+      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+    case 48:
+      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+    case 49:
+      set_word(M_VIERTEL, _col); set_word(M_VOR, _col); break;
+    case 50:
+      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+    case 51:
+      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+    case 52:
+      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+    case 53:
+      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+    case 54:
+      set_word(M_ZEHN, _col); set_word(M_VOR, _col); break;
+    case 55:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+    case 56:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+    case 57:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+    case 58:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+    case 59:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+    case 60:
+      set_word(M_FUENF, _col); set_word(M_VOR, _col); break;
+  }
+}
+#endif
+
 //h: 0-99, m:0-99, s:0-99 col: 0-255, _bright: 0-255, _disable_leading_zero:0-1
 //_disable_leading_zero =>
 void update_clock_display(int h, int m, int s, int col, int _bright, bool _disable_leading_zero){
@@ -616,22 +903,32 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     delay(100);
   
     //UPDATE NEOPIXEL
-    //SPLIT HOURS MINS,.. INTO SEPERATE DIGITS
-    const int m_tens = m / 10;      // tens now = 2
-    const int m_ones = m % 10;      // ones now = 6 
-
-    const int h_tens = h / 10;      // tens now = 2
-    const int h_ones = h % 10;      // ones now = 6 
     
-    const int s_tens = s / 10;
-    const int s_ones = s % 10;
   
     pixels.clear();
     
     
     
 #ifdef WORDCLOCK_V0
+  //ES
+  set_word(M_ES, digit_color(0,0,false, col, _bright));
+  // IST
+  set_word(M_IST, digit_color(0,0,false, col, _bright));
+
+  uint32_t col_m = digit_color(m,1 ,false, col, _bright);
+  uint32_t col_h = digit_color(h,2 ,false, col, _bright);
+
+  //getHourWord(h, m, col_h);
+  getMinuteWord(m, col_m);
+
 #else
+  //SPLIT HOURS MINS,.. INTO SEPERATE DIGITS
+    const int m_tens = m / 10;      // tens now = 2
+    const int m_ones = m % 10;      // ones now = 6 
+    const int h_tens = h / 10;      // tens now = 2
+    const int h_ones = h % 10;      // ones now = 6 
+    const int s_tens = s / 10;
+    const int s_ones = s % 10;
     //JUST INDICATE OVER THE PCB LED THAT THE CLOCK IS WOKRING
     if(led_offset > 0){
       pixels.setPixelColor(0,digit_color(0,0,false, col, _bright));
@@ -990,6 +1287,16 @@ String IpAddress2String(const IPAddress& ipAddress)
 
 
 void test_digits(){
+#ifdef WORDCLOCK_V0
+
+  for (int i=0; i<WORD_ARR_LEN; i++){
+            pixels.clear();
+            set_word(i, Wheel(i*(WORD_ARR_LEN/255), 255));
+             pixels.show();
+            delay(100);
+  }
+#else
+
   pixels.clear();
     for(int j = 0; j < 5; j++){
     for(int i = 0; i < NUM_NEOPIXELS; i++){
@@ -999,6 +1306,7 @@ void test_digits(){
       delay(50);
     }
     }
+#endif
     pixels.clear();
   }
 
@@ -1064,15 +1372,15 @@ void setup(void)
     wifiManager.setDebugOutput(true);
     wifiManager.setTimeout(60);
     wifiManager.setConfigPortalTimeout(180);
-    wifiManager.setAPClientCheck(true);
+   // wifiManager.setAPClientCheck(true);
     wifiManager.setBreakAfterConfig(true);
-    wifiManager.setClass("invert"); 
+   // wifiManager.setClass("invert"); 
     //TRY TO CONNECT
     // AND DISPLAY IP ON CLOCKS HOUR DISPLAY (FOR 2 DIGIT CLOCKS)
     update_clock_display(0, 0, 0, 192, 255,true); //DISPLAY WIFI ERROR
     delay(1000);
-    if(wifiManager.autoConnect(("LixieClockConfiguration_" + String(get_esp_chip_id())).c_str())){
-      display_ip();
+    if(wifiManager.autoConnect(( ap_name +"_" + String(get_esp_chip_id())).c_str())){
+     // display_ip();
       
     }else{
       update_clock_display(42, 42, 42, 192, 255,false); //DISPLAY WIFI ERROR
