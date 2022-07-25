@@ -4,11 +4,11 @@
 // 10.01.2022 - VERSION 1.4; fixing ESP32 SUPPORT
 // 11.02.2022 - VERSION 1.5; fixing SPIFFS INIT AND FORMAT WITH DBG MSG
 
-#define VERSION "1.5"
+#define VERSION "2.0"
 //#define USE_LITTLEFS
-#define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
+//#define PCB_V1_FIX //DEFINE THIS TO AVOID PIXEL ERRORS ON THE PCB V1; ON THIS PCB VERISION THE SEGMENT PAIRS 7,8 and 3,4 ARE SWAPPED
 //#define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR ELEMENT PRESENT; SO ONE ADDITIONAL LED IS ADDED
-
+#define WORDCLOCK_V0
 
 
 #include <Arduino.h>
@@ -17,7 +17,9 @@
 
 
 
-
+//#ifdef WORDCLOCK_V0
+//#include "wordclock_de_constants.h"
+//#endif
 
 #ifdef ESP8266
 #include <ESP8266WiFi.h>
@@ -134,15 +136,20 @@ const String BOARD_INFO= "LIXIE_FW_" + String(VERSION) + "_BOARD_" + "ESP32";
 
 
 // DARKMODE
-  const int DARKMODE_START_HOURS = 0;
-    const int DARKMODE_STOP_HOURS = 6;
+const int DARKMODE_START_HOURS = 0;
+const int DARKMODE_STOP_HOURS = 6;
 
     
 // NEOPIXEL CONF ------------------------------
-
+#ifdef WORDCLOCK_V0
+const int NUM_NEOPIXELS = 43;
+const int ABI_COUNTER_MAX = 10;
+const int COUNT_CLOCK_DIGITS = 2;
+#else
 const int COUNT_CLOCK_DIGITS = 6; // 2 4 OR 6 DIGITS ARE SUPPORTED
 const int NEOPIXEL_DIGIT_OFFSET = 10;
 const int NUM_NEOPIXELS = (COUNT_CLOCK_DIGITS*10) + NEOPIXEL_DIGIT_OFFSET; //10 leds per digit
+const int ABI_COUNTER_MAX = COUNT_CLOCK_DIGITS * 6; //COUNT ABI ITERATIONS
 //const int led_index_digits[] = {9, 0, 1, 3, 2, 4, 5, 7, 6, 8};
 
 #if defined(PCB_V1_FIX)
@@ -150,9 +157,8 @@ const int led_index_digits[] = {0, 9, 8, 7, 6, 5, 4, 3, 2, 1}; //PIXEL INDEX OFF
 #else
 const int led_index_digits[] = {0, 9, 8, 6, 7, 5, 4, 2, 3, 1}; //PIXEL INDEX OFFSET FOR EACH DIGIT STARTING AT 0,1 2 3 4 5 6 7 8 9
 #endif
-
 const int digit_offsets[6] = {0, 10 ,20 ,30, 40, 50}; //HOUR_TENS HOUR_ONES MINUTES_TENS MINUTES_ONES
-
+#endif
 // END NEOPIXEL CONF ---------------------------
 //FILES FOR STORiNG CONFIGURATION DATA
 const char* file_ntp_server = "/file.txt";
@@ -194,7 +200,7 @@ int mqtt_display_mode = 0;
 int rtc_hours_tmp = 0;
 bool abi_started = false;
 int abi_counter = 0;
-const int ABI_COUNTER_MAX = COUNT_CLOCK_DIGITS * 6; //HOW MANY ABI ITERATIONS
+
 int dalight_saving_enabled = 0;
 //IS SET TO TRUE IN SETUP IF A RTC CLOCK IS DETECTED
 bool is_rtc_present = false;
@@ -624,15 +630,12 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
     
     
     
-    
+#ifdef WORDCLOCK_V0
+#else
     //JUST INDICATE OVER THE PCB LED THAT THE CLOCK IS WOKRING
     if(led_offset > 0){
       pixels.setPixelColor(0,digit_color(0,0,false, col, _bright));
     }
-
-
-      
-    
     if(COUNT_CLOCK_DIGITS >= 2){
       pixels.setPixelColor(digit_offsets[0] + led_index_digits[h_tens] + led_offset, digit_color(h_tens,0,_disable_leading_zero, col, _bright));
       pixels.setPixelColor(digit_offsets[1] + led_index_digits[h_ones] + led_offset, digit_color(h_ones,0,_disable_leading_zero, col, _bright));
@@ -647,7 +650,7 @@ void update_clock_display(int h, int m, int s, int col, int _bright, bool _disab
       pixels.setPixelColor(digit_offsets[4] + led_index_digits[s_tens] + led_offset, digit_color(s_tens,2,_disable_leading_zero, col, _bright));
       pixels.setPixelColor(digit_offsets[5] + led_index_digits[s_ones] + led_offset, digit_color(s_ones,2,_disable_leading_zero, col, _bright));
     }
-    
+#endif    
   
    
     pixels.show();   // Send the updated pixel colors to the hardware.
@@ -988,7 +991,6 @@ String IpAddress2String(const IPAddress& ipAddress)
 
 void test_digits(){
   pixels.clear();
-
     for(int j = 0; j < 5; j++){
     for(int i = 0; i < NUM_NEOPIXELS; i++){
       pixels.clear();
@@ -997,7 +999,6 @@ void test_digits(){
       delay(50);
     }
     }
-
     pixels.clear();
   }
 
