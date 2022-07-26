@@ -768,15 +768,15 @@ void getMinuteWord(int _m, uint32_t _col,  uint32_t _col_oth)
   switch(_m)
   {
     case 0:
-      {set_word(M_UHR, _col);break;}
+      {set_word(M_UHR, _col_oth);break;}
     case 1:
-      {set_word(M_UHR, _col);break;}
+      {set_word(M_UHR, _col_oth);break;}
     case 2:
-      {set_word(M_UHR, _col);break;}
+      {set_word(M_UHR, _col_oth);break;}
     case 3:
-      {set_word(M_UHR, _col);break;}
+      {set_word(M_UHR, _col_oth);break;}
     case 4:
-      {set_word(M_UHR, _col);break;}
+      {set_word(M_UHR, _col_oth);break;}
     case 5:
       {set_word(M_FUENF, _col); set_word(M_NACH, _col); break;}
     case 6:
