@@ -364,6 +364,28 @@ Hierzu bietet die Software ein Define, welches diesen Fehler behebt.
 9 | #define PCB_V0_FIX //ON THE ESP8266 VERSION OF PCB V0 IS THE ERROR LED PRESENT
 ``` 
 
+## Wordclock
+
+Die Software-Version `>=2.0` unterstützt zusätzlich die Anordnung der LEDs als `Wordclock`.
+Wenn nicht die richtigen Wörter aufleuchten, muss die Software für die Verwendung als Wordclock angepasst werden.
+
+```c++
+11 | #define WORDCLOCK_V0 // german wordclock layout
+```
+
+## RTC Offline-Mode 
+
+Falls keine Internetverbindung bestehen sollte, kann die Uhr auch im Offline-Modus verwendet werden.
+Dazu wird eine RTC Modul `DS1307` oder `DS3231` am I2C Bus des Controllers angeschlossen.
+Zusätzlich muss der Software-Support aktiviert werden.
+Die RTC wird automatisch durch den NTP-Server gestellt/aktualisiert, wenn eine Internetverbindung vorhanden ist.
+
+
+```c++
+14 | #define ENABLE_RTC
+```
+
+
 ## ESP32 Version speichert Konfiguration nicht
 
 Je nach verwendeter Arduino-IDE Version, sowie der verwendeten Libraries kann es bei der ESP32 Software zu Fehlern mit dem Dateisystem FS kommen.
