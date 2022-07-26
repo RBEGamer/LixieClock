@@ -61,10 +61,9 @@
  #include <avr/power.h> // Required for 16 MHz Adafruit Trinket
 #endif
 
+
 #include <Wire.h>
 #include "RTClib.h"
-
-
 
 #if defined(ESP32)
 #include "TZ.h"
@@ -175,12 +174,13 @@ const int DARKMODE_STOP_HOURS = 6;
 #define H_ZEHN 19
 #define H_ELF 20
 #define H_ZWOELF 18
+#define H_EIN 22
 
 const int NUM_NEOPIXELS = 10*11;
 const int ABI_COUNTER_MAX = 10;
 const int COUNT_CLOCK_DIGITS = 2;
 const String ap_name = "WordClockConfiguration";
-const int WORD_ARR_LEN = 22;
+const int WORD_ARR_LEN = 23;
 int clockWords[WORD_ARR_LEN][10] = {
   {9,10,-1,-1,-1,-1,-1,-1,-1,-1}, // es 0 X OK
   {5,6,7,-1,-1,-1,-1,-1,-1,-1},  // ist 1 X OK
@@ -204,6 +204,7 @@ int clockWords[WORD_ARR_LEN][10] = {
   {99,100,101,102,-1,-1,-1,-1,-1,-1},  // zehn 19 X OK
   {47,48,49,-1,-1,-1,-1,-1,-1,-1},  // elf 20 X OK
   {109,108,107,-1,-1,-1,-1,-1,-1, -1},  // uhr 21 X X
+  {55,56,57,-1,-1,-1,-1,-1,-1,-1},  // eins 11 X OK
 };
 
 
@@ -692,8 +693,15 @@ void getHourWord(int _h, int _m, uint32_t _col,  uint32_t _col_oth)
       set_word(H_ZWOELF, _col);
       break;
     case 1:
-      set_word(H_EINS, _col);
+    {
+      if(_m >= 0 && _m < 5){
+         set_word(H_EIN, _col);
+      }else{
+        set_word(H_EINS, _col);
+      }
         break;
+    }
+      
     case 13:
         set_word(H_EINS, _col);
         break;
@@ -1524,6 +1532,7 @@ void loop(void)
      //UPDATE RTC IF THE CLOCK IS PRESENT
      //ELSE SIMPLY USE MILLIS TO KEEP TRACK OF TIME
     if (is_rtc_present && sync_mode == 1) {
+      
       DateTime now = rtc.now();
       rtc_hours = now.hour();
       rtc_hours_tmp = now.hour();
