@@ -1334,7 +1334,7 @@ void display_ip(){
         if(ip[i] == '.'){
           update_clock_display(0,0,0,128,64,false); //DISPLAY WIFI ERROR
         }else{
-          update_clock_display(ip[i]-'0',ip[i]-'0',0,0,255,false); //DISPLAY WIFI ERROR
+          update_clock_display(ip[i]-'0',0,0,0,255,false); //DISPLAY WIFI ERROR
          // Serial.println("_st_" + String(ip[i]-'0') + "_0_");
         }
         delay(1000);
