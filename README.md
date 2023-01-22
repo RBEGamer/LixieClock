@@ -288,7 +288,7 @@ Mit einem USB-Kabel wird der `ESP8266 D1 Mini` verbunden. Jede Ziffer sollte ein
 Falls dies nicht der Fall ist, ist die Verkabelung zu Prüfen.
 
 Um den Zusammenbau zu vereinfachen, werden die einzelnen Stiftleisten mit dem `Jumperwires` leicht zueinander (ca. 45°) gebogen und mit Heisskleber fixiert.
-Auch die Kabel ziewschen den Elementen werden mit Kabelbindern und/oder Heißkleber an der `TOP_PLATE` fixiert.
+Auch die Kabel zwischen den Elementen werden mit Kabelbindern und/oder Heißkleber an der `TOP_PLATE` fixiert.
 
 ![electric_complete](./documentation/images/electric_complete.jpg)
 
