@@ -1,4 +1,4 @@
-# MSFHAC_LixieClock
+# LixieClock
 
 Die Lixie-Uhr des Makerspace der FH Aachen
 
